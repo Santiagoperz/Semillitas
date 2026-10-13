@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semillitas · Guía de alimentación infantil con alimentos locales</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="styles.css" rel="stylesheet">
+
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+
+  <header class="topbar">
+    <a href="#inicio" class="brand"><span>🌱</span> Semillitas</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav" id="nav">
+      <a href="#ejes">Ejes</a>
+      <a href="#etapas">Etapas de vida</a>
+      <a href="#precios">¿Dónde comprar?</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="inicio">
+      <div class="hero-inner">
+        <div class="hero-text reveal">
+          <p class="eyebrow">Guía práctica para familias del Caribe</p>
+          <h1>Semillitas <span class="sprout">🌱</span></h1>
+          <p class="lead">En esta guía encontrarás orientaciones prácticas para ofrecer alimentos variados, nutritivos, seguros y accesibles, aprovechando los alimentos propios de nuestra región, teniendo en cuenta las necesidades nutricionales y el desarrollo de los niños, niñas y adolescentes de tu hogar.</p>
+          <ul class="chips">
+            <li>👧 0 a 18 años</li>
+            <li>🌊 Alimentos locales</li>
+            <li>❤️ Con amor para tu pequeño</li>
+          </ul>
+          <a href="#etapas" class="btn">Empezar el recorrido ↓</a>
+        </div>
+        <aside class="hero-card reveal">
+          <p class="hero-card-title">❤️👨‍👩‍👧 Recuerda mamá, papá o cuidador/a</p>
+          <p>Acompañar la alimentación de tu hijo/a es una oportunidad para descubrir nuevos sabores, fortalecer su crecimiento y compartir momentos llenos de amor.</p>
+        </aside>
+      </div>
+      <div class="wave" aria-hidden="true"></div>
+    </section>
+
+    <!-- ================= EJES (SLIDER) ================= -->
+<section class="section" id="ejes">
+  <div class="section-head reveal">
+    <span class="tag">Antes de empezar</span>
+    <h2>Los ejes de la seguridad alimentaria</h2>
+    <p>Desliza o usa las flechas para conocer cada eje.</p>
+  </div>
+
+  <div class="slider reveal" id="slider" aria-roledescription="carrusel" aria-label="Ejes de la seguridad alimentaria">
+    <button class="slider-arrow prev" id="prevSlide" aria-label="Eje anterior">‹</button>
+
+    <div class="slider-viewport">
+      <div class="slider-track" id="sliderTrack">
+
+        <article class="slide" style="--c: var(--sea)" aria-roledescription="diapositiva" aria-label="1 de 5">
+          <div class="slide-visual" style="background-image:url('imgs/Ejes/1.jpeg')"></div>
+          <div class="slide-content">
+            <h3>Disponibilidad de alimentos</h3>
+            <p>Hay suministro suficiente de alimentos. Se evalúa la oferta, el nivel de producción de alimentos, los niveles de las existencias y el comercio neto.</p>
+            <br>
+            <h4>Ejemplo</h4>
+            <p>En el mercado de Bazurto hay arroz, plátano, pescado, frutas y verduras para que las familias puedan conseguir sus alimentos.</p>
+          </div>
+        </article>
+
+        <article class="slide" style="--c: #6E28BD " aria-roledescription="diapositiva" aria-label="2 de 5">
+          <div class="slide-visual" style="background-image:url('imgs/Ejes/2.jpeg')"></div>
+          <div class="slide-content">
+            <h3>Acceso físico y económico</h3>
+            <p>La población tiene la capacidad, económica y física, de adquirir los alimentos.</p>
+            <br>
+            <h4>Ejemplo</h4>
+            <p>Una familia cartagenera tiene ingresos suficientes para comprar arroz, huevos, verduras y otros alimentos para la semana.</p>
+            
+          </div>
+        </article>
+
+        <article class="slide" style="--c: #E86BE4" aria-roledescription="diapositiva" aria-label="3 de 5">
+          <div class="slide-visual" style="background-image:url('imgs/Ejes/3.jpeg')"></div>
+          <div class="slide-content">
+            <h3>Consumo de alimentos</h3>
+            <p>Incluye la preparación correcta de los alimentos, la diversidad en la dieta, la inocuidad alimentaria (condiciones óptimas y sin riesgos biológicos) y la ingesta suficiente.</p>
+            <br>
+            <h4>Ejemplo</h4>
+            <p>Una mamá prepara pescado, arroz y ensalada para que sus hijos tengan una comida variada y nutritiva.</p>
+          </div>
+        </article>
+
+        <article class="slide" style="--c: var(--leaf)" aria-roledescription="diapositiva" aria-label="4 de 5">
+          <div class="slide-visual" style="background-image:url('imgs/Ejes/4.jpeg')"></div>
+          <div class="slide-content">
+            <h3>Aprovechamiento biológico</h3>
+            <p>Se refiere a cómo y cuánto aprovecha el cuerpo humano los alimentos que consume y cómo los convierte en nutrientes para ser asimilados por el organismo.</p>
+            <br>
+            <h4>Ejemplo</h4>
+            <p>Una familia lava bien las frutas y verduras, consume agua potable y mantiene una buena higiene para prevenir enfermedades que afecten su nutrición.</p>
+        </article>
+
+        <article class="slide" style="--c: var(--berry)" aria-roledescription="diapositiva" aria-label="5 de 5">
+          <div class="slide-visual" style="background-image:url('imgs/Ejes/5.jpeg')"></div>
+          <div class="slide-content">
+            <h3>Calidad e inocuidad</h3>
+            <p>Conjunto de características que garantizan que los alimentos sean aptos para el consumo humano, cumpliendo condiciones durante toda la cadena agroalimentaria hasta el consumo, para que una vez ingeridos no representen un riesgo (biológico, físico o químico) para la salud.</p>
+            <br>
+            <h4>Ejemplo</h4>
+            <p>En una tienda de Cartagena venden pescado fresco, bien conservado y protegido de las moscas, para evitar que las personas se enfermen.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <button class="slider-arrow next" id="nextSlide" aria-label="Eje siguiente">›</button>
+
+    <div class="slider-dots" id="sliderDots" role="tablist"></div>
+    <div class="slider-bar"><span id="sliderBar"></span></div>
+  </div>
+</section>
+
+    <!-- ================= ETAPAS ================= -->
+    <section class="section alt" id="etapas">
+      <div class="section-head reveal">
+        <span class="tag">El recorrido</span>
+        <h2>Etapas de vida</h2>
+        <p>Elige la etapa de tu hijo/a para ver las recomendaciones.</p>
+      </div>
+
+      <!-- Stepper principal -->
+      <div class="stepper" role="tablist" data-tabs>
+        <button class="step active" role="tab" aria-selected="true" data-panel="p-infancia">
+          <span class="step-dot">👶</span>
+          <span class="step-label">Primera infancia<small>0 a 5 años</small></span>
+        </button>
+        <button class="step" role="tab" aria-selected="false" data-panel="p-ninez">
+          <span class="step-dot">🧒</span>
+          <span class="step-label">Niñez<small>6 a 12 años</small></span>
+        </button>
+        <button class="step" role="tab" aria-selected="false" data-panel="p-adolescencia">
+          <span class="step-dot">🧑</span>
+          <span class="step-label">Adolescencia<small>12 a 18 años</small></span>
+        </button>
+      </div>
+
+            <!-- ===== PRIMERA INFANCIA ===== -->
+      <div class="panel active" id="p-infancia" role="tabpanel">
+        <div class="subtabs" role="tablist" data-tabs>
+          <button class="subtab active" role="tab" aria-selected="true" data-panel="p-lactancia">🤱 Lactancia materna exclusiva <small>0 a 6 meses</small></button>
+          <button class="subtab" role="tab" aria-selected="false" data-panel="p-complementaria">🥣 Alimentación complementaria <small>6 meses a 2 años</small></button>
+        </div>
+
+        <!-- Lactancia -->
+        <div class="panel active" id="p-lactancia" role="tabpanel">
+          <div class="grid-3">
+            <div class="card">
+              <h4>👩‍🍼 ¿Qué es?</h4>
+              <p>No se debe dar ningún otro alimento ni bebida, <strong>ni siquiera agua</strong>, excepto leche materna (incluida la leche extraída o la de una nodriza) durante los primeros 6 meses de vida. Se exceptúan la solución de rehidratación oral (SRO), las gotas y los jarabes (vitaminas, minerales y medicamentos).</p>
+              <p class="note">La OMS y UNICEF recomiendan la lactancia materna exclusiva durante los primeros 6 meses y que inicie dentro de la primera hora posterior al parto. (Organización Mundial de la Salud, s. f.)</p>
+            </div>
+            <div class="card">
+              <h4>🛡️ Beneficios</h4>
+              <p>Protege a los recién nacidos de enfermarse y contribuye a su protección durante la infancia. Es particularmente eficaz contra las enfermedades infecciosas, ya que fortalece el sistema inmunitario mediante la transferencia directa de anticuerpos de la madre.</p>
+              <p>A largo plazo reduce el riesgo de sobrepeso u obesidad y de enfermedades no transmisibles en la edad adulta, como diabetes, enfermedades cardiovasculares y ciertos tipos de cáncer.</p>
+              <p class="note">(Organización Mundial de la Salud, s. f.)</p>
+            </div>
+            <div class="card">
+              <h4>⏰ ¿Cada cuánto dar teta al bebé?</h4>
+              <p class="big">A libre demanda</p>
+              <p>Cada vez que el bebé lo pida, sin un horario rígido.</p>
+            </div>
+          </div>
+
+          <div class="callout">
+            <span class="callout-icon">💛</span>
+            <div>
+              <h4>Y recuerda que…</h4>
+              <p>Desde la primera hora de su nacimiento y hasta los seis meses de edad, tu bebé debe ser alimentado exclusivamente con leche materna. No necesita ningún otro alimento, ni siquiera agua. La leche materna es un alimento tan poderoso que provee todos los nutrientes que tu bebé requiere para desarrollarse plenamente y crecer sano y feliz.</p>
+            </div>
+          </div>
+
+          <h3 class="block-title">Consejos para amamantar <small>(UNICEF, 2023)</small></h3>
+                  <ol class="breast-steps">
+            <li class="bstep">
+              <figure>
+                <div class="bstep-img" data-emoji="✋">
+                  <img src="imgs/lactancia/imagen_1.png" loading="lazy"
+                    alt="Mano sosteniendo el pecho en forma de C, con el pulgar arriba y los demás dedos abajo, lejos del pezón">
+                </div>
+                <figcaption>Ofrece el pecho sosteniendo la mama entre el pulgar y los demás dedos, con la mano en forma de <strong>C</strong>. Los dedos de abajo deben ir lejos del pezón.</figcaption>
+              </figure>
+            </li>
+
+            <li class="bstep">
+              <figure>
+                <div class="bstep-img" data-emoji="👄">
+                  <img src="imgs/lactancia/imagen_2.png" loading="lazy"
+                      alt="Vista lateral del bebé con el pezón dirigido hacia su paladar">
+                </div>
+                <figcaption>El pezón debe apuntar al paladar del bebé.</figcaption>
+              </figure>
+            </li>
+
+            <li class="bstep">
+              <figure>
+                <div class="bstep-img" data-emoji="👃">
+                  <img src="imgs/lactancia/imagen_3.png" loading="lazy"
+                      alt="El pezón ubicado a la altura de la nariz del bebé antes del agarre">
+                </div>
+                <figcaption>Ofrece el pezón a la altura de la nariz del bebé para un mejor agarre. Si toma solo el pezón no podrá extraer la leche que necesita y pueden aparecer grietas dolorosas.</figcaption>
+              </figure>
+            </li>
+
+            <li class="bstep">
+              <figure>
+                <div class="bstep-img" data-emoji="📏">
+                  <img src="imgs/lactancia/imagen_4.png" loading="lazy"
+                      alt="Bebé alineado frente al cuerpo de la mamá, con hombro, oreja y cadera en línea recta">
+                </div>
+                <figcaption>Alinea bien al bebé: su cabeza no debe estar torcida; hombro, oreja y cadera en la misma línea, enfrentados al cuerpo de la mamá.</figcaption>
+              </figure>
+            </li>
+
+            <li class="bstep">
+              <figure>
+                <div class="bstep-img" data-emoji="😮">
+                  <img src="imgs/lactancia/imagen_5.png" loading="lazy"
+                      alt="Bebé con la boca bien abierta acercándose al pecho para tomar el pezón y gran parte de la aréola">
+                </div>
+                <figcaption>La cabeza del bebé no debe estar torcida. Su hombro, oreja y cadera deben mantenerse alineados, formando una línea recta paralela al cuerpo de la madre.</figcaption>
+              </figure>
+            </li>
+
+            <li class="bstep">
+              <figure>
+                <div class="bstep-img" data-emoji="🐟">
+                  <img src="imgs/lactancia/imagen_6.png" loading="lazy"
+                      alt="Buen agarre: labios evertidos como boca de pescado, mentón tocando el pecho y nariz libre">
+                </div>
+
+                <figcaption>Acércalo a la teta con la boca bien abierta e introduce el pezón y la mayor parte posible de la aréola.</figcaption>
+                
+              </figure>
+            </li>
+
+            <li class="bstep">
+              <figure>
+                <div class="bstep-img" data-emoji="🤙">
+                  <img src="imgs/lactancia/imagen_7.png" loading="lazy"
+                      alt="Dedo meñique introducido en la comisura de la boca del bebé para soltar el agarre">
+                </div>
+                <figcaption>Los labios superior e inferior deben quedar abiertos "como boca de pescado". El mentón toca el pecho; la nariz no.</figcaption>
+                
+              </figure>
+            </li>
+
+            <li class="bstep">
+              <figure>
+                <div class="bstep-img" data-emoji="🤙">
+                  <img src="imgs/lactancia/imagen_8.png" loading="lazy"
+                      alt="Dedo meñique introducido en la comisura de la boca del bebé para soltar el agarre">
+                </div>
+                <figcaption>Para retirarlo, introduce el dedo meñique en la comisura de su boca para romper el vacío; así se desprende sin tironear del pezón.</figcaption>
+              </figure>
+            </li>
+          </ol>
+        </div>
+
+        <!-- Complementaria -->
+        <div class="panel" id="p-complementaria" role="tabpanel">
+          <div class="card wide">
+            <p>La alimentación complementaria es el proceso por el cual se introducen alimentos sólidos o líquidos distintos de la leche materna o fórmula infantil a partir de los <strong>6 meses</strong> de edad <em>(OMS, 2026)</em>. Solo hasta ese momento el organismo de tu bebé tiene la madurez necesaria a nivel neurológico, renal, gastrointestinal e inmunológico para tolerar alimentos diferentes a la leche materna <em>(ICBF, 2020)</em>.</p>
+            <p>No siempre los cuidadores saben qué alimentos ofrecer, cuándo introducirlos, qué texturas son adecuadas para cada edad o qué cantidades y variedad necesitan los niños y niñas. <strong>¡Pero no te preocupes!</strong> Aquí te enseñamos paso a paso cómo ofrecer una alimentación adecuada, nutritiva y segura.</p>
+          </div>
+
+          <!-- Barra de textura -->
+          <div class="texture-bar" aria-hidden="true">
+            <span>Puré suave</span><span>Machacado y picado fino</span><span>Trozos, desmechado, molido</span>
+          </div>
+
+          <div class="agetabs" role="tablist" data-tabs>
+            <button class="agetab active" role="tab" aria-selected="true" data-panel="p-6-8">6 a 8 meses</button>
+            <button class="agetab" role="tab" aria-selected="false" data-panel="p-9-11">9 a 11 meses</button>
+            <button class="agetab" role="tab" aria-selected="false" data-panel="p-12-23">12 a 23 meses</button>
+          </div>
+
+          <!-- ===== 6 a 8 meses ===== -->
+          <div class="panel active" id="p-6-8" role="tabpanel">
+            <div class="grid-2">
+              <div class="card">
+                <h4>🥄 Textura: purés suaves</h4>
+                <p>En esta etapa se recomienda dar alimentos con textura tipo puré suave. El primer día comienza con <strong>1 cucharada</strong> y ve aumentando gradualmente.</p>
+                <h4>👀 Ten presente que…</h4>
+                <p>Ofrece un alimento de un solo tipo. Por ejemplo, si es fruta, que sea una sola (mango <em>o</em> banano, no los dos juntos), y lo mismo con los demás alimentos, para ver si el bebé presenta alguna intolerancia o alergia. Luego sí ve combinando.</p>
+              </div>
+              <div class="card">
+                <h4>✅ En esta etapa ten en cuenta <small>(ICBF, 2020)</small></h4>
+                <ul class="check">
+                  <li>No se recomienda ofrecer leche de vaca; se mantiene la leche materna.</li>
+                  <li>Alimentos sin adición de azúcar, sal, grasas trans ni especias.</li>
+                  <li>Frecuencia progresiva, hasta llegar a 3 comidas diarias a los 8 meses.</li>
+                  <li>Ofrece un alimento nuevo a la vez, junto con uno ya conocido, cada 2 a 4 días según la tolerancia del bebé.</li>
+                  <li>Inicia con 4 a 6 cucharadas postreras por comida, hasta llegar gradualmente a media taza (4 onzas).</li>
+                  <li>Ofrece comidas muy espesas tipo puré hasta que aparezca la habilidad de masticar.</li>
+                </ul>
+              </div>
+            </div>
+
+            <h3 class="block-title">Menú de ejemplo <small>toca un plato para ver la receta</small></h3>
+            <div class="menu">
+              <button class="dish" type="button" aria-haspopup="dialog">
+                <span>🥭</span><strong class="dish-name">Compota de mango</strong>
+                <em class="dish-cta">Ver receta →</em>
+                <template class="receta">
+                  <h5>Ingredientes</h5>
+                  <ul>
+                    <li>Mango maduro.</li>
+                    <li>Agua potable previamente hervida, únicamente si se necesita ajustar la textura.</li>
+                  </ul>
+                  <h5>Preparación</h5>
+                  <ol>
+                    <li>Lava muy bien el mango antes de pelarlo.</li>
+                    <li>Retira la cáscara y la semilla; usa solo la pulpa.</li>
+                    <li>Tritura la pulpa con un tenedor hasta obtener una consistencia suave.</li>
+                    <li>Si el mango está muy fibroso, pásalo por un colador para retirar las fibras gruesas.</li>
+                    <li>Si queda muy espeso, añade un poco de agua previamente hervida.</li>
+                    <li>Sirve sin azúcar ni endulzantes, aprovechando el dulzor natural de la fruta.</li>
+                  </ol>
+                </template>
+              </button>
+
+              <button class="dish" type="button" aria-haspopup="dialog">
+                <span>🎃</span><strong class="dish-name">Crema de ahuyama con pollo</strong>
+                <em class="dish-cta">Ver receta →</em>
+                <template class="receta">
+                  <h5>Ingredientes</h5>
+                  <ul>
+                    <li>Ahuyama.</li>
+                    <li>Pechuga de pollo sin piel ni huesos.</li>
+                    <li>Agua potable.</li>
+                  </ul>
+                  <h5>Preparación</h5>
+                  <ol>
+                    <li>Lava la ahuyama, retira la cáscara y las semillas, y córtala en trozos.</li>
+                    <li>Cocina el pollo en agua hasta que esté completamente cocido en el centro.</li>
+                    <li>Cocina la ahuyama hasta que esté muy blanda.</li>
+                    <li>Desmenuza el pollo y verifica que no queden huesos, cartílagos ni fragmentos duros.</li>
+                    <li>Tritura la ahuyama con el pollo y agrega poco a poco agua de cocción hasta lograr una crema espesa y homogénea.</li>
+                    <li>Deja enfriar hasta una temperatura segura antes de ofrecer.</li>
+                  </ol>
+                  <p class="note">El pollo debe quedar completamente triturado o finamente desmenuzado, sin fibras largas que dificulten la alimentación.</p>
+                </template>
+              </button>
+
+              <button class="dish" type="button" aria-haspopup="dialog">
+                <span>🍚</span><strong class="dish-name">Arroz con lentejas machacado</strong>
+                <em class="dish-cta">Ver receta →</em>
+                <template class="receta">
+                  <h5>Ingredientes</h5>
+                  <ul>
+                    <li>Arroz.</li>
+                    <li>Lentejas.</li>
+                    <li>Agua potable.</li>
+                  </ul>
+                  <h5>Preparación</h5>
+                  <ol>
+                    <li>Revisa y lava las lentejas retirando impurezas. Lava también el arroz.</li>
+                    <li>Cocina las lentejas en agua hasta que estén completamente blandas.</li>
+                    <li>Cocina el arroz hasta que esté muy suave. Si quieres, termina de cocinar ambos juntos con agua suficiente.</li>
+                    <li>Verifica que las lentejas estén tiernas y el arroz blando.</li>
+                    <li>Machaca con un tenedor hasta lograr una preparación húmeda y espesa, sin granos duros ni lentejas enteras.</li>
+                    <li>Deja enfriar antes de servir.</li>
+                  </ol>
+                  <p class="note">Las lentejas aportan hierro de origen vegetal y el arroz, energía. A medida que el bebé desarrolle sus habilidades, la textura puede adaptarse sin mantener todo licuado.</p>
+                </template>
+              </button>
+
+              <button class="dish" type="button" aria-haspopup="dialog">
+                <span>🥔</span><strong class="dish-name">Puré de papa con queso fresco (sin sal)</strong>
+                <em class="dish-cta">Ver receta →</em>
+                <template class="receta">
+                  <h5>Ingredientes</h5>
+                  <ul>
+                    <li>Papa.</li>
+                    <li>Queso fresco pasteurizado, preferiblemente bajo en sodio y sin sal añadida.</li>
+                    <li>Agua potable previamente hervida, si se necesita ajustar la consistencia.</li>
+                  </ul>
+                  <h5>Preparación</h5>
+                  <ol>
+                    <li>Lava muy bien la papa, pélala y córtala en trozos pequeños.</li>
+                    <li>Cocínala en agua hasta que esté completamente blanda.</li>
+                    <li>Escurre y tritura con un tenedor hasta obtener un puré suave, sin grumos duros.</li>
+                    <li>Desmenuza el queso y mézclalo con la papa mientras aún está tibia.</li>
+                    <li>Si hace falta, agrega un poco de agua de cocción para lograr una consistencia húmeda y espesa.</li>
+                    <li>Deja enfriar a una temperatura adecuada antes de ofrecer.</li>
+                  </ol>
+                </template>
+              </button>
+            </div>
+
+            <div class="callout">
+              <span class="callout-icon">🥚</span>
+              <div>
+                <h4>Y recuerda que… <small>(ICBF, 2020)</small></h4>
+                <p>Con el huevo empieza ofreciendo solo la yema, evaluando la tolerancia hasta ofrecer el huevo completo (yema y clara). Si vas a ofrecer fruta en pulpa, prefiere frutas suaves y machacadas como mango, papaya o banano.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== 9 a 11 meses ===== -->
+          <div class="panel" id="p-9-11" role="tabpanel">
+            <div class="grid-2">
+              <div class="card">
+                <h4>🍌 Textura: finamente picado y machacado</h4>
+                <p>Alimentos finamente picados y machacados que el bebé pueda agarrar con la mano.</p>
+                <h4>🍽️ ¿Cuánto y cada cuánto?</h4>
+                <p>Al menos <strong>3 comidas diarias</strong> y 1 o 2 refrigerios según su apetito. Cada comida, aproximadamente <strong>media taza (4 onzas)</strong>.</p>
+              </div>
+              <div class="card">
+                <h4>✅ En esta etapa ten en cuenta <small>(ICBF, 2020)</small></h4>
+                <ul class="check">
+                  <li>No se recomienda ofrecer leche de vaca; se mantiene la leche materna.</li>
+                  <li>Alimentos sin adición de azúcar, sal, grasas trans ni especias.</li>
+                  <li>Evita los alimentos que por su forma puedan causar atoramiento, como uvas, nueces o trozos grandes de zanahoria o manzana.</li>
+                </ul>
+              </div>
+            </div>
+
+                        <h3 class="block-title">Menú de ejemplo <small>toca un plato para ver la receta</small></h3>
+            <div class="menu">
+              <button class="dish" type="button" aria-haspopup="dialog">
+                <span>🍌</span><strong class="dish-name">Banano picado</strong>
+                <em class="dish-cta">Ver receta →</em>
+                <template class="receta">
+                  <h5>Ingrediente</h5>
+                  <ul><li>Banano.</li></ul>
+                  <h5>Preparación</h5>
+                  <ol>
+                    <li>Corta el banano en trozos pequeños.</li>
+                    <li>Sirve.</li>
+                  </ol>
+                  <p class="note">Puedes dar cualquier fruta según la preferencia del bebé. Si tiene semillas, como la mandarina, retíralas con cuidado.</p>
+                </template>
+              </button>
+
+              <button class="dish" type="button" aria-haspopup="dialog">
+                <span>🐟</span><strong class="dish-name">Pescado con yuca y zanahoria</strong>
+                <em class="dish-cta">Ver receta →</em>
+                <template class="receta">
+                  <h5>Ingredientes</h5>
+                  <ul>
+                    <li>Pescado blanco fresco, como tilapia.</li>
+                    <li>Yuca.</li>
+                    <li>Zanahoria.</li>
+                    <li>Agua potable.</li>
+                  </ul>
+                  <h5>Preparación</h5>
+                  <ol>
+                    <li>Pela la yuca y la zanahoria, lávalas y córtalas en trozos.</li>
+                    <li>Cocina las verduras hasta que estén completamente blandas.</li>
+                    <li>Cocina el pescado por separado hasta que esté completamente cocido.</li>
+                    <li>Revisa el pescado para retirar todas las espinas y quita las fibras duras de la yuca.</li>
+                    <li>Machaca la yuca y la zanahoria, y desmenuza finamente el pescado.</li>
+                    <li>Integra todo y sirve con textura blanda y húmeda.</li>
+                  </ol>
+                </template>
+              </button>
+
+              <button class="dish" type="button" aria-haspopup="dialog">
+                <span>🍗</span><strong class="dish-name">Puré de plátano maduro con pollo desmechado y aguacate</strong>
+                <em class="dish-cta">Ver receta →</em>
+                <template class="receta">
+                  <h5>Ingredientes</h5>
+                  <ul>
+                    <li>Plátano maduro.</li>
+                    <li>Pechuga de pollo.</li>
+                    <li>Aguacate.</li>
+                    <li>Agua potable.</li>
+                  </ul>
+                  <h5>Preparación</h5>
+                  <ol>
+                    <li>Pela el plátano maduro y córtalo en trozos.</li>
+                    <li>Cocínalo en agua hasta que esté muy blando.</li>
+                    <li>Cocina el pollo completamente en agua, sin sal ni condimentos comerciales.</li>
+                    <li>Desméchalo finamente, revisando que no queden huesos ni cartílagos.</li>
+                    <li>Machaca el plátano con un tenedor y mézclalo con el pollo.</li>
+                    <li>Pica el aguacate en trozos pequeños.</li>
+                    <li>Sirve una preparación húmeda, suave y fácil de comer.</li>
+                  </ol>
+                </template>
+              </button>
+
+              <button class="dish" type="button" aria-haspopup="dialog">
+                <span>🍳</span><strong class="dish-name">Huevo revuelto suave con papa y espinaca</strong>
+                <em class="dish-cta">Ver receta →</em>
+                <template class="receta">
+                  <h5>Ingredientes</h5>
+                  <ul>
+                    <li>Huevo.</li>
+                    <li>Papa.</li>
+                    <li>Espinaca.</li>
+                    <li>Agua potable.</li>
+                  </ul>
+                  <h5>Preparación</h5>
+                  <ol>
+                    <li>Lava la papa y la espinaca.</li>
+                    <li>Pela la papa, córtala en trozos y cocínala hasta que esté blanda.</li>
+                    <li>Cocina la espinaca hasta que esté tierna y pícala finamente.</li>
+                    <li>Bate el huevo y cocínalo completamente en sartén antiadherente, con unas gotas de aceite si hace falta.</li>
+                    <li>Machaca la papa y mézclala con el huevo y la espinaca.</li>
+                    <li>Verifica que no queden trozos grandes y sirve tibio.</li>
+                  </ol>
+                </template>
+              </button>
+            </div>
+          </div>
+
+          <!-- ===== 12 a 23 meses ===== -->
+          <div class="panel" id="p-12-23" role="tabpanel">
+            <div class="grid-2">
+              <div class="card">
+                <h4>🍗 Textura: sólidos con diversas texturas</h4>
+                <p>Ofrece variedad de alimentos sólidos picados en trozos pequeños, desmechados o molidos.</p>
+                <h4>🍽️ ¿Cuánto y cada cuánto?</h4>
+                <p>Al menos <strong>3 comidas diarias</strong> y 1 o 2 refrigerios según su apetito. La comida principal debe ser de <strong>1 taza o plato (8 onzas)</strong>.</p>
+              </div>
+              <div class="card">
+                <h4>✅ En esta etapa ten en cuenta <small>(ICBF, 2020)</small></h4>
+                <ul class="check">
+                  <li>Continúa dando de lactar las veces que el niño o la niña quiera, después de las comidas.</li>
+                  <li>Ya puedes ofrecer leche, hervida o pasteurizada.</li>
+                  <li>No ofrezcas productos procesados como los de paquete, bebidas azucaradas ni embutidos.</li>
+                  <li>Alimentos sin adición de azúcar, sal, grasas trans ni especias.</li>
+                </ul>
+              </div>
+            </div>
+
+                        <h3 class="block-title">Menú de ejemplo <small>toca un plato para ver la receta</small></h3>
+            <div class="menu">
+              <button class="dish" type="button" aria-haspopup="dialog">
+                <span>🍚</span><strong class="dish-name">Arroz con pollo, habichuela y zanahoria</strong>
+                <em class="dish-cta">Ver receta →</em>
+                <template class="receta">
+                  <h5>Ingredientes</h5>
+                  <ul>
+                    <li>Arroz.</li>
+                    <li>Pollo.</li>
+                    <li>Habichuela.</li>
+                    <li>Zanahoria.</li>
+                    <li>Cebolla.</li>
+                    <li>Tomate.</li>
+                    <li>Agua potable.</li>
+                    <li>Aceite vegetal, opcional.</li>
+                  </ul>
+                  <h5>Preparación</h5>
+                  <ol>
+                    <li>Lava las verduras y retira los extremos de las habichuelas.</li>
+                    <li>Cocina el pollo completamente y desméchalo en hebras cortas.</li>
+                    <li>Pica la zanahoria y la habichuela en trozos pequeños y cocínalas hasta que estén blandas.</li>
+                    <li>Prepara un guiso casero con tomate y cebolla, sin sal ni cubitos de caldo.</li>
+                    <li>Agrega el arroz, el agua y las verduras; cocina hasta que el arroz esté suave.</li>
+                    <li>Incorpora el pollo desmechado y mezcla bien.</li>
+                    <li>Sirve con los ingredientes blandos y en tamaños adecuados para el niño.</li>
+                  </ol>
+                </template>
+              </button>
+
+              <button class="dish" type="button" aria-haspopup="dialog">
+                <span>🫘</span><strong class="dish-name">Fríjoles suaves con arroz y aguacate</strong>
+                <em class="dish-cta">Ver receta →</em>
+                <template class="receta">
+                  <h5>Ingredientes</h5>
+                  <ul>
+                    <li>Fríjoles secos.</li>
+                    <li>Arroz.</li>
+                    <li>Aguacate.</li>
+                    <li>Tomate.</li>
+                    <li>Cebolla.</li>
+                    <li>Agua potable.</li>
+                    <li>Aceite vegetal, opcional.</li>
+                  </ul>
+                  <h5>Preparación</h5>
+                  <ol>
+                    <li>Revisa los fríjoles, lávalos y déjalos en remojo si su preparación lo requiere.</li>
+                    <li>Cocínalos en agua hasta que estén completamente blandos.</li>
+                    <li>Prepara un guiso casero con tomate y cebolla, sin sal ni condimentos comerciales.</li>
+                    <li>Incorpora el guiso a los fríjoles y sigue cocinando hasta lograr una consistencia suave.</li>
+                    <li>Prepara el arroz hasta que esté blando.</li>
+                    <li>Corta el aguacate en trozos pequeños.</li>
+                    <li>Machaca ligeramente los fríjoles y sírvelos con el arroz y el aguacate, adaptando la textura a las habilidades del niño.</li>
+                  </ol>
+                </template>
+              </button>
+
+              <button class="dish" type="button" aria-haspopup="dialog">
+                <span>🥚</span><strong class="dish-name">Bolitas blandas de yuca con huevo</strong>
+                <em class="dish-cta">Ver receta →</em>
+                <template class="receta">
+                  <h5>Ingredientes</h5>
+                  <ul>
+                    <li>Yuca.</li>
+                    <li>Huevo.</li>
+                    <li>Cebolla finamente picada, opcional.</li>
+                    <li>Aceite vegetal, opcional.</li>
+                  </ul>
+                  <h5>Preparación</h5>
+                  <ol>
+                    <li>Pela la yuca y cocínala hasta que esté completamente blanda.</li>
+                    <li>Retira la fibra central y machácala hasta formar una masa suave.</li>
+                    <li>Cocina el huevo completamente y tritúralo con un tenedor.</li>
+                    <li>Mezcla el huevo con la yuca y, si quieres, un poco de cebolla previamente cocida.</li>
+                    <li>Forma torticas pequeñas y blandas y cocínalas en sartén antiadherente con muy poco aceite, hasta que estén bien cocidas.</li>
+                    <li>Deja enfriar y ofrece en trozos pequeños, fáciles de aplastar con los dedos.</li>
+                  </ol>
+                </template>
+              </button>
+
+              <button class="dish" type="button" aria-haspopup="dialog">
+                <span>🐟</span><strong class="dish-name">Pescado guisado con arroz y brócoli</strong>
+                <em class="dish-cta">Ver receta →</em>
+                <template class="receta">
+                  <h5>Ingredientes</h5>
+                  <ul>
+                    <li>Pescado blanco fresco.</li>
+                    <li>Arroz.</li>
+                    <li>Brócoli.</li>
+                    <li>Tomate.</li>
+                    <li>Cebolla.</li>
+                    <li>Agua potable.</li>
+                    <li>Aceite vegetal, opcional.</li>
+                  </ul>
+                  <h5>Preparación</h5>
+                  <ol>
+                    <li>Lava el brócoli, el tomate y la cebolla.</li>
+                    <li>Cocina el brócoli hasta que esté blando.</li>
+                    <li>Prepara un guiso casero con tomate y cebolla finamente picados y un poco de agua.</li>
+                    <li>Agrega el pescado y cocínalo completamente.</li>
+                    <li>Revisa minuciosamente que no queden espinas.</li>
+                    <li>Prepara el arroz hasta que esté suave.</li>
+                    <li>Sirve con el pescado desmenuzado y el guiso, con los ingredientes en trozos pequeños.</li>
+                  </ol>
+                </template>
+              </button>
+            </div>
+          </div>
+
+          <!-- Recomendaciones generales -->
+          <h3 class="block-title">🌟 Recomendaciones generales para todas las edades</h3>
+          <div class="card wide">
+            <ul class="check">
+              <li>Permite que tu bebé agarre los alimentos con sus manos y, si es necesario, deja que se ensucie, para que experimente de forma segura texturas, olores y sabores.</li>
+              <li>Cuando introduzcas un alimento nuevo, ofrécelo varias veces y en diferentes preparaciones para favorecer su aceptación.</li>
+              <li>Al momento de comer, evita la televisión, el teléfono y otras distracciones.</li>
+              <li>Ofrece frutas y verduras de tu región y que estén en cosecha.</li>
+              <li>Incluye a diario una porción de alimentos de origen animal: carnes, vísceras, huevos y quesos frescos.</li>
+              <li>No ofrezcas carnes frías como salchichas, jamón, mortadela o salchichón.</li>
+              <li>Tu bebé debe tener su propia cuchara, vaso y plato.</li>
+            </ul>
+          </div>
+
+          <!-- Hierro -->
+          <div class="iron">
+            <h3>🩸 Ten presente esto: el hierro</h3>
+            <p>A los 6 meses las reservas de hierro del bebé se agotan y la leche materna ya no alcanza a cubrir el requerimiento: durante la alimentación complementaria, <strong>más del 90 % del hierro</strong> debe venir de los otros alimentos. Por eso es fundamental incluir fuentes de hierro <strong>en cada comida</strong>.</p>
+            <div class="grid-2">
+              <div class="iron-box">
+                <h4>Hierro hemínico <small>(mejor absorbido)</small></h4>
+                <p>🍗 Pollo · 🐟 Pescado · 🥩 Res</p>
+              </div>
+              <div class="iron-box">
+                <h4>Hierro no hemínico</h4>
+                <p>🫘 Fríjoles · 🟤 Lentejas · 🥬 Espinaca</p>
+              </div>
+            </div>
+            <p class="trick">💡 <strong>Truco clave:</strong> acompañar con vitamina C (papaya, tomate) aumenta la absorción hasta 3 veces.</p>
+            <p class="note">Fuente: ESPGHAN 2017.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== NIÑEZ ===== -->
+      <div class="panel" id="p-ninez" role="tabpanel">
+        <div class="card wide">
+          <p>La alimentación de los niños en etapa escolar debe ser <strong>completa, equilibrada, suficiente y adecuada</strong>, con alimentos naturales y mínimamente procesados, usando como herramienta principal el <strong>Plato Saludable de la Familia Colombiana</strong> <em>(ICBF, 2015-2025)</em>.</p>
+        </div>
+        <h3 class="block-title">Grupos del plato saludable</h3>
+        <div class="plate-groups">
+          <div class="group" style="--c: var(--mango)"><span>🍚</span>Cereales, raíces, tubérculos y plátanos</div>
+          <div class="group" style="--c: var(--leaf)"><span>🥦</span>Frutas y verduras</div>
+          <div class="group" style="--c: var(--sea)"><span>🥛</span>Leche y productos lácteos</div>
+          <div class="group" style="--c: var(--coral)"><span>🍳</span>Carnes, huevos, leguminosas, frutos secos y semillas</div>
+          <div class="group" style="--c: var(--berry)"><span>🥑</span>Grasas saludables (con moderación)</div>
+          <div class="group" style="--c: #a07b5b"><span>🍯</span>Azúcares (con moderación)</div>
+        </div>
+        <p class="note center">Acompaña siempre con agua 💧 y actividad física 🏃.</p>
+      </div>
+
+      <!-- ===== ADOLESCENCIA ===== -->
+      <div class="panel" id="p-adolescencia" role="tabpanel">
+        <div class="card wide empty">
+          <span class="stage-emoji">🌿</span>
+          <h4>Sección en construcción</h4>
+          <p>Aquí irán las recomendaciones para adolescentes de 12 a 18 años.</p>
+        </div>
+      </div>
+    </section>
+
+  <!-- ================= PRECIOS ================= -->
+<section class="section" id="precios">
+  <div class="section-head reveal">
+    <span class="tag">Alimentos locales al mejor precio</span>
+    <h2>¿Dónde comprar más barato en Cartagena?</h2>
+    <p>Comparativo entre Bazurto, D1, Ara y Megatiendas · Referencia: octubre de 2026</p>
+  </div>
+
+  <div class="stores">
+    <div class="store" style="--c: var(--sea)"><span>🌊</span><strong>Bazurto</strong><small>Mercado mayorista</small></div>
+    <div class="store" style="--c: #d62828"><span>🔴</span><strong>D1</strong><small>Tienda de descuento</small></div>
+    <div class="store" style="--c: #f77f00"><span>🟠</span><strong>Ara</strong><small>Tienda de descuento</small></div>
+    <div class="store" style="--c: #2a9d8f"><span>🟢</span><strong>Megatiendas</strong><small>Supermercado regional</small></div>
+  </div>
+
+  <div class="controls">
+    <input type="search" id="search" placeholder="🔍 Buscar alimento…" aria-label="Buscar alimento">
+    <div class="filters" id="filters"></div>
+    <select id="sort" aria-label="Ordenar">
+      <option value="nombre">Ordenar: A → Z</option>
+      <option value="precio">Menor precio</option>
+      <option value="ahorro">Mayor ahorro</option>
+    </select>
+  </div>
+
+  <div class="table-wrap">
+    <table class="prices">
+      <thead>
+        <tr>
+          <th>Alimento</th>
+          <th>Unidad</th>
+          <th>Bazurto<br><small>mayorista</small></th>
+          <th>D1</th>
+          <th>Ara</th>
+          <th>Megatiendas</th>
+          <th>Más barato en</th>
+          <th>Súper más barato</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <p class="empty-msg" id="emptyMsg" hidden>No encontramos ese alimento 🙈</p>
+  </div>
+
+  <div class="legend">
+    <span><i class="dot best"></i> Precio más bajo</span>
+    <span><b class="mk ok">✓</b> Precio consultado (web, folleto o SIPSA)</span>
+    <span><b class="mk est">≈</b> Precio estimado</span>
+    <span>— No disponible habitualmente</span>
+  </div>
+
+  <div class="grid-3 tips">
+    <div class="card"><h4>🌅 Ve temprano a Bazurto</h4><p>La mejor oferta y frescura está en las primeras horas. Comprar en grupo con vecinos permite acceder a precios por bulto.</p></div>
+    <div class="card"><h4>🏷️ Aprovecha los días de oferta</h4><p>Megatiendas tiene martes de cortes de pollo y miércoles de pescado; Ara y D1 rotan promociones semanales en granos, huevos y pollo.</p></div>
+    <div class="card"><h4>⚖️ Compara por kilo</h4><p>Revisa el precio por kilo o por unidad, no por paquete. Las marcas propias de las tiendas de descuento suelen rendir más.</p></div>
+  </div>
+
+  <p class="sources"><strong>Fuentes:</strong> Bazurto: SIPSA-DANE vía Agronegocios (oct. 2026). D1, Ara y Megatiendas: páginas web y folletos de cada cadena (2026). Los precios marcados con ≈ son estimaciones. Las ofertas cambian cada semana, así que verifica en tu punto de compra.</p>
+</section>
+  </main>
+
+    <!-- ================= PANEL DE RECETA ================= -->
+  <dialog class="recipe-modal" id="recipeModal" aria-labelledby="recipeModalTitle">
+    <div class="recipe-modal-inner">
+      <div class="recipe-modal-head">
+        <h3 id="recipeModalTitle"></h3>
+        <button class="recipe-close" id="recipeClose" aria-label="Cerrar receta">✕</button>
+      </div>
+      <div class="recipe-modal-body" id="recipeModalBody"></div>
+      <div class="recipe-modal-foot">
+        <button class="btn recipe-ok" id="recipeOk">Cerrar receta</button>
+      </div>
+    </div>
+  </dialog>
+
+  <footer class="footer">
+    <p>🌱 <strong>Semillitas</strong> · Guía de alimentación con alimentos locales</p>
+    <p class="refs">Referencias: Organización Mundial de la Salud (s. f.) · UNICEF (2023) · ICBF (2020) · ICBF, Guías Alimentarias (2015-2025) · ESPGHAN (2017) · DANE-SIPSA (2026).</p>
+    <button class="to-top" id="toTop" aria-label="Volver arriba">↑</button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
