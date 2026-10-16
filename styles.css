@@ -50,6 +50,28 @@ img{max-width:100%}
 .section-head p{color:var(--muted)}
 .tag{display:inline-block;background:#9DDFF5;color:#000000;font-weight:800;font-size:.8rem;padding:.3rem .9rem;border-radius:999px}
 
+/* ---------- Sección Tips ---------- */
+#tips{
+  --tips-c: var(--sea);        /* color principal: cámbialo aquí */
+  --tips-bg: #eaf7f1;           /* fondo de la pestaña activa */
+}
+
+/* Fondo de la sección (opcional) */
+/* #tips{max-width:none;background:#f0faf5}
+   #tips > *{max-width:1150px;margin-left:auto;margin-right:auto} */
+
+/* Título y etiqueta */
+#tips .section-head h2{color:var(--tips-c)}
+#tips .tag{background:var(--tips-c);color:#fff}
+
+/* Pestañas */
+#tips .subtab{border-color:color-mix(in srgb, var(--tips-c) 40%, #fff)}
+#tips .subtab:hover{border-style:solid}
+#tips .subtab.active{border:2px solid var(--tips-c);background:var(--tips-bg);color:var(--tips-c)}
+
+/* Tarjetas dentro de la sección */
+#tips .card h4{color:var(--tips-c)}
+
 /* ---------- Slider de ejes ---------- */
 .slider{position:relative;max-width:900px;margin:auto;padding:0 3.5rem}
 .slider-viewport{overflow:hidden;border-radius:var(--radius);touch-action:pan-y}
