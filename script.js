@@ -207,6 +207,74 @@ document.querySelectorAll('[data-tabs]').forEach(grupo => {
     return d;
   });
 
+  // ---------- Visor de imágenes (galerías) ----------
+(function initLightbox() {
+  const lb = document.getElementById('lightbox');
+  if (!lb) return;
+  const lbImg = document.getElementById('lbImg');
+  const lbCaption = document.getElementById('lbCaption');
+  const lbCount = document.getElementById('lbCount');
+  const btnPrev = document.getElementById('lbPrev');
+  const btnNext = document.getElementById('lbNext');
+  let grupo = [], actual = 0, origen = null;
+
+  function mostrar(n) {
+    actual = (n + grupo.length) % grupo.length;
+    const img = grupo[actual];
+    lbImg.src = img.currentSrc || img.src;
+    lbImg.alt = img.alt;
+    const texto = img.closest('figure')?.querySelector('figcaption');
+    lbCaption.textContent = texto ? texto.textContent.trim() : img.alt;
+    lbCount.textContent = `${actual + 1} de ${grupo.length}`;
+    const varias = grupo.length > 1;
+    btnPrev.hidden = btnNext.hidden = lbCount.hidden = !varias;
+  }
+
+  document.querySelectorAll('.galeria').forEach(galeria => {
+    const imgs = [...galeria.querySelectorAll('.bstep-img img')];
+    imgs.forEach((img, n) => {
+      const caja = img.parentElement;
+      caja.tabIndex = 0;
+      caja.setAttribute('role', 'button');
+      caja.setAttribute('aria-label', 'Ampliar imagen: ' + img.alt);
+
+      const abrir = () => {
+        if (caja.classList.contains('sin-img')) return; // la imagen no cargó
+        grupo = imgs.filter(i => !i.parentElement.classList.contains('sin-img'));
+        origen = caja;
+        mostrar(grupo.indexOf(img));
+        lb.showModal();
+        document.body.classList.add('modal-open');
+      };
+      caja.addEventListener('click', abrir);
+      caja.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abrir(); }
+      });
+    });
+  });
+
+  btnPrev.addEventListener('click', () => mostrar(actual - 1));
+  btnNext.addEventListener('click', () => mostrar(actual + 1));
+  document.getElementById('lbClose').addEventListener('click', () => lb.close());
+
+  // Cerrar al tocar fuera de la imagen
+  lb.addEventListener('click', e => {
+    if (e.target === lb || e.target.classList.contains('lb-figure')) lb.close();
+  });
+
+  // Flechas del teclado (Esc ya lo maneja <dialog>)
+  lb.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') mostrar(actual - 1);
+    if (e.key === 'ArrowRight') mostrar(actual + 1);
+  });
+
+  lb.addEventListener('close', () => {
+    document.body.classList.remove('modal-open');
+    lbImg.removeAttribute('src');
+    if (origen) origen.focus();
+  });
+})();
+
   function irA(i) {
     index = (i + slides.length) % slides.length;
     track.style.transform = `translateX(-${index * 100}%)`;
@@ -354,3 +422,10 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     if (origen) origen.focus();
   });
 })();
+
+// ---------- Respaldo con emoji si una imagen de pasos no carga ----------
+document.querySelectorAll('.bstep-img img').forEach(img => {
+  const usarEmoji = () => img.parentElement.classList.add('sin-img');
+  if (img.complete && img.naturalWidth === 0) usarEmoji();
+  else img.addEventListener('error', usarEmoji);
+});
