@@ -69,9 +69,6 @@ img{max-width:100%}
 #tips .subtab:hover{border-style:solid}
 #tips .subtab.active{border:2px solid var(--tips-c);background:var(--tips-bg);color:var(--tips-c)}
 
-/* Tarjetas dentro de la sección */
-#tips .card h4{color:var(--tips-c)}
-
 /* ---------- Slider de ejes ---------- */
 .slider{position:relative;max-width:900px;margin:auto;padding:0 3.5rem}
 .slider-viewport{overflow:hidden;border-radius:var(--radius);touch-action:pan-y}
@@ -264,10 +261,126 @@ body.modal-open{overflow:hidden}
 .bstep figure{display:flex;flex-direction:column;width:100%}
 .bstep-img{position:relative;aspect-ratio: none ;background:linear-gradient(135deg,#fff3f0,#fde7ef);display:grid;place-items:center;overflow:hidden}
 .bstep-img img{width:100%;height:100%;object-fit:cover;display:block}
-.bstep-img::before{content:counter(s);position:absolute;top:.8rem;left:.8rem;z-index:1;width:34px;height:34px;border-radius:50%;background:var(--coral);color:#fff;font-family:var(--font-h);font-weight:600;display:grid;place-items:center;box-shadow:0 3px 8px rgba(0,0,0,.15)}
+.bstep-img::before{content:counter(s);position:absolute;top:.8rem;left:.8rem;z-index:1;width:34px;height:34px;border-radius:50%;background:var(--sea);color:#fff;font-family:var(--font-h);font-weight:600;display:grid;place-items:center;box-shadow:0 3px 8px rgba(0,0,0,.15)}
 .bstep-img.sin-img img{display:none}
 .bstep-img.sin-img::after{content:attr(data-emoji);font-size:3.5rem}
 .bstep figcaption{padding:1rem 1.2rem 1.3rem;font-size:.95rem}
+
+/* ---------- Galería de lactancia ---------- */
+#p-lactancia .galeria{
+  --tips-c: var(--coral);   /* color del marco */
+  --tips-bg: #fff3f0;       /* fondo detrás de la imagen */
+}
+
+/* Mantener los números de los pasos */
+#p-lactancia .galeria .bstep-img::before{
+  content:counter(s);
+}
+
+/* En celular, una columna: los textos son largos para dos columnas */
+@media (max-width:720px){
+  #p-lactancia .galeria{grid-template-columns:1fr}
+}
+.lb-figure{
+  width:min(1200px, calc(100vw - 10rem));  /* ancho máximo de la imagen */
+  max-width:none;
+  gap:.6rem;
+}
+.lb-figure img{
+  width:100%;
+  height:auto;
+  max-height:82dvh;                         /* alto máximo de la imagen */
+  padding:.4rem;
+}
+
+@media (max-width:720px){
+  .lb-figure{width:100%}
+  .lb-figure img{max-height:66dvh;padding:.3rem}
+  .lightbox{padding:3.8rem .5rem 5rem}
+}
+
+/* ---------- Galería de imágenes (sin números, con marco) ---------- */
+
+/* Quitar los números */
+.galeria .bstep-img::before{content:none}
+
+/* Marco */
+.galeria .bstep{
+  padding:.6rem;
+  background:#fff;
+  border:3px solid color-mix(in srgb, var(--tips-c, var(--leaf)) 35%, #fff);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  transition:transform .25s, box-shadow .25s, border-color .25s;
+}
+.galeria .bstep-img{
+  aspect-ratio:1/1;
+  border-radius:14px;
+  background:var(--tips-bg, #eaf7f1);
+}
+.galeria .bstep-img img{object-fit:contain}
+
+/* Al pasar el mouse */
+.galeria .bstep:hover{
+  transform:translateY(-6px) rotate(-1deg);
+  border-color:var(--tips-c, var(--leaf));
+  box-shadow:0 16px 36px rgba(14,124,134,.2);
+}
+
+/* ---------- Tarjeta "¿Cuándo lavarte las manos?" ---------- */
+#tips .momentos{
+  margin-top:1.5rem;
+  background:var(--tips-bg, #eaf7f1);
+  box-shadow: -3px 3px 10px var(--tips-c, var(--leaf));
+}
+#tips .momentos h4{
+  color:var(--tips-c, var(--leaf));
+  font-size:1.3rem;
+  text-align:center;
+  margin-bottom:3rem 0;
+}
+
+@media (min-width:721px){
+  #tips .momentos ul{columns:2;column-gap:2rem}
+  #tips .momentos li{break-inside:avoid}
+}
+
+/* ---------- Visor de imágenes ---------- */
+.galeria .bstep-img{cursor:zoom-in}
+.galeria .bstep-img:focus-visible{outline:3px solid var(--mango);outline-offset:3px}
+
+.lightbox{
+  border:0;padding:0;margin:0;background:transparent;
+  width:100vw;height:100dvh;max-width:100vw;max-height:100dvh;
+}
+.lightbox[open]{display:grid;place-items:center}
+.lightbox::backdrop{background:rgba(31,45,61,.88);backdrop-filter:blur(4px)}
+
+.lb-figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:.8rem;max-width:min(900px,88vw)}
+.lightbox[open] .lb-figure{animation:pop .3s ease}
+.lb-figure img{
+  max-width:100%;max-height:75dvh;object-fit:contain;
+  background:#fff;border-radius:var(--radius);padding:.6rem;
+  box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
+.lb-figure figcaption{color:#fff;text-align:center;font-weight:700;max-width:60ch}
+.lb-count{color:#cfd8e0;font-size:.85rem;font-weight:800}
+
+.lb-close,.lb-arrow{
+  position:fixed;border:0;border-radius:50%;cursor:pointer;
+  background:#fff;color:var(--sea);box-shadow:var(--shadow);
+  display:grid;place-items:center;transition:transform .2s, background .2s;
+}
+.lb-close{top:1rem;right:1rem;width:44px;height:44px;font-size:1.1rem}
+.lb-arrow{top:50%;translate:0 -50%;width:52px;height:52px;font-size:2rem;line-height:1}
+.lb-arrow.prev{left:1rem}
+.lb-arrow.next{right:1rem}
+.lb-close:hover,.lb-arrow:hover{background:var(--coral);color:#fff;transform:scale(1.08)}
+
+@media (max-width:720px){
+  .lb-arrow{top:auto;bottom:1rem;translate:none}
+  .lb-figure img{max-height:65dvh}
+}
 
 /* ---------- Responsive ---------- */
 @media (max-width:860px){

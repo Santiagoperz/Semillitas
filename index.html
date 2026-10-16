@@ -186,7 +186,7 @@
           </div>
 
           <h3 class="block-title">Consejos para amamantar <small>(UNICEF, 2023)</small></h3>
-                  <ol class="breast-steps">
+          <ol class="breast-steps galeria">
             <li class="bstep">
               <figure>
                 <div class="bstep-img" data-emoji="✋">
@@ -736,7 +736,78 @@
         <div class="card wide">
           <p>Antes de preparar o dar de comer a tu bebé, lávate bien las manos y limpia los alimentos, los utensilios y el espacio donde cocinas. Muchas enfermedades, como la diarrea, empiezan por manos o alimentos mal lavados.</p>
         </div>
-        <!-- TODO Issue 1.1: serie de pasos con imágenes (ol.breast-steps > li.bstep), imgs/higiene/ -->
+        <!-- Lavado de manos -->
+        <h3 class="block-title">🧼 Lavado de manos paso a paso <small>(OMS, 2009)</small></h3>
+        <ol class="breast-steps galeria">
+          <li class="bstep">
+            <figure>
+              <div class="bstep-img" data-emoji="💧">
+                <img src="imgs/Higiene/1.jpeg" loading="lazy"
+                  alt="Manos bajo el chorro de agua de una llave">
+              </div>
+            </figure>
+          </li>
+          <li class="bstep">
+            <figure>
+              <div class="bstep-img" data-emoji="🧼">
+                <img src="imgs/Higiene/2.jpeg" loading="lazy"
+                  alt="Manos enjabonadas frotando la palma de una mano con la otra">
+              </div>
+            </figure>
+          </li>
+          <li class="bstep">
+            <figure>
+              <div class="bstep-img" data-emoji="🤲">
+                <img src="imgs/Higiene/3.jpeg" loading="lazy"
+                  alt="Manos enjabonadas frotando la palma de una mano con la otra, entrelazando los dedos">
+              </div>
+            </figure>
+          </li>
+          <li class="bstep">
+            <figure>
+              <div class="bstep-img" data-emoji="🖐️">
+                <img src="imgs/Higiene/4.jpeg" loading="lazy"
+                  alt="Manos enjabonadas frotando la palma de una mano con la otra, entrelazando los dedos y frotando el dorso de las manos">
+              </div>
+            </figure>
+          </li>
+          <li class="bstep">
+            <figure>
+              <div class="bstep-img" data-emoji="💦">
+                <img src="imgs/Higiene/5.jpeg" loading="lazy"
+                  alt="Manos enjabonadas frotando la punta de los dedos de una mano con la palma de la otra, y viceversa">
+              </div>
+            </figure>
+          </li>
+          <li class="bstep">
+            <figure>
+              <div class="bstep-img" data-emoji="🧽">
+                <img src="imgs/Higiene/6.jpeg" loading="lazy"
+                  alt="Manos enjabonadas frotando el pulgar de una mano con la palma de la otra, y viceversa">
+              </div>
+            </figure>
+          </li>
+          <li class="bstep">
+            <figure>
+              <div class="bstep-img" data-emoji="🧴">
+                <img src="imgs/Higiene/7.jpeg" loading="lazy"
+                  alt="Manos enjabonadas frotando la punta de los dedos de una mano con la palma de la otra, y viceversa">
+              </div>
+            </figure>
+          </li>       
+        </ol>
+        <br>
+        <div class="card wide momentos">
+          <h4>¿Cuándo lavarte las manos?</h4>
+          <ul class="check">
+            <li>Antes de preparar alimentos y durante la preparación.</li>
+            <li>Antes de dar de comer a tu hijo/a.</li>
+            <li>Después de ir al baño o de cambiar un pañal.</li>
+            <li>Después de tocar carne, pollo, pescado o huevos crudos.</li>
+            <li>Después de sacar la basura, limpiar o tocar animales.</li>
+            <li>Después de toser, estornudar o sonarte la nariz.</li>
+          </ul>
+        </div>
       </div>
 
       <!-- ===== Manipulación de alimentos (Issue 1.2) ===== -->
@@ -814,8 +885,7 @@
     <div class="card"><h4>⚖️ Compara por kilo</h4><p>Revisa el precio por kilo o por unidad, no por paquete. Las marcas propias de las tiendas de descuento suelen rendir más.</p></div>
   </div>
 
-  <p class="sources"><strong>Fuentes:</strong> Bazurto: SIPSA-DANE vía Agronegocios (oct. 2026). D1, Ara y Megatiendas: páginas web y folletos de cada cadena (2026). Los precios marcados con ≈ son estimaciones. Las ofertas cambian cada semana, así que verifica en tu punto de compra.</p>
-</section>
+  </section>
   </main>
 
     <!-- ================= PANEL DE RECETA ================= -->
@@ -830,6 +900,17 @@
         <button class="btn recipe-ok" id="recipeOk">Cerrar receta</button>
       </div>
     </div>
+  </dialog>
+    <!-- ================= VISOR DE IMÁGENES ================= -->
+  <dialog class="lightbox" id="lightbox" aria-label="Imagen ampliada">
+    <button class="lb-close" id="lbClose" aria-label="Cerrar imagen">✕</button>
+    <button class="lb-arrow prev" id="lbPrev" aria-label="Imagen anterior">‹</button>
+    <figure class="lb-figure">
+      <img id="lbImg" alt="">
+      <figcaption id="lbCaption"></figcaption>
+      <p class="lb-count" id="lbCount"></p>
+    </figure>
+    <button class="lb-arrow next" id="lbNext" aria-label="Imagen siguiente">›</button>
   </dialog>
 
   <footer class="footer">
