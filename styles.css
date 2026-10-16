@@ -351,16 +351,19 @@ body.modal-open{overflow:hidden}
 
 .lightbox{
   border:0;padding:0;margin:0;background:transparent;
-  width:100vw;height:100dvh;max-width:100vw;max-height:100dvh;
+  width:100vw;height:100vh;height:100dvh;max-width:100vw;max-height:100dvh;
 }
 .lightbox[open]{display:grid;place-items:center}
 .lightbox::backdrop{background:rgba(31,45,61,.88);backdrop-filter:blur(4px)}
 
-.lb-figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:.8rem;max-width:min(900px,88vw)}
+.lb-figure{
+  margin:0;display:flex;flex-direction:column;align-items:center;gap:.6rem;
+  width:min(1200px, calc(100vw - 10rem));   /* ancho máximo */
+}
 .lightbox[open] .lb-figure{animation:pop .3s ease}
 .lb-figure img{
-  max-width:100%;max-height:75dvh;object-fit:contain;
-  background:#fff;border-radius:var(--radius);padding:.6rem;
+  width:100%;height:auto;max-height:82dvh;  /* alto máximo */
+  object-fit:contain;background:#fff;border-radius:var(--radius);padding:.4rem;
   box-shadow:0 20px 60px rgba(0,0,0,.35);
 }
 .lb-figure figcaption{color:#fff;text-align:center;font-weight:700;max-width:60ch}
@@ -378,8 +381,10 @@ body.modal-open{overflow:hidden}
 .lb-close:hover,.lb-arrow:hover{background:var(--coral);color:#fff;transform:scale(1.08)}
 
 @media (max-width:720px){
+  .lightbox{padding:3.8rem .5rem 5rem}
+  .lb-figure{width:100%}
+  .lb-figure img{max-height:66dvh;padding:.3rem}
   .lb-arrow{top:auto;bottom:1rem;translate:none}
-  .lb-figure img{max-height:65dvh}
 }
 
 /* ---------- Responsive ---------- */
