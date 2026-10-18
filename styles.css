@@ -213,16 +213,23 @@ img{max-width:100%}
 
 /* ---------- Tiendas y marcas de precio ---------- */
 .stores{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-bottom:1.5rem}
-.store{background:#fff;border-radius:18px;padding:1rem;text-align:center;box-shadow:var(--shadow);border-bottom:5px solid var(--c);display:flex;flex-direction:column;gap:.1rem}
-.store span{font-size:1.6rem}
-.store strong{font-family:var(--font-h);font-size:1.15rem;color:var(--c)}
-.mk{display:inline-block;font-size:.7rem;font-weight:800;margin-left:.25rem;vertical-align:super}
-.mk.ok{color:#1d7a57}
-.mk.est{color:#b07a00}
-.price.na{color:#b8b8b8;text-align:center}
-.save-small{display:block;font-size:.75rem;font-weight:800;color:#5c005c;margin-top:.2rem}
-.badge.super{background:#fff1e0;color:#b35c00}
-  .stores{grid-template-columns:repeat(2,1fr)}
+.store{
+  --c-d: color-mix(in srgb, var(--c) 65%, #000);   /* versión oscura del color de la tienda */
+  min-height:150px;
+  padding:1rem;
+  border-radius:18px;
+  border-bottom:5px solid var(--c);
+  box-shadow:var(--shadow);
+  text-align:center;
+  color:#fff;
+  display:flex;flex-direction:column;justify-content:flex-end;gap:.1rem;
+  background:var(--img, none) center / cover no-repeat, var(--c);                                       /* respaldo si la imagen no carga */
+}
+.store span{font-size:1.6rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.3))}
+.store strong{font-family:var(--font-h);font-size:1.15rem;color:#fff}
+.store small{color:rgba(255,255,255,.92)}
+.store strong,
+.store small{text-shadow:0 1px 3px rgba(0,0,0,.4)}
 
 /* ---------- Platos del menú como botón ---------- */
 .dish{border:0;font:inherit;color:var(--ink);cursor:pointer;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.2rem}
@@ -280,6 +287,8 @@ body.modal-open{overflow:hidden}
 /* En celular, una columna: los textos son largos para dos columnas */
 @media (max-width:720px){
   #p-lactancia .galeria{grid-template-columns:1fr}
+  .stores{grid-template-columns:repeat(2,1fr)}
+  .store{min-height:130px}
 }
 .lb-figure{
   width:min(1200px, calc(100vw - 10rem));  /* ancho máximo de la imagen */
