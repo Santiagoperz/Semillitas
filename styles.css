@@ -42,13 +42,28 @@ img{max-width:100%}
   background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 90' preserveAspectRatio='none'%3E%3Cpath fill='%23FFF8EC' d='M0,40 C240,90 480,0 720,40 C960,80 1200,10 1440,45 L1440,90 L0,90 Z'/%3E%3C/svg%3E") center/100% 100% no-repeat}
 
 /* ---------- Secciones ---------- */
-.section, section_pre {padding:5rem 5vw;max-width:1200px;margin:auto}
-.section.alt{max-width:none;background: #e2f2ffb7;;border-radius:40px 40px 0 0}
-.section.alt > *{max-width:1150px;margin-left:auto;margin-right:auto}
+.section{padding:5rem 5vw;max-width:1200px;margin:auto}
+
+/* Secciones de ancho completo: el fondo ocupa toda la página y el contenido queda centrado */
+.section-full{max-width:none}
+.section-full > *{max-width:1150px;margin-left:auto;margin-right:auto}
+
 .section-head{text-align:center;margin-bottom:2.5rem}
 .section-head h2{font-size:clamp(1.8rem,4vw,2.5rem);color:var(--sea-d);margin:.5rem 0}
 .section-head p{color:var(--muted)}
 .tag{display:inline-block;background:#9DDFF5;color:#000000;font-weight:800;font-size:.8rem;padding:.3rem .9rem;border-radius:999px}
+
+/* ---------- Etapas de vida (cada una se modifica por separado) ---------- */
+#etapas{
+  background:#e2f2ff;
+  border-radius:40px 40px 0 0;
+  padding-bottom:2rem;              /* el stepper queda pegado a la etapa */
+}
+.etapa{padding-top:3rem}
+
+#p-infancia{background:#e2f2ff}
+#p-ninez{background:#eaf7f1}
+#p-adolescencia{background:#f3ecfa}
 
 /* ---------- Sección Tips ---------- */
 #tips{
@@ -56,9 +71,8 @@ img{max-width:100%}
   --tips-bg: #eaf7f1;           /* fondo de la pestaña activa */
 }
 
-/* Fondo de la sección (opcional) */
-/* #tips{max-width:none;background:#f0faf5}
-   #tips > *{max-width:1150px;margin-left:auto;margin-right:auto} */
+/* Fondo de ancho completo (opcional): agrega la clase section-full a #tips en el HTML
+   y define aquí el color, por ejemplo: #tips{background:#f0faf5} */
 
 /* Título y etiqueta */
 #tips .section-head h2{color:var(--tips-c)}
@@ -115,11 +129,29 @@ img{max-width:100%}
 
 .agetabs{display:flex;gap:.5rem;background:#fff;padding:.4rem;border-radius:999px;width:fit-content;margin:1rem auto 1.5rem;box-shadow:var(--shadow);flex-wrap:wrap;justify-content:center}
 .agetab{border:0;background:none;padding:.6rem 1.3rem;border-radius:999px;cursor:pointer;font:inherit;font-weight:800;color:var(--muted)}
-.agetab.active{background:#DBBBF2  ;color:var(--ink)}
+.agetab.active{background:#DBBBF2;color:var(--ink)}
 
 .panel{display:none;animation:fade .35s ease}
 .panel.active{display:block}
 @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ---------- Imagen centrada con marco ---------- */
+.imagen-marco{
+  display:block;
+  width:100%;
+  max-width:700px;               /* ancho máximo: cámbialo a tu gusto */
+  height:auto;
+  margin:2rem auto 0;            /* centrada, con espacio arriba */
+  padding:.5rem;                 /* espacio entre la imagen y el marco */
+  background:#fff;
+  border:3px solid color-mix(in srgb, var(--leaf) 35%, #fff);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  box-shadow: -10px 5px 10px #000;
+}
+.ampliable{cursor:zoom-in;transition:transform .25s, box-shadow .25s}
+.ampliable:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(14,124,134,.2)}
+.ampliable:focus-visible{outline:3px solid var(--mango);outline-offset:3px}
 
 /* ---------- Tarjetas y bloques ---------- */
 .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
@@ -133,6 +165,7 @@ img{max-width:100%}
 .note{font-size:.85rem;color:var(--muted);font-style:italic}
 .note.center{text-align:center;margin-top:1rem}
 .block-title{margin:2.2rem 0 1rem;color:var(--sea-d);font-size:1.4rem}
+.titulo-menu{margin-left:clamp(0rem, 20vw - 6rem, 13rem)}
 
 .callout{display:flex;gap:1rem;align-items:flex-start;background:#fff7e0;border-left:6px solid var(--mango);border-radius:var(--radius);padding:1.3rem 1.5rem;margin-top:1.5rem}
 .callout-icon{font-size:2rem}
@@ -198,8 +231,7 @@ img{max-width:100%}
 .dot.best{background:#bfe9d6}
 .tips{margin-top:1rem}
 .sources{margin-top:2rem;font-size:.85rem;color:var(--muted)}
-#precios{max-width:none;background:#e7d5f3}
-#precios > *{max-width:1150px;margin-left:auto;margin-right:auto}
+#precios{background:#e7d5f3}
 
 /* ---------- Footer ---------- */
 .footer{background:var(--sea-d);color:#e3f4f3;text-align:center;padding:2.5rem 5vw;position:relative}
@@ -223,13 +255,19 @@ img{max-width:100%}
   text-align:center;
   color:#fff;
   display:flex;flex-direction:column;justify-content:flex-end;gap:.1rem;
-  background:var(--img, none) center / cover no-repeat, var(--c);                                       /* respaldo si la imagen no carga */
+  background:var(--img, none) center / cover no-repeat, var(--c);   /* respaldo si la imagen no carga */
 }
 .store span{font-size:1.6rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.3))}
 .store strong{font-family:var(--font-h);font-size:1.15rem;color:#fff}
 .store small{color:rgba(255,255,255,.92)}
 .store strong,
 .store small{text-shadow:0 1px 3px rgba(0,0,0,.4)}
+.mk{display:inline-block;font-size:.7rem;font-weight:800;margin-left:.25rem;vertical-align:super}
+.mk.ok{color:#1d7a57}
+.mk.est{color:#b07a00}
+.price.na{color:#b8b8b8;text-align:center}
+.save-small{display:block;font-size:.75rem;font-weight:800;color:#5c005c;margin-top:.2rem}
+.badge.super{background:#fff1e0;color:#b35c00}
 
 /* ---------- Platos del menú como botón ---------- */
 .dish{border:0;font:inherit;color:var(--ink);cursor:pointer;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.2rem}
@@ -237,6 +275,7 @@ img{max-width:100%}
 .dish-cta{margin-top:.8rem;font-style:normal;font-size:.8rem;font-weight:800;color:#fff;background:var(--coral);padding:.3rem .9rem;border-radius:999px;transition:background .2s}
 .dish:hover .dish-cta{background:var(--sea)}
 .dish:focus-visible{outline:3px solid var(--mango);outline-offset:3px}
+.dish-time{display:inline-block;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--sea-d);background:#e2f2ff;padding:.15rem .6rem;border-radius:999px;margin-bottom:.3rem}
 
 /* ---------- Panel flotante de receta ---------- */
 body.modal-open{overflow:hidden}
@@ -306,6 +345,7 @@ body.modal-open{overflow:hidden}
   .lb-figure{width:100%}
   .lb-figure img{max-height:66dvh;padding:.3rem}
   .lightbox{padding:3.8rem .5rem 5rem}
+  .titulo-menu{margin-left:0}
 }
 
 /* ---------- Galería de imágenes (sin números, con marco) ---------- */

@@ -9,12 +9,12 @@ Semillitas es un sitio web que orienta a mamás, papás y cuidadores de Cartagen
 | Sección | Qué incluye |
 |---|---|
 | **Ejes de la seguridad alimentaria** | Slider con los 5 ejes (disponibilidad, acceso, consumo, aprovechamiento biológico, calidad e inocuidad) y ejemplos locales |
-| **Etapas de vida** | Lactancia materna exclusiva (0–6 meses), alimentación complementaria (6 meses–2 años) con menús y recetas por edad, niñez (6–12 años) y adolescencia (12–18 años, en construcción) |
+| **Etapas de vida** | Lactancia materna exclusiva (0–6 meses), alimentación complementaria (6 meses–2 años) con menús y recetas por edad, niñez (6–12 años) y adolescencia (12–18 años), ambas con menú de un día |
 | **Tips** | Lavado e higiene (galería con visor), manipulación de alimentos y tiempos de cocción |
-| **¿Dónde comprar?** | Comparativo de precios entre Bazurto, D1, Ara y Megatiendas, con buscador, filtros y orden |
+| **¿Dónde comprar?** | Tarjetas de cada tienda y comparativo de precios entre Bazurto, D1, Ara y Megatiendas, con buscador, filtros y orden |
 
 ### Funcionalidades
-- Pestañas por etapa, subetapa y edad
+- Pestañas por etapa, subetapa y edad (cada etapa es una sección independiente de ancho completo)
 - Recetas en ventana emergente
 - Galerías de imágenes con visor ampliado (flechas, teclado y cierre con Esc)
 - Tabla de precios interactiva que se adapta a tarjetas en celular
@@ -40,6 +40,7 @@ Semillitas/
     ├── Ejes/       # Imágenes del slider de ejes
     ├── lactancia/  # Pasos para amamantar
     ├── Higiene/    # Lavado de manos
+    ├── tiendas/    # Fotos de Bazurto, D1, Ara y Megatiendas
     └── recetas/    # Portadas del menú de ejemplo (pendiente)
 ```
 
@@ -92,19 +93,19 @@ Para el detalle de componentes, convenciones y estructura del código, consulta 
 ## 🗺️ Pendientes
 
 - [ ] Tips: manipulación de alimentos (imágenes) y tiempos de cocción
-- [ ] Niñez: contenido completo y menú de un día
-- [ ] Adolescencia (12–18 años)
+- [ ] Validar con nutricionista los `TODO` de Niñez y Adolescencia (fuentes y temperatura del enyucado)
 - [ ] Sección "Comer con poco es posible"
 - [ ] Sección "Para tener en cuenta" (consejos para elegir alimentos)
 - [ ] Imágenes de portada en el menú de ejemplo
 
 ## 📚 Fuentes
 
-- Organización Mundial de la Salud (OMS): lactancia materna, *Cinco claves para la inocuidad de los alimentos* (2006), *¿Cómo lavarse las manos?* (2009)
-- UNICEF (2023)
-- Instituto Colombiano de Bienestar Familiar (ICBF, 2020) y Guías Alimentarias Basadas en Alimentos para la población colombiana (2015-2025)
+- Organización Mundial de la Salud (OMS): lactancia materna, *Cinco claves para la inocuidad de los alimentos* (2006), *¿Cómo lavarse las manos?* (2009), adolescencia (2019)
+- UNICEF (2023 y s. f.)
+- Instituto Colombiano de Bienestar Familiar (ICBF, 2020 y s. f.) y Guías Alimentarias Basadas en Alimentos para la población colombiana (2015-2025)
 - ESPGHAN (2017)
 - DANE – SIPSA (2026): precios mayoristas de Bazurto
+- Álvarez (2024) y Rechy (2024), pendientes de validación
 
 Los precios de D1, Ara y Megatiendas se tomaron de las páginas web y los folletos de cada cadena. Las ofertas cambian cada semana, así que deben verificarse en el punto de compra.
 
