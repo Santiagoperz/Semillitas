@@ -82,6 +82,16 @@ img{max-width:100%}
 #tips .subtab{border-color:color-mix(in srgb, var(--tips-c) 40%, #fff)}
 #tips .subtab:hover{border-style:solid}
 #tips .subtab.active{border:2px solid var(--tips-c);background:var(--tips-bg);color:var(--tips-c)}
+/* Tarjetas ✅ Sí / ❌ No */
+.card-si{border-top:6px solid var(--leaf)}
+.card-si h4{color:var(--leaf)}
+.card-no{border-top:6px solid var(--coral)}
+.card-no h4{color:var(--coral)}
+.check.cross li::before{content:"❌";font-size:.7rem}
+
+/* Tarjetas de color (tablas de picar) */
+.card-color{border-top:6px solid var(--c)}
+.card-color h4{color:var(--c)}
 
 /* ---------- Slider de ejes ---------- */
 .slider{position:relative;max-width:900px;margin:auto;padding:0 3.5rem}
@@ -148,6 +158,35 @@ img{max-width:100%}
   border-radius:var(--radius);
   box-shadow:var(--shadow);
   box-shadow: -10px 5px 10px #000;
+}
+/* ---------- Imagen con texto debajo (estilo tarjeta de pasos) ---------- */
+.figure{
+  max-width:700px;
+  margin:2rem auto 0;
+  padding:.5rem;
+  background:#fff;
+  border:3px solid color-mix(in srgb, var(--leaf) 35%, #fff);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  transition:transform .25s, box-shadow .25s;
+}
+.figure:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(14,124,134,.2)}
+
+.figure .imagen-marco{
+  max-width:100%;
+  margin:0;
+  padding:0;
+  border:0;
+  box-shadow:none;
+  border-radius:14px;
+}
+.figure .imagen-marco:hover{transform:none;box-shadow:none}
+
+.figure figcaption{
+  padding:1rem 1.2rem 1.3rem;
+  font-size:.95rem;
+  color:var(--ink);
+  text-align:left;
 }
 .ampliable{cursor:zoom-in;transition:transform .25s, box-shadow .25s}
 .ampliable:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(14,124,134,.2)}
