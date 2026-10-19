@@ -1,5 +1,5 @@
 /* ===========================================================
-   Semillitas · Interacciones
+    Semillitas · Interacciones
    =========================================================== */
 
 // ---------- Tiendas ----------
@@ -11,9 +11,6 @@ const tiendas = [
 ];
 const supers = ['d1', 'ara', 'mega'];
 
-// ---------- Datos de precios (COP) ----------
-// p: precio por unidad en cada tienda (null = no disponible)
-// ok: tiendas con precio consultado (Bazurto siempre es dato SIPSA). El resto es estimado (≈).
 // ---------- Datos de precios (COP) ----------
 // p: precio por unidad en cada tienda (null = no disponible habitualmente)
 // ok: tiendas con precio consultado. Bazurto es dato SIPSA, salvo si bazEst: true (estimado).
@@ -44,7 +41,7 @@ const alimentos = [
   { n: 'Pimentón',        e: '🫑', cat: 'Verduras', u: 'kg', p: { baz: 4896,  d1: 8900,  ara: 8500,  mega: 9500 },  ok: [], etapa: 'Rico en vitamina C' },
   { n: 'Apio',            e: '🥬', cat: 'Verduras', u: 'kg', p: { baz: 1967,  d1: null,  ara: 4500,  mega: 4900 },  ok: [], etapa: 'Para caldos y sopas' },
   { n: 'Ajo',             e: '🧄', cat: 'Verduras', u: 'kg', p: { baz: 5858,  d1: 14000, ara: 13500, mega: 15900 }, ok: [], etapa: 'Sazón natural en lugar de cubitos' },
-  { n: 'Cilantro',        e: '🌿', cat: 'Verduras', u: 'kg', p: { baz: 11500, d1: 15800,  ara: 16000, mega: 18000 }, ok: [], etapa: 'Aromático, picado fino' },
+  { n: 'Cilantro',        e: '🌿', cat: 'Verduras', u: 'kg', p: { baz: 11500, d1: 15800, ara: 16000, mega: 18000 }, ok: [], etapa: 'Aromático, picado fino' },
 
   // ===== Tubérculos y plátanos =====
   { n: 'Papa',            e: '🥔', cat: 'Tubérculos', u: 'kg', p: { baz: 2324, d1: 4000, ara: 3800, mega: 4300 }, ok: [], etapa: 'Desde 6 meses (puré)' },
@@ -57,7 +54,7 @@ const alimentos = [
   { n: 'Arroz',           e: '🍚', cat: 'Granos', u: 'kg', p: { baz: 3378,  d1: 3900, ara: 3800, mega: 3300 },  ok: ['d1', 'mega'], etapa: 'Desde 6 meses (machacado)' },
   { n: 'Lenteja',         e: '🟤', cat: 'Granos', u: 'kg', p: { baz: 4875,  d1: 3180, ara: 5700, mega: 6100 },  ok: ['d1', 'ara', 'mega'], etapa: 'Hierro no hemínico' },
   { n: 'Fríjol cabeza negra', e: '🫘', cat: 'Granos', u: 'kg', p: { baz: 4750, d1: 7200, ara: 7000, mega: 7900 }, ok: [], etapa: 'Hierro no hemínico' },
-  { n: 'Fríjol rojo (Zaragoza)',     e: '🫘', cat: 'Granos', u: 'kg', p: { baz: 7525,  d1: 8900, ara: 8600, mega: 9900 },  ok: [], etapa: 'Machacado desde 6 meses · hierro' },
+  { n: 'Fríjol rojo (Zaragoza)', e: '🫘', cat: 'Granos', u: 'kg', p: { baz: 7525, d1: 8900, ara: 8600, mega: 9900 }, ok: [], etapa: 'Machacado desde 6 meses · hierro' },
   { n: 'Arveja seca',     e: '🟢', cat: 'Granos', u: 'kg', p: { baz: 4450,  d1: 5800, ara: 5600, mega: 6500 },  ok: [], etapa: 'En crema o sopa · proteína vegetal' },
   { n: 'Mazorca (chócolo)', e: '🌽', cat: 'Granos', u: 'kg', p: { baz: 1708, d1: 3900, ara: 3600, mega: 4200 },  ok: [], etapa: 'Desgranada y molida o en sopa' },
   { n: 'Maíz blanco trillado', e: '🌽', cat: 'Granos', u: 'kg', p: { baz: 2781, d1: 4000, ara: 4200, mega: 4900 }, ok: [], etapa: 'Mazamorra y peto' },
@@ -208,72 +205,90 @@ document.querySelectorAll('[data-tabs]').forEach(grupo => {
   });
 
   // ---------- Visor de imágenes (galerías) ----------
-(function initLightbox() {
-  const lb = document.getElementById('lightbox');
-  if (!lb) return;
-  const lbImg = document.getElementById('lbImg');
-  const lbCaption = document.getElementById('lbCaption');
-  const lbCount = document.getElementById('lbCount');
-  const btnPrev = document.getElementById('lbPrev');
-  const btnNext = document.getElementById('lbNext');
-  let grupo = [], actual = 0, origen = null;
+  (function initLightbox() {
+    const lb = document.getElementById('lightbox');
+    if (!lb) return;
+    const lbImg = document.getElementById('lbImg');
+    const lbCaption = document.getElementById('lbCaption');
+    const lbCount = document.getElementById('lbCount');
+    const btnPrev = document.getElementById('lbPrev');
+    const btnNext = document.getElementById('lbNext');
+    let grupo = [], actual = 0, origen = null;
 
-  function mostrar(n) {
-    actual = (n + grupo.length) % grupo.length;
-    const img = grupo[actual];
-    lbImg.src = img.currentSrc || img.src;
-    lbImg.alt = img.alt;
-    const texto = img.closest('figure')?.querySelector('figcaption');
-    lbCaption.textContent = texto ? texto.textContent.trim() : img.alt;
-    lbCount.textContent = `${actual + 1} de ${grupo.length}`;
-    const varias = grupo.length > 1;
-    btnPrev.hidden = btnNext.hidden = lbCount.hidden = !varias;
-  }
+    function mostrar(n) {
+      actual = (n + grupo.length) % grupo.length;
+      const img = grupo[actual];
+      lbImg.src = img.currentSrc || img.src;
+      lbImg.alt = img.alt;
+      const texto = img.closest('figure')?.querySelector('figcaption');
+      lbCaption.textContent = texto ? texto.textContent.trim() : img.alt;
+      lbCount.textContent = `${actual + 1} de ${grupo.length}`;
+      const varias = grupo.length > 1;
+      btnPrev.hidden = btnNext.hidden = lbCount.hidden = !varias;
+    }
 
-  document.querySelectorAll('.galeria').forEach(galeria => {
-    const imgs = [...galeria.querySelectorAll('.bstep-img img')];
-    imgs.forEach((img, n) => {
-      const caja = img.parentElement;
-      caja.tabIndex = 0;
-      caja.setAttribute('role', 'button');
-      caja.setAttribute('aria-label', 'Ampliar imagen: ' + img.alt);
+    document.querySelectorAll('.galeria').forEach(galeria => {
+      const imgs = [...galeria.querySelectorAll('.bstep-img img')];
+      imgs.forEach(img => {
+        const caja = img.parentElement;
+        caja.tabIndex = 0;
+        caja.setAttribute('role', 'button');
+        caja.setAttribute('aria-label', 'Ampliar imagen: ' + img.alt);
+
+        const abrir = () => {
+          if (caja.classList.contains('sin-img')) return; // la imagen no cargó
+          grupo = imgs.filter(i => !i.parentElement.classList.contains('sin-img'));
+          origen = caja;
+          mostrar(grupo.indexOf(img));
+          lb.showModal();
+          document.body.classList.add('modal-open');
+        };
+        caja.addEventListener('click', abrir);
+        caja.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abrir(); }
+        });
+      });
+    });
+    // Imágenes sueltas (fuera de una galería): se abren solas, sin flechas
+    document.querySelectorAll('img.ampliable').forEach(img => {
+      img.tabIndex = 0;
+      img.setAttribute('role', 'button');
+      img.setAttribute('aria-label', 'Ampliar imagen: ' + img.alt);
 
       const abrir = () => {
-        if (caja.classList.contains('sin-img')) return; // la imagen no cargó
-        grupo = imgs.filter(i => !i.parentElement.classList.contains('sin-img'));
-        origen = caja;
-        mostrar(grupo.indexOf(img));
+        grupo = [img];
+        origen = img;
+        mostrar(0);
         lb.showModal();
         document.body.classList.add('modal-open');
       };
-      caja.addEventListener('click', abrir);
-      caja.addEventListener('keydown', e => {
+      img.addEventListener('click', abrir);
+      img.addEventListener('keydown', e => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abrir(); }
       });
     });
-  });
 
-  btnPrev.addEventListener('click', () => mostrar(actual - 1));
-  btnNext.addEventListener('click', () => mostrar(actual + 1));
-  document.getElementById('lbClose').addEventListener('click', () => lb.close());
+    btnPrev.addEventListener('click', () => mostrar(actual - 1));
+    btnNext.addEventListener('click', () => mostrar(actual + 1));
+    document.getElementById('lbClose').addEventListener('click', () => lb.close());
 
-  // Cerrar al tocar fuera de la imagen
-  lb.addEventListener('click', e => {
-    if (e.target === lb || e.target.classList.contains('lb-figure')) lb.close();
-  });
+    // Cerrar al tocar fuera de la imagen
+    lb.addEventListener('click', e => {
+      if (e.target === lb || e.target.classList.contains('lb-figure')) lb.close();
+    });
 
-  // Flechas del teclado (Esc ya lo maneja <dialog>)
-  lb.addEventListener('keydown', e => {
-    if (e.key === 'ArrowLeft') mostrar(actual - 1);
-    if (e.key === 'ArrowRight') mostrar(actual + 1);
-  });
+    // Flechas del teclado (Esc ya lo maneja <dialog>)
+    lb.addEventListener('keydown', e => {
+      if (e.key === 'ArrowLeft') mostrar(actual - 1);
+      if (e.key === 'ArrowRight') mostrar(actual + 1);
+    });
 
-  lb.addEventListener('close', () => {
-    document.body.classList.remove('modal-open');
-    lbImg.removeAttribute('src');
-    if (origen) origen.focus();
-  });
-})();
+    lb.addEventListener('close', () => {
+      document.body.classList.remove('modal-open');
+      lbImg.removeAttribute('src');
+      if (origen) origen.focus();
+    });
+  })();
 
   function irA(i) {
     index = (i + slides.length) % slides.length;
@@ -355,6 +370,7 @@ document.querySelectorAll('[data-tabs]').forEach(grupo => {
   irA(0);
   if (!sinMovimiento) iniciar();
 })();
+
 // ---------- Menú móvil ----------
 const menuBtn = document.getElementById('menuBtn');
 const nav = document.getElementById('nav');
@@ -374,8 +390,14 @@ window.addEventListener('scroll', () => {
   const h = document.documentElement;
   progress.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100 + '%';
   toTop.classList.toggle('show', h.scrollTop > 600);
-  const actual = secciones.filter(s => s.getBoundingClientRect().top < 140).pop();
-  links.forEach(l => l.classList.toggle('current', actual && l.getAttribute('href') === '#' + actual.id));
+
+  // Ignora las secciones ocultas (etapas no activas) y usa data-nav si la sección
+  // pertenece a otro enlace del menú (las tres etapas resaltan "Etapas de vida")
+  const actual = secciones
+    .filter(s => s.offsetParent !== null && s.getBoundingClientRect().top < 140)
+    .pop();
+  const id = actual && (actual.dataset.nav || actual.id);
+  links.forEach(l => l.classList.toggle('current', l.getAttribute('href') === '#' + id));
 }, { passive: true });
 
 toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
