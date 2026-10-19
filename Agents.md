@@ -20,9 +20,11 @@ imgs/
   Ejes/           # 1.jpeg … 5.jpeg (slider de ejes)
   lactancia/      # imagen_1.png … imagen_8.png
   Higiene/        # 1.jpeg … 7.jpeg (lavado de manos)
+  manipulacion/   # separar-crudos-cocidos.webp, cadena-de-frio.webp, dos-horas.webp,
+                  # descongelar-nevera.webp, guardar-tapado.webp, desechar-sobras.webp
+  frecuencia/     # fre.jpeg (infografía de frecuencia de consumo, Niñez)
   tiendas/        # bz.jpg, d1.jpg, ara.jpg, mt.jpg (pasar a WebP cuando sea posible)
   recetas/        # (pendiente) portadas del menú de ejemplo
-  manipulacion/   # (pendiente) serie de manipulación
 ```
 
 ## 3. Mapa de secciones (`index.html`)
@@ -34,9 +36,9 @@ imgs/
 | `#etapas` | Encabezado y stepper: Primera infancia / Niñez / Adolescencia |
 | `#p-infancia` | Sección propia (panel). Subpestañas: Lactancia (0–6 m) y Complementaria (6 m–2 años) |
 | ↳ `#p-complementaria` | Pestañas por edad: `#p-6-8`, `#p-9-11`, `#p-12-23`, con menú de ejemplo, recomendaciones y bloque de hierro |
-| `#p-ninez` | Sección propia (panel). Introducción, recomendaciones y menú de un día |
+| `#p-ninez` | Sección propia (panel). Introducción, recomendaciones, menú de un día e infografía de frecuencia de consumo (ampliable) |
 | `#p-adolescencia` | Sección propia (panel). Introducción, recomendaciones por sexo y menú de un día |
-| `#tips` | Subpestañas: `#p-higiene` (lavado de manos con imágenes), `#p-manipulacion` y `#p-coccion` (**en construcción**) |
+| `#tips` | Subpestañas: `#p-higiene` (lavado de manos con imágenes), `#p-manipulacion` (quién cocina, tablas de picar y serie ilustrada) y `#p-coccion` (**en construcción**) |
 | `#precios` | Tarjetas de tiendas con imagen + comparativo Bazurto / D1 / Ara / Megatiendas (tabla generada por JS) |
 
 Las tres etapas son `<section>` independientes con las clases `.section-full .etapa .panel` y `data-nav="etapas"`. El stepper de `#etapas` muestra una a la vez. Su fondo se cambia en `styles.css` con `#p-infancia`, `#p-ninez` o `#p-adolescencia`.
@@ -50,6 +52,7 @@ Cada sección nueva debe agregarse también al `<nav id="nav">` del header. El r
 - Lila de acento (hero, texture-bar, agetab activo, fondo de precios): `#DBBBF2`, `#e7d5f3`. Celeste de acento (botones, tags): `#9DDFF5`.
 - Fondos de etapas: `#etapas` y `#p-infancia` `#e2f2ff`, `#p-ninez` `#eaf7f1`, `#p-adolescencia` `#f3ecfa`.
 - `#tips` tiene sus propias variables locales: `--tips-c` (color principal) y `--tips-bg` (fondo de la pestaña activa).
+- Colores de tablas de picar (solo en `.card-color`): verde `var(--leaf)`, rojo `#d62828`, azul `#2a6fdb`.
 - `--radius: 20px`, `--shadow: 0 10px 30px rgba(14,124,134,.12)`.
 - Tipografías: `--font-h` (Fredoka) para títulos y `--font-b` (Nunito) para el texto.
 
@@ -61,17 +64,20 @@ Cada sección nueva debe agregarse también al `<nav id="nav">` del header. El r
 | Sección nueva | `<section class="section" id="...">` con `.section-head` (`.tag` + `h2` + `p`) |
 | Sección de ancho completo | `.section.section-full` (el fondo ocupa toda la página; el contenido se centra a 1150px) |
 | Tarjetas en grilla | `.grid-2` / `.grid-3` + `.card` (`.card.wide` para ancho completo) |
+| Tarjetas Sí / No | `.grid-2` con `.card.card-si` (lista `ul.check`) y `.card.card-no` (lista `ul.check.cross`, viñeta ❌) |
+| Tarjeta con color superior | `.card.card-color` con `style="--c: …"` (borde superior y título del color) |
 | Lista con viñeta 🌱 | `ul.check` |
 | Mensaje destacado | `.callout` con `.callout-icon` |
 | Pasos con imagen numerada | `ol.breast-steps` > `li.bstep` > `figure` > `.bstep-img` (con `data-emoji` de respaldo) + `figcaption` |
 | Galería con visor ampliable | agrega la clase `.galeria` al `ol.breast-steps`; quita los números, pone marco y abre las imágenes en el `#lightbox` |
+| Imagen suelta ampliable | `img.imagen-marco.ampliable` (centrada, con marco y abre en el `#lightbox`) |
+| Imagen suelta con texto debajo | `figure.figura-marco` > `img.imagen-marco.ampliable` + `figcaption`; el marco lo pone el `figure` y el texto tiene el estilo de `.bstep figcaption` |
 | Pestañas | contenedor con `data-tabs` y botones con `data-panel="id-del-panel"` y `aria-controls`; los paneles usan `.panel` / `.panel.active` y pueden estar en cualquier parte de la página |
 | Plato con receta | `button.dish` con `span` (emoji), `small.dish-time` opcional (tiempo de comida), `.dish-name`, `.dish-cta` y `<template class="receta">` |
 | Tarjeta de tienda con imagen | `.store` con `role="img"`, `aria-label` y `style="--c: …; --img: url('imgs/tiendas/…')"` |
 | Nota o fuente | `p.note` |
 | Título de bloque | `h3.block-title` (con `<small>` para la fuente) |
 | Animación de entrada | clase `.reveal` |
-| Imagen suelta ampliable | `img.imagen-marco.ampliable` (centrada, con marco y abre en el `#lightbox`) |
 
 ### Tarjetas de tiendas (`.store`)
 - La imagen va como fondo CSS en la variable `--img`; el color de la tienda en `--c` es el respaldo si la imagen no carga.
@@ -83,6 +89,7 @@ Cada sección nueva debe agregarse también al `<nav id="nav">` del header. El r
 ### Responsive
 - `@media (max-width:860px)`: hero en una columna, menú hamburguesa.
 - `@media (max-width:720px)`: la tabla de precios pasa a tarjetas (cada `<td>` necesita `data-label`), el slider se apila, las tiendas quedan en 2 columnas y la galería de lactancia en 1 columna.
+- Para márgenes grandes que deben reducirse en celular, usa `clamp()` (por ejemplo, `margin-left: clamp(0rem, 20vw - 6rem, 13rem)`) en lugar de valores fijos.
 - Se respeta `prefers-reduced-motion`.
 
 ## 5. JavaScript (`script.js`)
@@ -102,9 +109,10 @@ Cualquier contenedor con `[data-tabs]` funciona automáticamente: sus botones hi
 - Solo una receta abierta a la vez; al cerrar, el foco vuelve al plato.
 
 ### Visor de imágenes (`#lightbox`)
-- Funciona solo para las imágenes dentro de `.galeria .bstep-img img`.
-- Navega con flechas (botones y teclado) entre las imágenes de la misma galería; ignora las que no cargaron (`.sin-img`).
-- El texto debajo de la imagen sale del `figcaption`; si no hay, usa el `alt`.
+- Abre las imágenes dentro de `.galeria .bstep-img img` y las imágenes sueltas con la clase `img.ampliable`.
+- En una galería, navega con flechas (botones y teclado) entre sus imágenes e ignora las que no cargaron (`.sin-img`). Una imagen suelta se abre sola, sin flechas ni contador.
+- El texto debajo de la imagen ampliada sale del `figcaption` del `figure` que la contiene; si no hay, usa el `alt`. Para mostrar un texto solo en el visor, usa `<figcaption hidden>`.
+- El código de las imágenes sueltas va dentro de `initLightbox`, porque usa sus variables (`grupo`, `origen`, `mostrar`).
 
 ### Tarjetas de tiendas
 Son HTML estático; `script.js` no las toca. No necesitan respaldo en JS: si la imagen falla, el CSS muestra el color.
@@ -128,11 +136,12 @@ Cada alimento sigue esta forma:
 ## 6. Reglas de contenido (obligatorias)
 
 ### Rigor y fuentes
-- Todo dato nutricional o de salud debe tener una fuente citada: OMS, UNICEF, ICBF (Guías Alimentarias, 2020, 2015-2025), ESPGHAN, DANE-SIPSA, Ministerio de Salud.
-- Cita en el formato existente: `(ICBF, 2020)` dentro de `<small>`, `<em>` o `p.note`.
+- Todo dato nutricional o de salud debe tener una fuente citada: OMS, UNICEF, ICBF (Guías Alimentarias, 2020, 2015-2025), ESPGHAN, DANE-SIPSA, Ministerio de Salud y Protección Social.
+- Cita en el formato existente: `(ICBF, 2020)` dentro de `<small>`, `<em>`, `p.note` o `figcaption`.
 - Agrega cada fuente nueva a `.refs` en el footer y en `#tips`.
 - **No inventes cifras, dosis, tiempos ni porcentajes.** Si falta un dato, deja `<!-- TODO: validar con nutricionista -->`.
 - Fuentes por validar: Álvarez (2024) y Rechy (2024), usadas en Adolescencia. Si no son confiables, reemplázalas por una fuente oficial.
+- Los consejos de manipulación (separar crudos y cocidos, 2 horas a temperatura ambiente, descongelar en la nevera) se basan en *Cinco claves para la inocuidad de los alimentos* (OMS, 2006).
 
 ### Rangos de edad
 - Primera infancia: 0 a 5 años · Niñez: 6 a 12 años · Adolescencia: **12 a 18 años**. Usa estos rangos en todo el sitio.
@@ -154,6 +163,12 @@ Cada alimento sigue esta forma:
 - Agua potable como bebida principal.
 - No usar la comida como premio o castigo.
 
+**Inocuidad (todas las edades)**
+- Separar lo crudo de lo cocido, con tablas y cuchillos distintos.
+- Mantener la cadena de frío desde la compra (Bazurto o súper) hasta la nevera.
+- No dejar comida cocida más de 2 horas a temperatura ambiente; en el calor del Caribe, guardarla lo antes posible.
+- Las tablas de colores son opcionales: basta con dos tablas diferenciadas (crudos / frutas, verduras y cocidos).
+
 ### Recetas
 - Estructura del template: `h5 Ingredientes` → `ul` → `h5 Preparación` → `ol` → `p.note` opcional.
 - Pasos en imperativo con tú ("Lava…", "Cocina…"). Nunca en infinitivo ni con usted.
@@ -161,15 +176,17 @@ Cada alimento sigue esta forma:
 - Prioriza los ingredientes locales que aparecen en la tabla de precios, con el mismo nombre que usa la tabla.
 - Los menús de Niñez y Adolescencia son de un día con 5 tiempos (desayuno, media mañana, almuerzo, merienda, cena), marcados con `small.dish-time`.
 
-### Contexto local
+### Contexto local y lenguaje inclusivo
 - Usa nombres locales: ahuyama, patilla (no sandía), ñame, guineo, bocachico, mojarra, níspero, zapote, Bazurto.
 - Los ejemplos deben ser de la vida cotidiana en Cartagena y el Caribe.
 - Evita alimentos poco comunes o costosos en la región (por ejemplo, pavo).
 - Considera el clima cálido (conservación y cadena de frío) y el presupuesto limitado.
+- Cuando hables de quien cuida o cocina, usa formas inclusivas ("quien prepara la comida", "mamá, papá o cuidador/a") en lugar de asumir que siempre es la mamá.
 
 ## 7. Accesibilidad
 - Todas las imágenes `<img>` llevan `alt` descriptivo en español y `loading="lazy"`.
 - Las imágenes de pasos llevan `data-emoji` como respaldo.
+- Las imágenes ampliables reciben `tabindex`, `role="button"` y `aria-label` desde el JS; se abren con clic, Enter o Espacio.
 - Las imágenes de fondo CSS con información (tiendas) llevan `role="img"` y `aria-label`; las del slider son decorativas porque el texto ya está en la diapositiva.
 - Mantén los `role`, `aria-selected`, `aria-label`, `aria-controls` y `aria-expanded` existentes.
 - Los botones interactivos son `<button>`, no `<div>`.
@@ -180,7 +197,8 @@ Cada alimento sigue esta forma:
 - Nombres en minúsculas con guiones: `crema-ahuyama-pollo.webp`.
 - Las fotos de comida para bebés deben mostrar la textura correcta para la edad.
 - En grillas, usa `aspect-ratio` y `object-fit: cover` para que las tarjetas queden parejas.
-- Tamaños de referencia: tiendas 600 × 400 px.
+- Tamaños de referencia: tiendas 600 × 400 px. Imágenes sueltas con marco: hasta 700 px de ancho visible.
+- El `alt` de cada imagen de la serie de manipulación describe la imagen ideal para ese paso: úsalo como guía al tomarla o ilustrarla.
 
 ## 9. Problemas conocidos (corregir si tocas esa zona)
 - **Fuentes no cargadas:** hay `preconnect` a Google Fonts, pero falta el `<link>` de Fredoka y Nunito, así que se usa `system-ui`.
@@ -194,12 +212,15 @@ Cada alimento sigue esta forma:
 - **`#precios`:** falta la fecha de referencia de los precios en `.section-head`, y la clase `.sources` existe en el CSS pero no en el HTML.
 
 ## 10. Trabajo pendiente (issues)
-1. Sección `#tips`: manipulación de alimentos (imágenes, `imgs/manipulacion/`) y tiempos de cocción (solo texto, validar con nutricionista). Lavado e higiene ya está.
+1. Sección `#tips`: tiempos de cocción (solo texto, validar con nutricionista). Lavado e higiene y manipulación ya están; faltan las imágenes de `imgs/manipulacion/` (mientras tanto se muestra el emoji de respaldo).
 2. Sección "Comer con poco es posible": va antes de `#precios`.
 3. Sección "Para tener en cuenta" (consejos para elegir alimentos): va después de `#precios`.
 4. Imagen de portada en cada tarjeta `.dish` del menú de ejemplo (y opcionalmente dentro de la receta).
-5. Resolver los `TODO` de Niñez y Adolescencia: temperatura del enyucado, fuentes de Álvarez (2024) y Rechy (2024), y fuente de las tarjetas de mujeres y hombres adolescentes.
-6. Opcional: agregar a la tabla de precios guineo verde, hígado de res, coco, ají dulce y repollo, solo con precios consultados.
+5. Resolver los `TODO` pendientes:
+   - Niñez y Adolescencia: temperatura del enyucado, fuentes de Álvarez (2024) y Rechy (2024), y fuente de las tarjetas de mujeres y hombres adolescentes.
+   - Manipulación: fuente del bloque "Antes de cocinar" y validar "recalentar una sola vez".
+6. Agregar "Ministerio de Salud y Protección Social (2020)" a las `.refs` del footer y de `#tips` (fuente de la infografía de Niñez).
+7. Opcional: agregar a la tabla de precios guineo verde, hígado de res, coco, ají dulce y repollo, solo con precios consultados.
 
 ## 11. Checklist antes de terminar
 - [ ] El contenido está en español, con tú, y es coherente con las reglas de la sección 6
