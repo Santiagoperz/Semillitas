@@ -49,6 +49,7 @@ const alimentos = [
   { n: 'Plátano hartón verde', e: '🍌', cat: 'Tubérculos', u: 'kg', p: { baz: 3375, d1: 5000, ara: 4800, mega: 5200 }, ok: [], etapa: 'Sopas y purés' },
   { n: 'Ñame criollo',    e: '🍠', cat: 'Tubérculos', u: 'kg', p: { baz: 3248, d1: 5400, ara: 5200, mega: 5300 }, ok: [], etapa: 'Típico del Caribe, ideal en sopas' },
   { n: 'Batata',          e: '🍠', cat: 'Tubérculos', u: 'kg', p: { baz: 2500, d1: null, ara: 4500, mega: 4900 }, ok: [], bazEst: true, etapa: 'Desde 6 meses, puré naturalmente dulce' },
+  { n: 'Plátano maduro',  e: '🍌', cat: 'Tubérculos', u: 'kg', p: { baz: null, d1: null, ara: null, mega: 6400 }, ok: ['mega'], etapa: 'Cocido y machacado · dulzor natural' },
 
   // ===== Granos y cereales =====
   { n: 'Arroz',           e: '🍚', cat: 'Granos', u: 'kg', p: { baz: 3378,  d1: 3900, ara: 3800, mega: 3300 },  ok: ['d1', 'mega'], etapa: 'Desde 6 meses (machacado)' },
@@ -73,7 +74,8 @@ const alimentos = [
   { n: 'Pescado basa',    e: '🐟', cat: 'Proteínas', u: 'kg', p: { baz: 9100,  d1: 12900, ara: 12500, mega: 13900 }, ok: [], etapa: 'Sin espinas, fácil para niños' },
   { n: 'Mojarra lora',    e: '🐠', cat: 'Proteínas', u: 'kg', p: { baz: 11000, d1: null,  ara: 15500, mega: 15900 }, ok: [], etapa: 'Retira bien las espinas' },
   { n: 'Bocachico',       e: '🐟', cat: 'Proteínas', u: 'kg', p: { baz: 13500, d1: null,  ara: null,  mega: 16900 }, ok: [], etapa: 'Pescado de río típico · muchas espinas' },
-
+  { n: 'Hígado de res',   e: '🥩', cat: 'Proteínas', u: 'kg', p: { baz: null, d1: null, ara: null, mega: 10600 }, ok: ['mega'], etapa: 'Muy rico en hierro · siempre bien cocido' },
+  
   // ===== Lácteos =====
   { n: 'Leche entera',    e: '🥛', cat: 'Lácteos', u: 'litro', p: { baz: null, d1: 3900, ara: 3800, mega: 4500 }, ok: [], etapa: 'Leche de vaca como bebida desde 12 meses' },
   { n: 'Yogurt natural',  e: '🥣', cat: 'Lácteos', u: 'litro', p: { baz: null, d1: 7900, ara: 7500, mega: 9500 }, ok: [], etapa: 'Sin azúcar · útil desde el primer año' },

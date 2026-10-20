@@ -7,6 +7,9 @@
   <title>Semillitas · Guía de alimentación infantil con alimentos locales</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
   <link href="styles.css" rel="stylesheet">
 
 </head>
@@ -1170,7 +1173,7 @@
       </div>
       <!-- ===== Lavado e higiene (Issue 1.1) ===== -->
       <div class="panel active" id="p-higiene" role="tabpanel">
-        <h3 class="block-title">🧼🍗 Lavado de Alimentos</h3>
+        <h3 class="block-title">🧼🍗 Lavado de Alimentos<small>(OMS, 2009)</small></h3>
         <div class="card wide">
           <p>La alimentación segura de tu bebé comienza con una buena higiene. Antes de preparar sus alimentos, lávate
             las manos, limpia los utensilios y las superficies, y manipula cada alimento correctamente. Estos hábitos
@@ -1226,7 +1229,7 @@
             </figure>
           </li>
         </ol>
-        <div class="panel active" id="p-higiene" role="tabpanel">
+        <div class="panel active">
           <h3 class="block-title">🧼🤲 Lavado de manos paso a paso <small>(OMS, 2009)</small></h3>
           <ol class="breast-steps galeria">
             <li class="bstep">
@@ -1344,8 +1347,7 @@
           <li class="bstep tstep" style="--step-color: #04ba07;">
             <figure>
               <div class="tstep-img" data-emoji="🔪">
-                <img src="imgs/Higiene/tablas/1.png" loading="lazy"
-                  alt="Dos tablas de picar en un mesón: en una, pollo crudo con su cuchillo; en la otra, verduras cocidas con otro cuchillo">
+                <img src="imgs/Higiene/tablas/1.png" loading="lazy" alt="Tabla de picar verde con frutas y verduras.">
               </div>
               <figcaption> <strong>🟢 Verde: frutas y verduras</strong>
                 <p>Para picar mango, papaya, banano, ahuyama, zanahoria, papa y otros vegetales. Lava las frutas y
@@ -1357,8 +1359,7 @@
           <li class="bstep tstep " style="--step-color: #d00202;">
             <figure>
               <div class="tstep-img" data-emoji="🔪">
-                <img src="imgs/Higiene/tablas/3.png" loading="lazy"
-                  alt="Dos tablas de picar en un mesón: en una, pollo crudo con su cuchillo; en la otra, verduras cocidas con otro cuchillo">
+                <img src="imgs/Higiene/tablas/3.png" loading="lazy" alt="Tabla de picar roja con carne roja cruda">
               </div>
               <figcaption><strong>🔴 Roja: carnes rojas crudas</strong>
                 <p>Para carne de res, cerdo y otras carnes rojas crudas.</p>
@@ -1368,8 +1369,7 @@
           <li class="bstep tstep " style="--step-color: #2039c7;">
             <figure>
               <div class="tstep-img" data-emoji="🔪">
-                <img src="imgs/Higiene/tablas/2.png" loading="lazy"
-                  alt="Dos tablas de picar en un mesón: en una, pollo crudo con su cuchillo; en la otra, verduras cocidas con otro cuchillo">
+                <img src="imgs/Higiene/tablas/2.png" loading="lazy" alt="Tabla de picar azul con pescado crudo">
               </div>
               <figcaption><strong>🔵 Azul: pescados y mariscos crudos</strong>
                 <p>Para pescado, camarones y otros productos de mar crudos.</p>
@@ -1490,18 +1490,148 @@
         </ol>
       </div>
       </div>
-
       </div>
-
-
-
       <!-- ===== Tiempos de cocción (Issue 1.3) ===== -->
       <div class="panel" id="p-coccion" role="tabpanel">
         <div class="card wide">
           <p>Cocinar completamente los alimentos elimina los microbios que pueden enfermar a tu hijo/a. Aquí encontrarás
             tiempos aproximados y las señales para saber cuándo un alimento está listo.</p>
         </div>
-        <!-- TODO Issue 1.3: tarjetas por grupo de alimentos (.grid-3 > .card), validar con nutricionista -->
+
+        <!-- Carnes, pollo, pescado y huevo -->
+        <h3 class="block-title">🍗 Carnes, pollo, pescado y huevo <small>(OMS, 2006; USDA-FSIS, s. f.)</small></h3>
+        <!-- TODO: validar con nutricionista los tiempos de cocción -->
+        <div class="grid-3">
+          <div class="card">
+            <h4>🐔 Pollo</h4>
+            <p class="big">74 °C</p>
+            <ul class="check">
+              <li><strong>En trozos pequeños:</strong> 15 a 25 minutos, hervido.</li>
+              <li><strong>Pechuga entera:</strong> 20 a 30 minutos, según el tamaño.</li>
+              <li><strong>Señal:</strong> no quedan partes rosadas por dentro y los jugos salen claros.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>🐟 Pescado</h4>
+            <p class="big">63 °C</p>
+            <ul class="check">
+              <li><strong>En filete:</strong> 8 a 15 minutos, al vapor o al horno.</li>
+              <li><strong>Señal:</strong> la carne se ve opaca, ya no transparente, y se separa fácil con un tenedor.
+              </li>
+              <li>Revisa con cuidado que no queden espinas antes de servir.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>🥩 Carne de res y cerdo</h4>
+            <p class="big">71 °C <small>carne molida</small></p>
+            <ul class="check">
+              <li><strong>Res en trozos pequeños:</strong> 20 a 40 minutos, según el corte.</li>
+              <li><strong>Cerdo en trozos:</strong> 20 a 40 minutos o más, según el corte.</li>
+              <li><strong>Carne molida:</strong> cocínala hasta que esté completamente cocida, sin partes rosadas.</li>
+              <!-- TODO: validar con nutricionista tiempo y temperatura del hígado de res -->
+              <li><strong>Hígado de res · 71 °C:</strong> cocínalo hasta que esté completamente hecho por dentro, sin
+                partes crudas.</li>
+              <li><strong>Señal:</strong> la carne queda tierna y sin partes rojas o rosadas por dentro.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>🥚 Huevo</h4>
+            <ul class="check">
+              <li><strong>Huevo duro:</strong> aproximadamente 10 a 15 minutos.</li>
+              <li><strong>Señal:</strong> la yema y la clara están firmes.</li>
+              <li>Para bebés y niños pequeños, nunca lo ofrezcas crudo ni tibio.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout">
+          <span class="callout-icon">🌡️</span>
+          <div>
+            <h4>¿Tienes termómetro de cocina?</h4>
+            <p>Mide la temperatura en la parte más gruesa del alimento, sin tocar el hueso. Si no tienes termómetro,
+              guíate por las señales: es lo que hace la mayoría de las familias.</p>
+          </div>
+        </div>
+
+        <!-- Vegetales, granos y frutas -->
+        <h3 class="block-title">🥕 Verduras, tubérculos, granos y frutas</h3>
+        <!-- TODO: validar con nutricionista y agregar fuente de los tiempos de cocción -->
+        <div class="grid-3">
+          <div class="card">
+            <h4>🍠 Tubérculos y plátanos</h4>
+            <ul class="check">
+              <li><strong>Papa · 12 a 20 min.</strong> Hervida en trozos medianos. Al vapor puede tardar un poco más.
+              </li>
+              <li><strong>Yuca · 20 a 35 min.</strong> Cocínala hasta que esté blanda y retira las fibras duras.</li>
+              <li><strong>Plátano verde · 15 a 25 min.</strong> Hiérvelo hasta que se ablande.</li>
+              <li><strong>Ñame · 15 a 30 min.</strong> Cocínalo hasta que se pueda triturar fácilmente.</li>
+              <!-- TODO: validar con nutricionista el tiempo de cocción del plátano maduro y el guineo verde -->
+              <li><strong>Plátano maduro y guineo verde.</strong> Cocínalos hasta que estén muy blandos.</li>
+              <li><strong>Señal:</strong> el tenedor entra sin resistencia.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>🥦 Verduras</h4>
+            <ul class="check">
+              <li><strong>Zanahoria · 10 a 20 min.</strong> Hervida en trozos pequeños. Al vapor, unos 10 a 15 minutos.
+              </li>
+              <li><strong>Ahuyama · 10 a 15 min.</strong> Hervida o al vapor, hasta que se deshaga fácil con un
+                tenedor.</li>
+              <li><strong>Brócoli · 5 a 10 min.</strong> Mejor al vapor, para que conserve su textura.</li>
+              <li><strong>Habichuela · 8 a 15 min.</strong> Hervida o al vapor hasta que quede blanda.</li>
+              <li><strong>Coliflor · 5 a 10 min.</strong> Al vapor o hervida, sin que se deshaga demasiado.</li>
+              <li><strong>Espinaca · 2 a 5 min.</strong> Cocción breve, con poca agua o al vapor.</li>
+              <li><strong>Remolacha · 11 a 13 min.</strong> Hervida en trozos pequeños.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>🫘 Leguminosas</h4>
+            <ul class="check">
+              <li><strong>Lentejas · 20 a 35 min.</strong> Cocínalas hasta que se aplasten fácilmente.</li>
+              <li><strong>Fríjoles · 60 a 120 min o más.</strong> Déjalos en remojo antes y cocínalos hasta que estén
+                muy blandos. El tiempo depende del tipo de fríjol y de la olla.</li>
+              <li><strong>Garbanzos · 60 a 120 min o más.</strong> Déjalos en remojo y cocínalos bien. En olla a presión
+                el tiempo se reduce bastante.</li>
+              <!-- TODO: validar con nutricionista el tiempo de cocción de la arveja seca -->
+              <li><strong>Señal:</strong> se aplastan fácil entre dos dedos o con un tenedor.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>🍚 Cereales</h4>
+            <ul class="check">
+              <li><strong>Arroz · 15 a 25 min.</strong> Cocínalo hasta que quede completamente blando.</li>
+              <li><strong>Avena en hojuelas · 5 a 10 min.</strong> Revuelve y comprueba que tenga una textura suave.
+              </li>
+              <li><strong>Pasta · 7 a 12 min.</strong> Cocínala hasta que quede blanda, siguiendo el empaque.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>🍎 Frutas para purés</h4>
+            <ul class="check">
+              <li><strong>Manzana · 8 a 12 min.</strong> Cocínala en trozos hasta que esté blanda.</li>
+              <li><strong>Pera · 5 a 10 min.</strong> Cocínala si está firme. Si está madura y blanda, puedes ofrecerla
+                sin cocinar.</li>
+              <li><strong>Durazno · 3 a 8 min.</strong> Cocínalo solo si necesitas ablandarlo.</li>
+              <li>El mango, el banano y la papaya maduros no necesitan cocción: solo lávalos bien.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="note center">⏱️ Los tiempos son aproximados y cambian según el tamaño de los trozos, la olla y el
+          fogón. La señal más confiable es la textura o la temperatura interna.</p>
+
+        <!-- Conservar nutrientes -->
+        <!-- TODO: validar con nutricionista y agregar fuente -->
+        <div class="callout">
+          <span class="callout-icon">🥗</span>
+          <div>
+            <h4>¿Cómo evitar que los alimentos pierdan sus nutrientes?</h4>
+            <p><strong>Usa el método de cocción adecuado.</strong> Cocinar al vapor o por poco tiempo y con poca agua
+              ayuda a que las verduras pierdan menos vitaminas.</p>
+            <p><strong>No los cocines de más.</strong> Cocina hasta lograr la textura necesaria y que el alimento sea
+              seguro, sin dejarlo en el fuego más tiempo del necesario.</p>
+          </div>
+        </div>
       </div>
       <p class="refs">Referencias: Organización Mundial de la Salud (s. f.) · OMS (2006), Cinco claves para la inocuidad
         de los alimentos · OMS (2009), ¿Cómo lavarse las manos? · OMS (2019) · UNICEF (s. f.) · UNICEF (2023) · ICBF (s.
