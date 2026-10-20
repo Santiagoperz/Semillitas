@@ -204,6 +204,7 @@ img{max-width:100%}
 .note{font-size:.85rem;color:var(--muted);font-style:italic}
 .note.center{text-align:center;margin-top:1rem}
 .block-title{margin:2.2rem 0 1rem;color:var(--sea-d);font-size:1.4rem}
+.EjeError{text-align: center; margin-top: 1rem; margin-bottom: 1.4rem;}
 .titulo-menu{margin-left:clamp(0rem, 20vw - 6rem, 13rem)}
 
 .callout{display:flex;gap:1rem;align-items:flex-start;background:#fff7e0;border-left:6px solid var(--mango);border-radius:var(--radius);padding:1.3rem 1.5rem;margin-top:1.5rem}
@@ -243,6 +244,26 @@ img{max-width:100%}
 .group{background:#fff;border-radius:18px;padding:1.2rem;text-align:center;font-weight:700;border-bottom:6px solid var(--c);box-shadow:var(--shadow)}
 .group span{display:block;font-size:2.2rem}
 .empty{text-align:center}
+
+/* Tarjeta "Errores que nunca debes cometer" */
+.card-nunca{
+  margin-top:1.5rem;
+  padding:1.3rem 1.5rem;
+  border-top:6px solid #fc0202;
+}
+.card-nunca h4{
+  text-align:center;
+  color:var(--sea-d);
+  font-size:1.1rem;
+  margin-bottom:1.1rem;
+}
+.card-nunca .check li{
+  font-size:.9rem;
+  line-height:1.5;
+  margin-bottom:.7rem;
+}
+.card-nunca .check li:last-child{margin-bottom:0}
+.card-nunca .check li::before{content:"❌";font-size:.65rem}
 
 /* ---------- Tabla de precios ---------- */
 .controls{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;margin-bottom:1.2rem}
@@ -406,6 +427,21 @@ body.modal-open{overflow:hidden}
   border-radius:14px;
   background:var(--tips-bg, #eaf7f1);
 }
+.galeria .tstep {
+  padding: .6rem;
+  background: #f5f5f5;
+  border: 3px solid var(--step-color);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+}
+
+.tstep-img{
+  aspect-ratio:3/2;
+  border-radius:14px;
+  background:var(--tips-bg, #e30cdc);
+  cursor:zoom-in;
+}
 .galeria .bstep-img img{object-fit:contain}
 
 /* Al pasar el mouse */
@@ -431,6 +467,8 @@ body.modal-open{overflow:hidden}
 @media (min-width:721px){
   #tips .momentos ul{columns:2;column-gap:2rem}
   #tips .momentos li{break-inside:avoid}
+  .card-nunca .check{columns:2;column-gap:2rem}
+  .card-nunca .check li{break-inside:avoid}
 }
 
 /* ---------- Visor de imágenes ---------- */

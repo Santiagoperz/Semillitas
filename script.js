@@ -228,7 +228,7 @@ document.querySelectorAll('[data-tabs]').forEach(grupo => {
     }
 
     document.querySelectorAll('.galeria').forEach(galeria => {
-      const imgs = [...galeria.querySelectorAll('.bstep-img img')];
+      const imgs = [...galeria.querySelectorAll('.bstep-img img, .tstep-img img')];
       imgs.forEach(img => {
         const caja = img.parentElement;
         caja.tabIndex = 0;
