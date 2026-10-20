@@ -1,8 +1,27 @@
 /* ===========================================================
-    Semillitas · Interacciones
+   Semillitas · Interacciones
+   -----------------------------------------------------------
+   1. Configuración
+   2. Datos de precios
+   3. Utilidades
+   4. Tabla de precios
+   5. Pestañas
+   6. Slider de ejes
+   7. Visor de imágenes
+   8. Recetas
+   9. Portada
+   10. Menú móvil
+   11. Scroll: progreso, botón arriba y enlace activo
+   12. Aparición al hacer scroll
+   13. Respaldo de imágenes
    =========================================================== */
 
-// ---------- Tiendas ----------
+
+/* ===========================================================
+   1. Configuración
+   =========================================================== */
+const MENOS_MOVIMIENTO = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 const tiendas = [
   { k: 'baz', label: 'Bazurto' },
   { k: 'd1', label: 'D1' },
@@ -11,9 +30,14 @@ const tiendas = [
 ];
 const supers = ['d1', 'ara', 'mega'];
 
-// ---------- Datos de precios (COP) ----------
-// p: precio por unidad en cada tienda (null = no disponible habitualmente)
-// ok: tiendas con precio consultado. Bazurto es dato SIPSA, salvo si bazEst: true (estimado).
+
+/* ===========================================================
+   2. Datos de precios (COP)
+   -----------------------------------------------------------
+   p:      precio por unidad en cada tienda (null = no disponible habitualmente)
+   ok:     tiendas con precio consultado
+   bazEst: true si el precio de Bazurto es estimado (si no, es dato SIPSA)
+   =========================================================== */
 const alimentos = [
   // ===== Frutas =====
   { n: 'Mango común', e: '🥭', cat: 'Frutas', u: 'kg', p: { baz: 456, d1: 2900, ara: 2700, mega: 3200 }, ok: [], etapa: 'Desde 6 meses (puré o compota)' },
@@ -68,8 +92,8 @@ const alimentos = [
   { n: 'Harina de maíz precocida', e: '🌽', cat: 'Granos', u: 'kg', p: { baz: 3479, d1: 4200, ara: 4100, mega: 4500 }, ok: [], etapa: 'Arepas para niños y escolares' },
   { n: 'Pasta', e: '🍝', cat: 'Granos', u: 'kg', p: { baz: 6500, d1: 5800, ara: 5600, mega: 7200 }, ok: [], etapa: 'Bien cocida y picada desde 9 meses' },
   { n: 'Avena en hojuelas', e: '🥣', cat: 'Granos', u: 'kg', p: { baz: 10104, d1: 9800, ara: 9900, mega: 11200 }, ok: [], etapa: 'Coladas sin azúcar añadida' },
-  { n: 'Garbanzo',        e: '🫘', cat: 'Granos', u: 'kg', p: { baz: null, d1: null, ara: null, mega: 5580 }, ok: ['mega'], etapa: 'Remojado y bien cocido · proteína vegetal' },
-  
+  { n: 'Garbanzo', e: '🫘', cat: 'Granos', u: 'kg', p: { baz: null, d1: null, ara: null, mega: 5580 }, ok: ['mega'], etapa: 'Remojado y bien cocido · proteína vegetal' },
+
   // ===== Proteínas =====
   { n: 'Huevo rojo A', e: '🥚', cat: 'Proteínas', u: 'cubeta x30', p: { baz: 14820, d1: 11990, ara: 11500, mega: 15900 }, ok: ['d1'], etapa: 'Empieza por la yema' },
   { n: 'Muslo / contramuslo de pollo', e: '🍗', cat: 'Proteínas', u: 'kg', p: { baz: 6650, d1: 11900, ara: 7600, mega: 8390 }, ok: ['ara', 'mega'], etapa: 'Hierro hemínico' },
@@ -82,6 +106,7 @@ const alimentos = [
   { n: 'Mojarra lora', e: '🐠', cat: 'Proteínas', u: 'kg', p: { baz: 11000, d1: null, ara: 15500, mega: 15900 }, ok: [], etapa: 'Retira bien las espinas' },
   { n: 'Bocachico', e: '🐟', cat: 'Proteínas', u: 'kg', p: { baz: 13500, d1: null, ara: null, mega: 16900 }, ok: [], etapa: 'Pescado de río típico · muchas espinas' },
   { n: 'Hígado de res', e: '🥩', cat: 'Proteínas', u: 'kg', p: { baz: null, d1: null, ara: null, mega: 10600 }, ok: ['mega'], etapa: 'Muy rico en hierro · siempre bien cocido' },
+
   // ===== Lácteos =====
   { n: 'Leche entera', e: '🥛', cat: 'Lácteos', u: 'litro', p: { baz: null, d1: 3900, ara: 3800, mega: 4500 }, ok: [], etapa: 'Leche de vaca como bebida desde 12 meses' },
   { n: 'Yogurt natural', e: '🥣', cat: 'Lácteos', u: 'litro', p: { baz: null, d1: 7900, ara: 7500, mega: 9500 }, ok: [], etapa: 'Sin azúcar · útil desde el primer año' },
@@ -89,92 +114,125 @@ const alimentos = [
   { n: 'Queso costeño', e: '🧀', cat: 'Lácteos', u: 'kg', p: { baz: 22000, d1: 26000, ara: 25500, mega: 27900 }, ok: [], etapa: 'Muy salado: no apto para bebés' }
 ];
 
-const cop = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 });
-const etiqueta = k => tiendas.find(t => t.k === k).label;
 
-// Cálculos: más barato general, súper más barato y ahorro
+/* ===========================================================
+   3. Utilidades
+   =========================================================== */
+const cop = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 });
+const etiqueta = k => tiendas.find(t => t.k === k)?.label ?? '—';
+const normalizar = s => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+/** Reinicia una animación CSS quitando y volviendo a poner la clase. */
+function reanimar(el, clase) {
+  el.classList.remove(clase);
+  void el.offsetWidth;
+  el.classList.add(clase);
+}
+
+/** Calcula, para cada alimento, la tienda más barata, el súper más barato y el ahorro. */
 alimentos.forEach(a => {
   const disponibles = tiendas.map(t => t.k).filter(k => a.p[k] != null);
   const valores = disponibles.map(k => a.p[k]);
   a.min = Math.min(...valores);
-  const max = Math.max(...valores);
   a.mejor = disponibles.find(k => a.p[k] === a.min);
-  a.ahorro = Math.round(((max - a.min) / max) * 100);
+  a.ahorro = Math.round(((Math.max(...valores) - a.min) / Math.max(...valores)) * 100);
 
   const sups = supers.filter(k => a.p[k] != null);
-  const minSup = Math.min(...sups.map(k => a.p[k]));
-  a.mejorSuper = sups.find(k => a.p[k] === minSup);
-  a.minSuper = minSup;
+  if (sups.length) {
+    a.minSuper = Math.min(...sups.map(k => a.p[k]));
+    a.mejorSuper = sups.find(k => a.p[k] === a.minSuper);
+  } else {
+    a.minSuper = null;
+    a.mejorSuper = null;
+  }
 });
 
-// ---------- Tabla ----------
-const tbody = document.getElementById('tbody');
-const search = document.getElementById('search');
-const sortSel = document.getElementById('sort');
-const filtersBox = document.getElementById('filters');
-const emptyMsg = document.getElementById('emptyMsg');
-let categoria = 'Todos';
 
-['Todos', ...new Set(alimentos.map(a => a.cat))].forEach(c => {
-  const b = document.createElement('button');
-  b.className = 'filter' + (c === 'Todos' ? ' active' : '');
-  b.textContent = c;
-  b.addEventListener('click', () => {
-    categoria = c;
-    filtersBox.querySelectorAll('.filter').forEach(f => f.classList.toggle('active', f === b));
-    renderTabla();
-  });
-  filtersBox.appendChild(b);
-});
+/* ===========================================================
+   4. Tabla de precios
+   =========================================================== */
+(function initTablaPrecios() {
+  const tbody = document.getElementById('tbody');
+  const search = document.getElementById('search');
+  const sortSel = document.getElementById('sort');
+  const filtersBox = document.getElementById('filters');
+  const emptyMsg = document.getElementById('emptyMsg');
+  if (!tbody || !search) return;
 
-const normalizar = s => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  let categoria = 'Todos';
 
-function celdaPrecio(a, k) {
-  const label = etiqueta(k);
-  const v = a.p[k];
-  if (v == null) return `<td class="price na" data-label="${label}">—</td>`;
-  const verificado = (k === 'baz' && !a.bazEst) || a.ok.includes(k);
-  const marca = verificado ? '<b class="mk ok" title="Precio consultado">✓</b>' : '<b class="mk est" title="Precio estimado">≈</b>';
-  const best = a.mejor === k ? ' best' : '';
-  return `<td class="price${best}" data-label="${label}">${cop.format(v)}${marca}</td>`;
-}
-
-function renderTabla() {
-  const q = normalizar(search.value.trim());
-  const lista = alimentos.filter(a =>
-    (categoria === 'Todos' || a.cat === categoria) && normalizar(a.n).includes(q)
-  );
-
-  const orden = sortSel.value;
-  lista.sort((x, y) => {
-    if (orden === 'precio') return x.min - y.min;
-    if (orden === 'ahorro') return y.ahorro - x.ahorro;
-    return x.n.localeCompare(y.n, 'es');
+  // Botones de filtro por categoría
+  ['Todos', ...new Set(alimentos.map(a => a.cat))].forEach(c => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'filter' + (c === 'Todos' ? ' active' : '');
+    b.textContent = c;
+    b.addEventListener('click', () => {
+      categoria = c;
+      filtersBox.querySelectorAll('.filter').forEach(f => f.classList.toggle('active', f === b));
+      render();
+    });
+    filtersBox.appendChild(b);
   });
 
-  tbody.innerHTML = lista.map(a => `
-    <tr>
-      <td><div class="food"><span class="food-emoji">${a.e}</span><div>${a.n}<em>${a.etapa}</em></div></div></td>
-      <td data-label="Unidad">${a.u}</td>
-      ${tiendas.map(t => celdaPrecio(a, t.k)).join('')}
-      <td data-label="Más barato en">
-        <span class="badge">${etiqueta(a.mejor)}</span>
-        <span class="save-small">ahorra hasta ${a.ahorro}%</span>
-      </td>
+  function celdaPrecio(a, k) {
+    const label = etiqueta(k);
+    const v = a.p[k];
+    if (v == null) return `<td class="price na" data-label="${label}">—</td>`;
+    const verificado = (k === 'baz' && !a.bazEst) || a.ok.includes(k);
+    const marca = verificado
+      ? '<b class="mk ok" title="Precio consultado">✓</b>'
+      : '<b class="mk est" title="Precio estimado">≈</b>';
+    const best = a.mejor === k ? ' best' : '';
+    return `<td class="price${best}" data-label="${label}">${cop.format(v)}${marca}</td>`;
+  }
+
+  function celdaSuper(a) {
+    if (!a.mejorSuper) return '<td data-label="Súper más barato">—</td>';
+    return `
       <td data-label="Súper más barato">
         <span class="badge super">${etiqueta(a.mejorSuper)}</span>
         <span class="save-small">${cop.format(a.minSuper)}</span>
-      </td>
-    </tr>`).join('');
+      </td>`;
+  }
 
-  emptyMsg.hidden = lista.length > 0;
-}
+  function render() {
+    const q = normalizar(search.value.trim());
+    const lista = alimentos.filter(a =>
+      (categoria === 'Todos' || a.cat === categoria) && normalizar(a.n).includes(q)
+    );
 
-search.addEventListener('input', renderTabla);
-sortSel.addEventListener('change', renderTabla);
-renderTabla();
+    const orden = sortSel.value;
+    lista.sort((x, y) => {
+      if (orden === 'precio') return x.min - y.min;
+      if (orden === 'ahorro') return y.ahorro - x.ahorro;
+      return x.n.localeCompare(y.n, 'es');
+    });
 
-// ---------- Pestañas genéricas (stepper, subpestañas, edades) ----------
+    tbody.innerHTML = lista.map(a => `
+      <tr>
+        <td><div class="food"><span class="food-emoji">${a.e}</span><div>${a.n}<em>${a.etapa}</em></div></div></td>
+        <td data-label="Unidad">${a.u}</td>
+        ${tiendas.map(t => celdaPrecio(a, t.k)).join('')}
+        <td data-label="Más barato en">
+          <span class="badge">${etiqueta(a.mejor)}</span>
+          <span class="save-small">ahorra hasta ${a.ahorro}%</span>
+        </td>
+        ${celdaSuper(a)}
+      </tr>`).join('');
+
+    emptyMsg.hidden = lista.length > 0;
+  }
+
+  search.addEventListener('input', render);
+  sortSel.addEventListener('change', render);
+  render();
+})();
+
+
+/* ===========================================================
+   5. Pestañas (stepper, subpestañas y edades)
+   =========================================================== */
 document.querySelectorAll('[data-tabs]').forEach(grupo => {
   const botones = grupo.querySelectorAll(':scope > button');
   botones.forEach(btn => {
@@ -182,136 +240,55 @@ document.querySelectorAll('[data-tabs]').forEach(grupo => {
       botones.forEach(b => {
         const activo = b === btn;
         b.classList.toggle('active', activo);
-        b.setAttribute('aria-selected', activo);
-        document.getElementById(b.dataset.panel).classList.toggle('active', activo);
+        b.setAttribute('aria-selected', String(activo));
+        document.getElementById(b.dataset.panel)?.classList.toggle('active', activo);
       });
     });
   });
 });
 
-// ---------- Slider de ejes ----------
+
+/* ===========================================================
+   6. Slider de ejes
+   =========================================================== */
 (function initSlider() {
   const slider = document.getElementById('slider');
   if (!slider) return;
 
   const track = document.getElementById('sliderTrack');
+  const viewport = slider.querySelector('.slider-viewport');
   const slides = [...track.children];
   const dotsBox = document.getElementById('sliderDots');
   const bar = document.getElementById('sliderBar');
   const DURACION = 7000;
   let index = 0, timer = null, inicioBarra = 0, rafId = null;
 
-  // Puntos
+  // Puntos de navegación
   const dots = slides.map((_, i) => {
     const d = document.createElement('button');
+    d.type = 'button';
     d.className = 'slider-dot';
     d.setAttribute('role', 'tab');
     d.setAttribute('aria-label', `Ir al eje ${i + 1}`);
-    d.addEventListener('click', () => { irA(i); reiniciar(); });
+    d.addEventListener('click', () => { irA(i); iniciar(); });
     dotsBox.appendChild(d);
     return d;
   });
-
-  // ---------- Visor de imágenes (galerías) ----------
-  (function initLightbox() {
-    const lb = document.getElementById('lightbox');
-    if (!lb) return;
-    const lbImg = document.getElementById('lbImg');
-    const lbCaption = document.getElementById('lbCaption');
-    const lbCount = document.getElementById('lbCount');
-    const btnPrev = document.getElementById('lbPrev');
-    const btnNext = document.getElementById('lbNext');
-    let grupo = [], actual = 0, origen = null;
-
-    function mostrar(n) {
-      actual = (n + grupo.length) % grupo.length;
-      const img = grupo[actual];
-      lbImg.src = img.currentSrc || img.src;
-      lbImg.alt = img.alt;
-      const texto = img.closest('figure')?.querySelector('figcaption');
-      lbCaption.textContent = texto ? texto.textContent.trim() : img.alt;
-      lbCount.textContent = `${actual + 1} de ${grupo.length}`;
-      const varias = grupo.length > 1;
-      btnPrev.hidden = btnNext.hidden = lbCount.hidden = !varias;
-    }
-
-    document.querySelectorAll('.galeria').forEach(galeria => {
-      const imgs = [...galeria.querySelectorAll('.bstep-img img, .tstep-img img')];
-      imgs.forEach(img => {
-        const caja = img.parentElement;
-        caja.tabIndex = 0;
-        caja.setAttribute('role', 'button');
-        caja.setAttribute('aria-label', 'Ampliar imagen: ' + img.alt);
-
-        const abrir = () => {
-          if (caja.classList.contains('sin-img')) return; // la imagen no cargó
-          grupo = imgs.filter(i => !i.parentElement.classList.contains('sin-img'));
-          origen = caja;
-          mostrar(grupo.indexOf(img));
-          lb.showModal();
-          document.body.classList.add('modal-open');
-        };
-        caja.addEventListener('click', abrir);
-        caja.addEventListener('keydown', e => {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abrir(); }
-        });
-      });
-    });
-    // Imágenes sueltas (fuera de una galería): se abren solas, sin flechas
-    document.querySelectorAll('img.ampliable').forEach(img => {
-      img.tabIndex = 0;
-      img.setAttribute('role', 'button');
-      img.setAttribute('aria-label', 'Ampliar imagen: ' + img.alt);
-
-      const abrir = () => {
-        grupo = [img];
-        origen = img;
-        mostrar(0);
-        lb.showModal();
-        document.body.classList.add('modal-open');
-      };
-      img.addEventListener('click', abrir);
-      img.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abrir(); }
-      });
-    });
-
-    btnPrev.addEventListener('click', () => mostrar(actual - 1));
-    btnNext.addEventListener('click', () => mostrar(actual + 1));
-    document.getElementById('lbClose').addEventListener('click', () => lb.close());
-
-    // Cerrar al tocar fuera de la imagen
-    lb.addEventListener('click', e => {
-      if (e.target === lb || e.target.classList.contains('lb-figure')) lb.close();
-    });
-
-    // Flechas del teclado (Esc ya lo maneja <dialog>)
-    lb.addEventListener('keydown', e => {
-      if (e.key === 'ArrowLeft') mostrar(actual - 1);
-      if (e.key === 'ArrowRight') mostrar(actual + 1);
-    });
-
-    lb.addEventListener('close', () => {
-      document.body.classList.remove('modal-open');
-      lbImg.removeAttribute('src');
-      if (origen) origen.focus();
-    });
-  })();
 
   function irA(i) {
     index = (i + slides.length) % slides.length;
     track.style.transform = `translateX(-${index * 100}%)`;
     slides.forEach((s, n) => {
       s.classList.toggle('is-active', n === index);
-      s.setAttribute('aria-hidden', n !== index);
+      s.setAttribute('aria-hidden', String(n !== index));
     });
     dots.forEach((d, n) => {
       d.classList.toggle('active', n === index);
-      d.setAttribute('aria-selected', n === index);
+      d.setAttribute('aria-selected', String(n === index));
     });
   }
 
-  // Autoplay con barra de progreso
+  // Avance automático con barra de progreso
   function animarBarra(t) {
     const p = Math.min((t - inicioBarra) / DURACION, 1);
     bar.style.width = p * 100 + '%';
@@ -319,6 +296,7 @@ document.querySelectorAll('[data-tabs]').forEach(grupo => {
   }
   function iniciar() {
     detener();
+    if (MENOS_MOVIMIENTO) return;
     inicioBarra = performance.now();
     rafId = requestAnimationFrame(animarBarra);
     timer = setTimeout(() => { irA(index + 1); iniciar(); }, DURACION);
@@ -328,10 +306,10 @@ document.querySelectorAll('[data-tabs]').forEach(grupo => {
     cancelAnimationFrame(rafId);
     bar.style.width = '0';
   }
-  function reiniciar() { iniciar(); }
 
-  document.getElementById('prevSlide').addEventListener('click', () => { irA(index - 1); reiniciar(); });
-  document.getElementById('nextSlide').addEventListener('click', () => { irA(index + 1); reiniciar(); });
+  // Flechas
+  document.getElementById('prevSlide').addEventListener('click', () => { irA(index - 1); iniciar(); });
+  document.getElementById('nextSlide').addEventListener('click', () => { irA(index + 1); iniciar(); });
 
   // Pausa al pasar el mouse o enfocar
   slider.addEventListener('mouseenter', detener);
@@ -340,15 +318,14 @@ document.querySelectorAll('[data-tabs]').forEach(grupo => {
   slider.addEventListener('focusout', iniciar);
 
   // Teclado
-  slider.setAttribute('tabindex', '0');
+  slider.tabIndex = 0;
   slider.addEventListener('keydown', e => {
-    if (e.key === 'ArrowLeft') { irA(index - 1); }
-    if (e.key === 'ArrowRight') { irA(index + 1); }
+    if (e.key === 'ArrowLeft') irA(index - 1);
+    if (e.key === 'ArrowRight') irA(index + 1);
   });
 
   // Deslizar con el dedo o arrastrar con el mouse
   let xInicio = 0, arrastrando = false, ancho = 0;
-  const viewport = slider.querySelector('.slider-viewport');
 
   viewport.addEventListener('pointerdown', e => {
     arrastrando = true;
@@ -367,80 +344,133 @@ document.querySelectorAll('[data-tabs]').forEach(grupo => {
     arrastrando = false;
     track.classList.remove('dragging');
     const dx = e.clientX - xInicio;
-    if (Math.abs(dx) > ancho * 0.18) irA(index + (dx < 0 ? 1 : -1));
-    else irA(index);
+    irA(Math.abs(dx) > ancho * 0.18 ? index + (dx < 0 ? 1 : -1) : index);
     iniciar();
   });
 
-  // Respeta a quienes prefieren menos movimiento
-  const sinMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
   irA(0);
-  if (!sinMovimiento) iniciar();
+  iniciar();
 })();
 
-// ---------- Menú móvil ----------
-const menuBtn = document.getElementById('menuBtn');
-const nav = document.getElementById('nav');
-menuBtn.addEventListener('click', () => {
-  const abierto = nav.classList.toggle('open');
-  menuBtn.setAttribute('aria-expanded', abierto);
-});
-nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
 
-// ---------- Barra de progreso, botón arriba y enlace activo ----------
-const progress = document.getElementById('progress');
-const toTop = document.getElementById('toTop');
-const secciones = [...document.querySelectorAll('main section[id]')];
-const links = [...nav.querySelectorAll('a')];
+/* ===========================================================
+   7. Visor de imágenes
+   =========================================================== */
+(function initLightbox() {
+  const lb = document.getElementById('lightbox');
+  if (!lb) return;
 
-window.addEventListener('scroll', () => {
-  const h = document.documentElement;
-  progress.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100 + '%';
-  toTop.classList.toggle('show', h.scrollTop > 600);
+  const lbImg = document.getElementById('lbImg');
+  const lbCaption = document.getElementById('lbCaption');
+  const lbCount = document.getElementById('lbCount');
+  const btnPrev = document.getElementById('lbPrev');
+  const btnNext = document.getElementById('lbNext');
+  let grupo = [], actual = 0, origen = null;
 
-  // Ignora las secciones ocultas (etapas no activas) y usa data-nav si la sección
-  // pertenece a otro enlace del menú (las tres etapas resaltan "Etapas de vida")
-  const actual = secciones
-    .filter(s => s.offsetParent !== null && s.getBoundingClientRect().top < 140)
-    .pop();
-  const id = actual && (actual.dataset.nav || actual.id);
-  links.forEach(l => l.classList.toggle('current', l.getAttribute('href') === '#' + id));
-}, { passive: true });
+  function mostrar(n) {
+    actual = (n + grupo.length) % grupo.length;
+    const img = grupo[actual];
+    lbImg.src = img.currentSrc || img.src;
+    lbImg.alt = img.alt;
+    const texto = img.closest('figure')?.querySelector('figcaption');
+    lbCaption.textContent = texto ? texto.textContent.trim() : img.alt;
+    lbCount.textContent = `${actual + 1} de ${grupo.length}`;
+    const varias = grupo.length > 1;
+    btnPrev.hidden = btnNext.hidden = lbCount.hidden = !varias;
+  }
 
-toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  function abrir(imagenes, img, elementoOrigen) {
+    grupo = imagenes;
+    origen = elementoOrigen;
+    mostrar(grupo.indexOf(img));
+    lb.showModal();
+    document.body.classList.add('modal-open');
+  }
 
-// ---------- Aparición al hacer scroll ----------
-const io = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  /** Hace que un elemento se pueda activar con clic, Enter o espacio. */
+  function hacerAmpliable(el, alt, alAbrir) {
+    el.tabIndex = 0;
+    el.setAttribute('role', 'button');
+    el.setAttribute('aria-label', 'Ampliar imagen: ' + alt);
+    el.addEventListener('click', alAbrir);
+    el.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); alAbrir(); }
+    });
+  }
+
+  // Galerías: se navega entre las imágenes del mismo grupo
+  document.querySelectorAll('.galeria').forEach(galeria => {
+    const imgs = [...galeria.querySelectorAll('.bstep-img img, .tstep-img img')];
+    imgs.forEach(img => {
+      const caja = img.parentElement;
+      hacerAmpliable(caja, img.alt, () => {
+        if (caja.classList.contains('sin-img')) return;   // la imagen no cargó
+        const visibles = imgs.filter(i => !i.parentElement.classList.contains('sin-img'));
+        abrir(visibles, img, caja);
+      });
+    });
   });
-}, { threshold: 0.15 });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// ---------- Panel de recetas (una a la vez) ----------
-(function initRecetas() {
+  // Imágenes sueltas: se abren solas, sin flechas
+  document.querySelectorAll('img.ampliable').forEach(img => {
+    hacerAmpliable(img, img.alt, () => abrir([img], img, img));
+  });
+
+  btnPrev.addEventListener('click', () => mostrar(actual - 1));
+  btnNext.addEventListener('click', () => mostrar(actual + 1));
+  document.getElementById('lbClose').addEventListener('click', () => lb.close());
+
+  // Cerrar al tocar fuera de la imagen
+  lb.addEventListener('click', e => {
+    if (e.target === lb || e.target.classList.contains('lb-figure')) lb.close();
+  });
+
+  // Flechas del teclado (Esc ya lo maneja <dialog>)
+  lb.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') mostrar(actual - 1);
+    if (e.key === 'ArrowRight') mostrar(actual + 1);
+  });
+
+  lb.addEventListener('close', () => {
+    document.body.classList.remove('modal-open');
+    lbImg.removeAttribute('src');
+    origen?.focus();
+  });
+})();
+
+
+/* ===========================================================
+   8. Recetas (una a la vez)
+   -----------------------------------------------------------
+   Devuelve abrirReceta(plato, focoAlCerrar) para usarla desde
+   otras partes de la página, como la portada.
+   =========================================================== */
+const abrirReceta = (function initRecetas() {
   const modal = document.getElementById('recipeModal');
-  if (!modal) return;
+  if (!modal) return () => { };
+
   const titulo = document.getElementById('recipeModalTitle');
   const cuerpo = document.getElementById('recipeModalBody');
   let origen = null;
 
-  document.querySelectorAll('.dish').forEach(plato => {
+  function abrir(plato, focoAlCerrar = plato) {
     const receta = plato.querySelector('template.receta');
-    if (!receta) return;
-    plato.addEventListener('click', () => {
-      if (modal.open) return;           // solo una receta a la vez
-      origen = plato;
-      const emoji = plato.querySelector('span').textContent;
-      const nombre = plato.querySelector('.dish-name').textContent;
-      titulo.textContent = `${emoji} ${nombre}`;
-      cuerpo.innerHTML = '';
-      cuerpo.appendChild(receta.content.cloneNode(true));
-      modal.showModal();
-      document.body.classList.add('modal-open');
-      cuerpo.scrollTop = 0;
-    });
+    if (!receta || modal.open) return;
+
+    origen = focoAlCerrar;
+    const emoji = plato.querySelector('span').textContent;
+    const nombre = plato.querySelector('.dish-name').textContent;
+    titulo.textContent = `${emoji} ${nombre}`;
+    cuerpo.replaceChildren(receta.content.cloneNode(true));
+    modal.showModal();
+    document.body.classList.add('modal-open');
+    cuerpo.scrollTop = 0;
+  }
+
+  document.querySelectorAll('.dish').forEach(plato => {
+    if (plato.querySelector('template.receta')) {
+      plato.addEventListener('click', () => abrir(plato));
+    }
   });
 
   const cerrar = () => modal.close();
@@ -449,11 +479,149 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   modal.addEventListener('click', e => { if (e.target === modal) cerrar(); });
   modal.addEventListener('close', () => {
     document.body.classList.remove('modal-open');
-    if (origen) origen.focus();
+    origen?.focus();
+  });
+
+  return abrir;
+})();
+
+
+/* ===========================================================
+   9. Portada
+   =========================================================== */
+(function initPortada() {
+  // Buscador: llena la búsqueda de la tabla de precios y baja hasta ella
+  const form = document.getElementById('portadaBuscar');
+  const search = document.getElementById('search');
+  if (form && search) {
+    const campo = document.getElementById('portadaBuscarInput');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      search.value = campo.value.trim();
+      search.dispatchEvent(new Event('input'));
+      document.getElementById('precios').scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+
+  // Atajos a las etapas: abren la pestaña correspondiente del stepper
+  document.querySelectorAll('.etapas-botones [data-abre]').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelector(`.stepper > button[data-panel="${b.dataset.abre}"]`)?.click();
+      document.getElementById('etapas').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Receta del día: cambia cada día; "Otra" elige una al azar
+  const caja = document.querySelector('.b-receta');
+  const platos = [...document.querySelectorAll('.dish')].filter(d => d.querySelector('template.receta'));
+  if (!caja || !platos.length) return;
+
+  const edades = {
+    'p-6-8': '6 a 8 meses',
+    'p-9-11': '9 a 11 meses',
+    'p-12-23': '12 a 23 meses',
+    'p-ninez': 'Niñez',
+    'p-adolescencia': 'Adolescencia'
+  };
+  const elEmoji = document.getElementById('rdEmoji');
+  const elNombre = document.getElementById('rdNombre');
+  const elEdad = document.getElementById('rdEdad');
+  const btnVer = document.getElementById('rdVer');
+  const btnOtra = document.getElementById('rdOtra');
+  let actual = 0;
+
+  function mostrar(i) {
+    actual = (i + platos.length) % platos.length;
+    const p = platos[actual];
+    elEmoji.textContent = p.querySelector('span').textContent;
+    elNombre.textContent = p.querySelector('.dish-name').textContent;
+    const panel = p.closest('.panel[id]');
+    const momento = p.querySelector('.dish-time')?.textContent;
+    elEdad.textContent = [edades[panel?.id], momento].filter(Boolean).join(' · ');
+    reanimar(caja, 'cambia');
+  }
+
+  const hoy = new Date();
+  const diaDelAnio = Math.floor((hoy - new Date(hoy.getFullYear(), 0, 0)) / 864e5);
+  mostrar(diaDelAnio);
+
+  // Al cerrar la receta, el foco vuelve al botón de la portada
+  btnVer.addEventListener('click', () => abrirReceta(platos[actual], btnVer));
+  btnOtra.addEventListener('click', () => {
+    let n;
+    do { n = Math.floor(Math.random() * platos.length); } while (platos.length > 1 && n === actual);
+    mostrar(n);
   });
 })();
 
-// ---------- Respaldo con emoji si una imagen de pasos no carga ----------
+
+/* ===========================================================
+   10. Menú móvil
+   =========================================================== */
+const menuBtn = document.getElementById('menuBtn');
+const nav = document.getElementById('nav');
+
+function cerrarMenu() {
+  nav.classList.remove('open');
+  menuBtn.setAttribute('aria-expanded', 'false');
+}
+
+menuBtn.addEventListener('click', () => {
+  const abierto = nav.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', String(abierto));
+});
+nav.querySelectorAll('a').forEach(a => a.addEventListener('click', cerrarMenu));
+
+
+/* ===========================================================
+   11. Scroll: progreso, botón arriba y enlace activo
+   =========================================================== */
+(function initScroll() {
+  const progress = document.getElementById('progress');
+  const toTop = document.getElementById('toTop');
+  const secciones = [...document.querySelectorAll('main section[id]')];
+  const links = [...nav.querySelectorAll('a')];
+
+  function actualizar() {
+    const h = document.documentElement;
+    progress.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100 + '%';
+    toTop.classList.toggle('show', h.scrollTop > 600);
+
+    // Ignora las secciones ocultas (etapas no activas) y usa data-nav si la sección
+    // pertenece a otro enlace del menú (las tres etapas resaltan "Etapas de vida")
+    const actual = secciones
+      .filter(s => s.offsetParent !== null && s.getBoundingClientRect().top < 140)
+      .pop();
+    const id = actual && (actual.dataset.nav || actual.id);
+    links.forEach(l => l.classList.toggle('current', l.getAttribute('href') === '#' + id));
+  }
+
+  window.addEventListener('scroll', actualizar, { passive: true });
+  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  actualizar();
+})();
+
+
+/* ===========================================================
+   12. Aparición al hacer scroll
+   =========================================================== */
+(function initReveal() {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+
+
+/* ===========================================================
+   13. Respaldo con emoji si una imagen de pasos no carga
+   =========================================================== */
 document.querySelectorAll('.bstep-img img').forEach(img => {
   const usarEmoji = () => img.parentElement.classList.add('sin-img');
   if (img.complete && img.naturalWidth === 0) usarEmoji();
