@@ -249,7 +249,7 @@ img{max-width:100%}
 .card-nunca{
   margin-top:1.5rem;
   padding:1.3rem 1.5rem;
-  border-top:6px solid #fc0202;
+  border-top:6px solid var(--coral);
 }
 .card-nunca h4{
   text-align:center;
