@@ -293,6 +293,20 @@ img{max-width:100%}
 .sources{margin-top:2rem;font-size:.85rem;color:var(--muted)}
 #precios{background:#e7d5f3}
 
+/* ---------- Comer con poco ---------- */
+#ahorro{background:#fff7e0}
+#ahorro .callout{background:#fff}
+.costos{margin-top:1rem}
+.costo{display:flex;flex-direction:column;gap:.3rem}
+.costo .dish-time{align-self:flex-start}
+.costo .big{line-height:1.1}
+.card.costo h4{margin:0 0 .6rem}
+.costo-lista{list-style:none;font-size:.9rem;border-top:1px dashed #ead9b8;padding-top:.6rem;margin-top:auto}
+.costo-lista li{display:flex;justify-content:space-between;gap:1rem;padding:.2rem 0}
+.costo-lista li span:last-child{font-weight:800;white-space:nowrap}
+#ahorro .block-title{margin-left: 13rem;}
+#ahorro .block-title + .note{margin-left: 13rem;}
+
 /* ---------- Footer ---------- */
 .footer{background:var(--sea-d);color:#e3f4f3;text-align:center;padding:2.5rem 5vw;position:relative}
 .refs{font-size:.85rem;opacity:.8;margin-top:.5rem}
