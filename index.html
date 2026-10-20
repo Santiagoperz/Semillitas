@@ -30,29 +30,55 @@
   </header>
 
   <main>
-    <!-- ================= HERO ================= -->
-    <section class="hero" id="inicio">
-      <div class="hero-inner">
-        <div class="hero-text reveal">
-          <p class="eyebrow">Guía práctica para familias del Caribe</p>
+        <!-- ================= PORTADA ================= -->
+    <section class="bento-portada" id="inicio">
+      <div class="bento">
+
+        <!-- Bloque principal -->
+        <div class="tile b-hero reveal">
+          <span class="hero-flota f1" aria-hidden="true">🥭</span>
+          <span class="hero-flota f2" aria-hidden="true">🍉</span>
+          <span class="hero-flota f3" aria-hidden="true">🎃</span>
+
+          <p class="tile-tag">🌴 Guía para familias del Caribe</p>
           <h1>Semillitas <span class="sprout">🌱</span></h1>
-          <p class="lead">En esta guía encontrarás orientaciones prácticas para ofrecer alimentos variados, nutritivos,
-            seguros y accesibles, aprovechando los alimentos propios de nuestra región, teniendo en cuenta las
-            necesidades nutricionales y el desarrollo de los niños, niñas y adolescentes de tu hogar.</p>
-          <ul class="chips">
-            <li>👧 0 a 18 años</li>
-            <li>🌊 Alimentos locales</li>
-            <li>❤️ Con amor para tu pequeño</li>
-          </ul>
+          <p class="b-lema">Crecer sano con <span class="resalta">lo que da nuestra tierra</span></p>
+          <p class="b-lead">Menús, recetas y precios de alimentos locales para niños, niñas y adolescentes de 0 a 18 años.</p>
+
           <a href="#etapas" class="btn">Empezar el recorrido ↓</a>
+
+          <form class="b-buscar" id="portadaBuscar" role="search">
+            <label for="portadaBuscarInput" class="sr-only">Busca un alimento</label>
+            <span aria-hidden="true">🔍</span>
+            <input id="portadaBuscarInput" type="search" placeholder="¿Cuánto cuesta el ñame, la patilla…?"
+              autocomplete="off">
+            <button type="submit">Buscar</button>
+          </form>
         </div>
-        <aside class="hero-card reveal">
-          <p class="hero-card-title">❤️👨‍👩‍👧 Recuerda mamá, papá o cuidador/a</p>
-          <p>Acompañar la alimentación de tu hijo/a es una oportunidad para descubrir nuevos sabores, fortalecer su
-            crecimiento y compartir momentos llenos de amor.</p>
-        </aside>
+
+        <!-- Receta del día -->
+        <div class="tile b-receta reveal" aria-live="polite">
+          <p class="tile-tag">👩‍🍳 Receta del día</p>
+          <span class="receta-emoji" id="rdEmoji">🍲</span>
+          <small class="receta-edad" id="rdEdad">—</small>
+          <h3 class="receta-nombre" id="rdNombre">Cargando…</h3>
+          <div class="receta-botones">
+            <button type="button" class="btn-mini" id="rdVer">Ver receta →</button>
+            <button type="button" class="btn-mini btn-mini-claro" id="rdOtra" aria-label="Mostrar otra receta">🔀 Otra</button>
+          </div>
+        </div>
+
+        <!-- Etapas -->
+        <div class="tile b-etapas reveal">
+          <p class="tile-tag">🧭 Elige una etapa</p>
+          <div class="etapas-botones">
+            <button type="button" data-abre="p-infancia"><span>👶</span><strong>Primera infancia</strong><small>0 a 5 años</small></button>
+            <button type="button" data-abre="p-ninez"><span>🧒</span><strong>Niñez</strong><small>6 a 12 años</small></button>
+            <button type="button" data-abre="p-adolescencia"><span>🧑</span><strong>Adolescencia</strong><small>12 a 18 años</small></button>
+          </div>
+        </div>
+
       </div>
-      <div class="wave" aria-hidden="true"></div>
     </section>
 
     <!-- ================= EJES (SLIDER) ================= -->
