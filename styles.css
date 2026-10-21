@@ -174,6 +174,12 @@ img{max-width:100%}
   transition:background .2s;
 }
 .b-buscar button:hover{background:var(--sea)}
+/* Logos de las entidades */
+.b-aval{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;margin-top:1.4rem}
+.b-aval[hidden]{display:none}
+.b-aval span{font-size:.8rem;font-weight:800;color:#fff}
+.b-aval img{height:75px;width:auto;padding:.4rem .7rem;border-radius:12px;background:#fff;margin-top:.3rem}
+.b-autoras{max-width:52ch;margin-top:.7rem;font-size:1rem;font-weight:700;color:#fff;text-shadow:0 1px 4px rgba(90,30,70,.25)}
 
 /* Frutas flotantes */
 .hero-flota{
@@ -482,6 +488,9 @@ img{max-width:100%}
 /* Respaldo con emoji si la imagen no carga */
 .bstep-img.sin-img img{display:none}
 .bstep-img.sin-img::after{content:attr(data-emoji);font-size:3.5rem}
+.tstep-img.sin-img{display:grid;place-items:center}
+.tstep-img.sin-img img{display:none}
+.tstep-img.sin-img::after{content:attr(data-emoji);font-size:3.5rem}
 
 /* Galería con marco (sin números) */
 .galeria .bstep{
@@ -554,6 +563,20 @@ img{max-width:100%}
 /* Tarjeta "¿Cuándo lavarte las manos?" */
 #tips .momentos{margin-top:1.5rem;background:var(--tips-bg);box-shadow:-3px 3px 10px var(--tips-c)}
 #tips .momentos h4{margin-bottom:1rem;text-align:center;font-size:1.3rem;color:var(--tips-c)}
+/* Tiempos de cocción */
+#tips .agetab.active{background:var(--tips-c);color:#fff}
+.cc-tabs{max-width:100%}
+.cc-nota{margin-bottom:.8rem;text-align:center;font-weight:700;color:var(--muted)}
+.cc-lista{list-style:none;display:grid;gap:.6rem}
+.cc-lista li{
+  display:grid;grid-template-columns:minmax(0,1.1fr) 150px minmax(0,2fr);
+  grid-template-areas:"ali tiempo senal";align-items:center;gap:.4rem 1rem;
+  padding:.9rem 1.2rem;border-radius:16px;background:#fff;box-shadow:var(--shadow);
+}
+.cc-ali{grid-area:ali;min-width:0;font-weight:800}
+.cc-temp{display:inline-block;margin-left:.3rem;padding:.1rem .5rem;border-radius:999px;background:#fff3f0;color:var(--coral);font-size:.75rem;white-space:nowrap}
+.cc-tiempo{grid-area:tiempo;justify-self:start;padding:.25rem .8rem;border-radius:999px;background:var(--tips-bg);color:var(--tips-c);font-weight:800;font-size:.9rem;white-space:nowrap}
+.cc-senal{grid-area:senal;min-width:0;font-size:.92rem;color:var(--muted)}
 
 
 /* ===========================================================
@@ -562,16 +585,45 @@ img{max-width:100%}
 #ahorro{background:#fff7e0}
 #ahorro .callout{background:#fff}
 #ahorro .block-title,
-#ahorro .block-title + .note{margin-left:13rem}
+#ahorro .block-title + .note{text-align:center}
+#ahorro .card .check li{margin-bottom:.8rem}
+#ahorro .card .check li:last-child{margin-bottom:0}
+/* Consejos: un color por tarjeta */
+.consejos .card{--ah-c:var(--mango);border-top:6px solid var(--ah-c);transition:transform .25s, box-shadow .25s}
+.consejos .card:nth-child(2){--ah-c:var(--coral)}
+.consejos .card:nth-child(3){--ah-c:var(--leaf)}
+.consejos .card h4{color:color-mix(in srgb, var(--ah-c) 70%, var(--ink))}
+.ah-emoji{display:inline-block;transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
+.consejos .check li{padding:.45rem .6rem .45rem 2.3rem;border-radius:12px;transition:background .2s}
+.consejos .check li::before{left:.55rem;top:.45rem;transition:transform .25s}
 
+/* Costos de los platos */
 .costos{margin-top:1rem}
-.costo{display:flex;flex-direction:column;gap:.3rem}
+.costo{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:.3rem;transition:transform .25s, box-shadow .25s}
+.costo::before{   /* franja de colores que aparece al pasar el cursor */
+  content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--mango),var(--coral),var(--berry));
+  transform:scaleX(0);transform-origin:left;transition:transform .4s ease;
+}
 .costo .dish-time{align-self:flex-start}
-.costo .big{line-height:1.1}
+.costo .big{line-height:1.1;transform-origin:left;transition:transform .25s, color .25s}
 .card.costo h4{margin:0 0 .6rem}
 .costo-lista{list-style:none;margin-top:auto;padding-top:.6rem;border-top:1px dashed var(--line-2);font-size:.9rem}
-.costo-lista li{display:flex;justify-content:space-between;gap:1rem;padding:.2rem 0}
+.costo-lista li{display:flex;justify-content:space-between;gap:1rem;margin:0 -.4rem;padding:.2rem .4rem;border-radius:8px;transition:background .2s}
 .costo-lista li span:last-child{font-weight:800;white-space:nowrap}
+
+/* Movimiento al pasar el cursor (solo en equipos con mouse) */
+@media (hover:hover){
+  .consejos .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover)}
+  .consejos .card:hover .ah-emoji{transform:scale(1.3) rotate(-12deg)}
+  .consejos .check li:hover{background:color-mix(in srgb, var(--ah-c) 14%, #fff)}
+  .consejos .check li:hover::before{transform:scale(1.3) rotate(-15deg)}
+
+  .costo:hover{transform:translateY(-6px) rotate(-1deg);box-shadow:var(--shadow-hover)}
+  .costo:hover::before{transform:scaleX(1)}
+  .costo:hover .big{transform:scale(1.08);color:var(--sea)}
+  .costo-lista li:hover{background:var(--sand)}
+}
 
 
 /* ===========================================================
@@ -713,6 +765,9 @@ body.modal-open{overflow:hidden}
    =========================================================== */
 .footer{position:relative;padding:2.5rem 5vw;background:var(--sea-d);color:#e3f4f3;text-align:center}
 .refs{margin-top:.5rem;font-size:.85rem;opacity:.8}
+.footer-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:1rem;margin-bottom:1.2rem}
+.footer-logos img{height:64px;width:auto;padding:.5rem .9rem;border-radius:14px;background:#fff}
+.autoras{margin-top:.4rem;font-weight:700}
 
 .to-top{
   position:fixed;right:1.2rem;bottom:1.2rem;
@@ -764,6 +819,15 @@ body.modal-open{overflow:hidden}
       "receta etapas";
   }
 }
+@media (max-width:900px){
+  /* Tiempos de cocción: nombre y tiempo arriba, señal abajo */
+  .cc-lista li{
+    grid-template-columns:minmax(0,1fr) auto;
+    grid-template-areas:"ali tiempo" "senal senal";
+    align-items:start;
+  }
+  .cc-tiempo{justify-self:end}
+}
 
 @media (max-width:860px){
   .menu-btn{display:block}
@@ -777,9 +841,7 @@ body.modal-open{overflow:hidden}
 
 @media (max-width:720px){
   /* Títulos */
-  .titulo-menu,
-  #ahorro .block-title,
-  #ahorro .block-title + .note{margin-left:0}
+  .titulo-menu{margin-left:0}
 
   /* Etapas */
   .step{padding-right:1rem}
@@ -814,6 +876,16 @@ body.modal-open{overflow:hidden}
   .lb-figure{width:100%}
   .lb-figure img{max-height:66dvh;padding:.3rem}
   .lb-arrow{top:auto;bottom:1rem;translate:none}
+
+    /* Tiempos de cocción: pestañas en una sola fila que se desliza */
+  .cc-tabs{
+    width:100%;flex-wrap:nowrap;justify-content:flex-start;
+    overflow-x:auto;border-radius:20px;
+    scroll-snap-type:x mandatory;scrollbar-width:none;
+  }
+  .cc-tabs::-webkit-scrollbar{display:none}
+  .cc-tabs .agetab{flex:none;white-space:nowrap;scroll-snap-align:start}
+  .cc-lista li{padding:.8rem 1rem}  
 }
 
 @media (max-width:600px){

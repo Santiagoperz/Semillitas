@@ -10,8 +10,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap"
     rel="stylesheet">
-  <link href="styles.css" rel="stylesheet">
-
+  <link href="styles.css?v=2" rel="stylesheet">
 </head>
 
 <body>
@@ -30,7 +29,7 @@
   </header>
 
   <main>
-        <!-- ================= PORTADA ================= -->
+    <!-- ================= PORTADA ================= -->
     <section class="bento-portada" id="inicio">
       <div class="bento">
 
@@ -43,7 +42,8 @@
           <p class="tile-tag">🌴 Guía para familias del Caribe</p>
           <h1>Semillitas <span class="sprout">🌱</span></h1>
           <p class="b-lema">Crecer sano con <span class="resalta">lo que da nuestra tierra</span></p>
-          <p class="b-lead">Menús, recetas y precios de alimentos locales para niños, niñas y adolescentes de 0 a 18 años.</p>
+          <p class="b-lead">Menús, recetas y precios de alimentos locales para niños, niñas y adolescentes de 0 a 18
+            años.</p>
 
           <a href="#etapas" class="btn">Empezar el recorrido ↓</a>
 
@@ -54,6 +54,14 @@
               autocomplete="off">
             <button type="submit">Buscar</button>
           </form>
+          <div class="b-aval">
+            <span>Un proyecto de</span>
+            <img src="imgs/logos/unisinu.png" alt="Logo de la Universidad del Sinú">
+            <!-- TODO: confirmar a qué Bienestar corresponde el logo y ajustar el alt -->
+            <img src="imgs/logos/bienestar.png" alt="Logo de Bienestar">
+          </div>
+          <p class="b-autoras"><strong>Equipo de autores:</strong> Gisella Ospino, Danna Martelo Romero y Luisa Guerra
+          </p>
         </div>
 
         <!-- Receta del día -->
@@ -64,7 +72,8 @@
           <h3 class="receta-nombre" id="rdNombre">Cargando…</h3>
           <div class="receta-botones">
             <button type="button" class="btn-mini" id="rdVer">Ver receta →</button>
-            <button type="button" class="btn-mini btn-mini-claro" id="rdOtra" aria-label="Mostrar otra receta">🔀 Otra</button>
+            <button type="button" class="btn-mini btn-mini-claro" id="rdOtra" aria-label="Mostrar otra receta">🔀
+              Otra</button>
           </div>
         </div>
 
@@ -72,9 +81,12 @@
         <div class="tile b-etapas reveal">
           <p class="tile-tag">🧭 Elige una etapa</p>
           <div class="etapas-botones">
-            <button type="button" data-abre="p-infancia"><span>👶</span><strong>Primera infancia</strong><small>0 a 5 años</small></button>
-            <button type="button" data-abre="p-ninez"><span>🧒</span><strong>Niñez</strong><small>6 a 12 años</small></button>
-            <button type="button" data-abre="p-adolescencia"><span>🧑</span><strong>Adolescencia</strong><small>12 a 18 años</small></button>
+            <button type="button" data-abre="p-infancia"><span>👶</span><strong>Primera infancia</strong><small>0 a 5
+                años</small></button>
+            <button type="button" data-abre="p-ninez"><span>🧒</span><strong>Niñez</strong><small>6 a 11
+                años</small></button>
+            <button type="button" data-abre="p-adolescencia"><span>🧑</span><strong>Adolescencia</strong><small>12 a 18
+                años</small></button>
           </div>
         </div>
 
@@ -186,7 +198,7 @@
         </button>
         <button class="step" role="tab" aria-selected="false" aria-controls="p-ninez" data-panel="p-ninez">
           <span class="step-dot">🧒</span>
-          <span class="step-label">Niñez<small>6 a 12 años</small></span>
+          <span class="step-label">Niñez<small>6 a 11 años</small></span>
         </button>
         <button class="step" role="tab" aria-selected="false" aria-controls="p-adolescencia"
           data-panel="p-adolescencia">
@@ -1499,153 +1511,254 @@
           </ul>
         </div>
         <br>
-        <h3 class="block-title EjeError">Ejemplos de algunas errores que nunca debes cometer</h3>
+        <h3 class="block-title EjeError">Ejemplos de algunos errores que nunca debes cometer</h3>
+        <!-- TODO: escribir el texto alternativo real de cada imagen (hoy son copias de otras) -->
         <ol class="breast-steps galeria">
           <li class="bstep">
             <figure>
               <div class="bstep-img" data-emoji="🔪">
                 <img src="imgs/Higiene/comparativa/1.1.jpeg" loading="lazy"
-                  alt="Dos tablas de picar en un mesón: en una, pollo crudo con su cuchillo; en la otra, verduras cocidas con otro cuchillo">
+                  alt="Ejemplo de un error al manipular alimentos en la cocina">
               </div>
+            </figure>
           </li>
           <li class="bstep">
             <figure>
               <div class="bstep-img" data-emoji="❄️">
                 <img src="imgs/Higiene/comparativa/1.2.jpeg" loading="lazy"
-                  alt="Persona guardando en la nevera bolsas con pollo, pescado y carne recién comprados en el mercado">
+                  alt="Ejemplo de un error al conservar alimentos en la nevera">
               </div>
+            </figure>
+          </li>
         </ol>
-      </div>
-      </div>
       </div>
       <!-- ===== Tiempos de cocción (Issue 1.3) ===== -->
       <div class="panel" id="p-coccion" role="tabpanel">
         <div class="card wide">
-          <p>Cocinar completamente los alimentos elimina los microbios que pueden enfermar a tu hijo/a. Aquí encontrarás
-            tiempos aproximados y las señales para saber cuándo un alimento está listo.</p>
+          <p>Cocinar completamente los alimentos elimina los microbios que pueden enfermar a tu hijo/a. Elige un grupo
+            de alimentos para ver los tiempos aproximados y las señales para saber cuándo está listo.</p>
+          <p class="note">⏱️ Los tiempos son aproximados y cambian según el tamaño de los trozos, la olla y el fogón. La
+            señal más confiable es la textura o la temperatura interna.</p>
+        </div>
+
+        <div class="agetabs cc-tabs" role="tablist" data-tabs>
+          <button class="agetab active" role="tab" aria-selected="true" aria-controls="p-cc-proteinas"
+            data-panel="p-cc-proteinas">🍗 Carnes y huevo</button>
+          <button class="agetab" role="tab" aria-selected="false" aria-controls="p-cc-tuberculos"
+            data-panel="p-cc-tuberculos">🍠 Tubérculos</button>
+          <button class="agetab" role="tab" aria-selected="false" aria-controls="p-cc-verduras"
+            data-panel="p-cc-verduras">🥦 Verduras</button>
+          <button class="agetab" role="tab" aria-selected="false" aria-controls="p-cc-granos"
+            data-panel="p-cc-granos">🫘 Granos y cereales</button>
+          <button class="agetab" role="tab" aria-selected="false" aria-controls="p-cc-frutas"
+            data-panel="p-cc-frutas">🍎 Frutas</button>
         </div>
 
         <!-- Carnes, pollo, pescado y huevo -->
-        <h3 class="block-title">🍗 Carnes, pollo, pescado y huevo <small>(OMS, 2006; USDA-FSIS, s. f.)</small></h3>
-        <!-- TODO: validar con nutricionista los tiempos de cocción -->
-        <div class="grid-3">
-          <div class="card">
-            <h4>🐔 Pollo</h4>
-            <p class="big">74 °C</p>
-            <ul class="check">
-              <li><strong>En trozos pequeños:</strong> 15 a 25 minutos, hervido.</li>
-              <li><strong>Pechuga entera:</strong> 20 a 30 minutos, según el tamaño.</li>
-              <li><strong>Señal:</strong> no quedan partes rosadas por dentro y los jugos salen claros.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h4>🐟 Pescado</h4>
-            <p class="big">63 °C</p>
-            <ul class="check">
-              <li><strong>En filete:</strong> 8 a 15 minutos, al vapor o al horno.</li>
-              <li><strong>Señal:</strong> la carne se ve opaca, ya no transparente, y se separa fácil con un tenedor.
-              </li>
-              <li>Revisa con cuidado que no queden espinas antes de servir.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h4>🥩 Carne de res y cerdo</h4>
-            <p class="big">71 °C <small>carne molida</small></p>
-            <ul class="check">
-              <li><strong>Res en trozos pequeños:</strong> 20 a 40 minutos, según el corte.</li>
-              <li><strong>Cerdo en trozos:</strong> 20 a 40 minutos o más, según el corte.</li>
-              <li><strong>Carne molida:</strong> cocínala hasta que esté completamente cocida, sin partes rosadas.</li>
-              <!-- TODO: validar con nutricionista tiempo y temperatura del hígado de res -->
-              <li><strong>Hígado de res · 71 °C:</strong> cocínalo hasta que esté completamente hecho por dentro, sin
-                partes crudas.</li>
-              <li><strong>Señal:</strong> la carne queda tierna y sin partes rojas o rosadas por dentro.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h4>🥚 Huevo</h4>
-            <ul class="check">
-              <li><strong>Huevo duro:</strong> aproximadamente 10 a 15 minutos.</li>
-              <li><strong>Señal:</strong> la yema y la clara están firmes.</li>
-              <li>Para bebés y niños pequeños, nunca lo ofrezcas crudo ni tibio.</li>
-            </ul>
+        <div class="panel active" id="p-cc-proteinas" role="tabpanel">
+          <p class="cc-nota">Fuentes: OMS (2006); USDA-FSIS (s. f.)</p>
+          <!-- TODO: validar con nutricionista los tiempos de cocción -->
+          <ul class="cc-lista">
+            <li>
+              <span class="cc-ali">🐔 Pollo en trozos pequeños <b class="cc-temp">74 °C</b></span>
+              <span class="cc-tiempo">15 a 25 min</span>
+              <span class="cc-senal">Hervido. No quedan partes rosadas por dentro y los jugos salen claros.</span>
+            </li>
+            <li>
+              <span class="cc-ali">🐔 Pechuga entera <b class="cc-temp">74 °C</b></span>
+              <span class="cc-tiempo">20 a 30 min</span>
+              <span class="cc-senal">Según el tamaño. Sin partes rosadas por dentro y con los jugos claros.</span>
+            </li>
+            <li>
+              <span class="cc-ali">🐟 Pescado en filete <b class="cc-temp">63 °C</b></span>
+              <span class="cc-tiempo">8 a 15 min</span>
+              <span class="cc-senal">Al vapor o al horno. Se ve opaco, ya no transparente, y se separa fácil con un
+                tenedor. Revisa que no queden espinas.</span>
+            </li>
+            <li>
+              <span class="cc-ali">🥩 Res en trozos pequeños</span>
+              <span class="cc-tiempo">20 a 40 min</span>
+              <span class="cc-senal">Según el corte. Queda tierna y sin partes rojas o rosadas por dentro.</span>
+            </li>
+            <li>
+              <span class="cc-ali">🐖 Cerdo en trozos</span>
+              <span class="cc-tiempo">20 a 40 min o más</span>
+              <span class="cc-senal">Según el corte. Queda tierno y sin partes rojas o rosadas por dentro.</span>
+            </li>
+            <li>
+              <span class="cc-ali">🥩 Carne molida <b class="cc-temp">71 °C</b></span>
+              <span class="cc-tiempo">Según la señal</span>
+              <span class="cc-senal">Completamente cocida, sin partes rosadas.</span>
+            </li>
+            <!-- TODO: validar con nutricionista tiempo y temperatura del hígado de res -->
+            <li>
+              <span class="cc-ali">🥩 Hígado de res <b class="cc-temp">71 °C</b></span>
+              <span class="cc-tiempo">Según la señal</span>
+              <span class="cc-senal">Completamente hecho por dentro, sin partes crudas.</span>
+            </li>
+            <li>
+              <span class="cc-ali">🥚 Huevo duro</span>
+              <span class="cc-tiempo">10 a 15 min</span>
+              <span class="cc-senal">La yema y la clara están firmes. Para bebés y niños pequeños, nunca lo ofrezcas
+                crudo ni tibio.</span>
+            </li>
+          </ul>
+
+          <div class="callout">
+            <span class="callout-icon">🌡️</span>
+            <div>
+              <h4>¿Tienes termómetro de cocina?</h4>
+              <p>Mide la temperatura en la parte más gruesa del alimento, sin tocar el hueso. Si no tienes termómetro,
+                guíate por las señales: es lo que hace la mayoría de las familias.</p>
+            </div>
           </div>
         </div>
 
-        <div class="callout">
-          <span class="callout-icon">🌡️</span>
-          <div>
-            <h4>¿Tienes termómetro de cocina?</h4>
-            <p>Mide la temperatura en la parte más gruesa del alimento, sin tocar el hueso. Si no tienes termómetro,
-              guíate por las señales: es lo que hace la mayoría de las familias.</p>
-          </div>
+        <!-- Tubérculos y plátanos -->
+        <div class="panel" id="p-cc-tuberculos" role="tabpanel">
+          <p class="cc-nota">✅ Señal: el tenedor entra sin resistencia.</p>
+          <!-- TODO: validar con nutricionista y agregar fuente de los tiempos de cocción -->
+          <ul class="cc-lista">
+            <li>
+              <span class="cc-ali">🥔 Papa</span>
+              <span class="cc-tiempo">12 a 20 min</span>
+              <span class="cc-senal">Hervida en trozos medianos. Al vapor puede tardar un poco más.</span>
+            </li>
+            <li>
+              <span class="cc-ali">🌿 Yuca</span>
+              <span class="cc-tiempo">20 a 35 min</span>
+              <span class="cc-senal">Hasta que esté blanda. Retira las fibras duras.</span>
+            </li>
+            <li>
+              <span class="cc-ali">🍌 Plátano verde</span>
+              <span class="cc-tiempo">15 a 25 min</span>
+              <span class="cc-senal">Hervido, hasta que se ablande.</span>
+            </li>
+            <li>
+              <span class="cc-ali">🍠 Ñame</span>
+              <span class="cc-tiempo">15 a 30 min</span>
+              <span class="cc-senal">Hasta que se pueda triturar fácilmente.</span>
+            </li>
+            <!-- TODO: validar con nutricionista el tiempo de cocción del plátano maduro y el guineo verde -->
+            <li>
+              <span class="cc-ali">🍌 Plátano maduro y guineo verde</span>
+              <span class="cc-tiempo">Según la señal</span>
+              <span class="cc-senal">Hasta que estén muy blandos.</span>
+            </li>
+          </ul>
         </div>
 
-        <!-- Vegetales, granos y frutas -->
-        <h3 class="block-title">🥕 Verduras, tubérculos, granos y frutas</h3>
-        <!-- TODO: validar con nutricionista y agregar fuente de los tiempos de cocción -->
-        <div class="grid-3">
-          <div class="card">
-            <h4>🍠 Tubérculos y plátanos</h4>
-            <ul class="check">
-              <li><strong>Papa · 12 a 20 min.</strong> Hervida en trozos medianos. Al vapor puede tardar un poco más.
-              </li>
-              <li><strong>Yuca · 20 a 35 min.</strong> Cocínala hasta que esté blanda y retira las fibras duras.</li>
-              <li><strong>Plátano verde · 15 a 25 min.</strong> Hiérvelo hasta que se ablande.</li>
-              <li><strong>Ñame · 15 a 30 min.</strong> Cocínalo hasta que se pueda triturar fácilmente.</li>
-              <!-- TODO: validar con nutricionista el tiempo de cocción del plátano maduro y el guineo verde -->
-              <li><strong>Plátano maduro y guineo verde.</strong> Cocínalos hasta que estén muy blandos.</li>
-              <li><strong>Señal:</strong> el tenedor entra sin resistencia.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h4>🥦 Verduras</h4>
-            <ul class="check">
-              <li><strong>Zanahoria · 10 a 20 min.</strong> Hervida en trozos pequeños. Al vapor, unos 10 a 15 minutos.
-              </li>
-              <li><strong>Ahuyama · 10 a 15 min.</strong> Hervida o al vapor, hasta que se deshaga fácil con un
-                tenedor.</li>
-              <li><strong>Brócoli · 5 a 10 min.</strong> Mejor al vapor, para que conserve su textura.</li>
-              <li><strong>Habichuela · 8 a 15 min.</strong> Hervida o al vapor hasta que quede blanda.</li>
-              <li><strong>Coliflor · 5 a 10 min.</strong> Al vapor o hervida, sin que se deshaga demasiado.</li>
-              <li><strong>Espinaca · 2 a 5 min.</strong> Cocción breve, con poca agua o al vapor.</li>
-              <li><strong>Remolacha · 11 a 13 min.</strong> Hervida en trozos pequeños.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h4>🫘 Leguminosas</h4>
-            <ul class="check">
-              <li><strong>Lentejas · 20 a 35 min.</strong> Cocínalas hasta que se aplasten fácilmente.</li>
-              <li><strong>Fríjoles · 60 a 120 min o más.</strong> Déjalos en remojo antes y cocínalos hasta que estén
-                muy blandos. El tiempo depende del tipo de fríjol y de la olla.</li>
-              <li><strong>Garbanzos · 60 a 120 min o más.</strong> Déjalos en remojo y cocínalos bien. En olla a presión
-                el tiempo se reduce bastante.</li>
-              <!-- TODO: validar con nutricionista el tiempo de cocción de la arveja seca -->
-              <li><strong>Señal:</strong> se aplastan fácil entre dos dedos o con un tenedor.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h4>🍚 Cereales</h4>
-            <ul class="check">
-              <li><strong>Arroz · 15 a 25 min.</strong> Cocínalo hasta que quede completamente blando.</li>
-              <li><strong>Avena en hojuelas · 5 a 10 min.</strong> Revuelve y comprueba que tenga una textura suave.
-              </li>
-              <li><strong>Pasta · 7 a 12 min.</strong> Cocínala hasta que quede blanda, siguiendo el empaque.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h4>🍎 Frutas para purés</h4>
-            <ul class="check">
-              <li><strong>Manzana · 8 a 12 min.</strong> Cocínala en trozos hasta que esté blanda.</li>
-              <li><strong>Pera · 5 a 10 min.</strong> Cocínala si está firme. Si está madura y blanda, puedes ofrecerla
-                sin cocinar.</li>
-              <li><strong>Durazno · 3 a 8 min.</strong> Cocínalo solo si necesitas ablandarlo.</li>
-              <li>El mango, el banano y la papaya maduros no necesitan cocción: solo lávalos bien.</li>
-            </ul>
-          </div>
+        <!-- Verduras -->
+        <div class="panel" id="p-cc-verduras" role="tabpanel">
+          <p class="cc-nota">✅ Señal: quedan blandas, pero sin deshacerse de más.</p>
+          <!-- TODO: validar con nutricionista y agregar fuente de los tiempos de cocción -->
+          <ul class="cc-lista">
+            <li>
+              <span class="cc-ali">🥕 Zanahoria</span>
+              <span class="cc-tiempo">10 a 20 min</span>
+              <span class="cc-senal">Hervida en trozos pequeños. Al vapor, unos 10 a 15 minutos.</span>
+            </li>
+            <li>
+              <span class="cc-ali">🎃 Ahuyama</span>
+              <span class="cc-tiempo">10 a 15 min</span>
+              <span class="cc-senal">Hervida o al vapor, hasta que se deshaga fácil con un tenedor.</span>
+            </li>
+            <li>
+              <span class="cc-ali">🥦 Brócoli</span>
+              <span class="cc-tiempo">5 a 10 min</span>
+              <span class="cc-senal">Mejor al vapor, para que conserve su textura.</span>
+            </li>
+            <li>
+              <span class="cc-ali">🫛 Habichuela</span>
+              <span class="cc-tiempo">8 a 15 min</span>
+              <span class="cc-senal">Hervida o al vapor, hasta que quede blanda.</span>
+            </li>
+            <li>
+              <span class="cc-ali">🥦 Coliflor</span>
+              <span class="cc-tiempo">5 a 10 min</span>
+              <span class="cc-senal">Al vapor o hervida, sin que se deshaga demasiado.</span>
+            </li>
+            <li>
+              <span class="cc-ali">🥬 Espinaca</span>
+              <span class="cc-tiempo">2 a 5 min</span>
+              <span class="cc-senal">Cocción breve, con poca agua o al vapor.</span>
+            </li>
+            <li>
+              <span class="cc-ali">🟣 Remolacha</span>
+              <span class="cc-tiempo">11 a 13 min</span>
+              <span class="cc-senal">Hervida en trozos pequeños.</span>
+            </li>
+          </ul>
         </div>
 
-        <p class="note center">⏱️ Los tiempos son aproximados y cambian según el tamaño de los trozos, la olla y el
-          fogón. La señal más confiable es la textura o la temperatura interna.</p>
+        <!-- Granos y cereales -->
+        <div class="panel" id="p-cc-granos" role="tabpanel">
+          <p class="cc-nota">✅ Señal en leguminosas: se aplastan fácil entre dos dedos o con un tenedor.</p>
+          <!-- TODO: validar con nutricionista y agregar fuente de los tiempos de cocción -->
+          <!-- TODO: validar con nutricionista el tiempo de cocción de la arveja seca -->
+          <ul class="cc-lista">
+            <li>
+              <span class="cc-ali">🟤 Lentejas</span>
+              <span class="cc-tiempo">20 a 35 min</span>
+              <span class="cc-senal">Hasta que se aplasten fácilmente.</span>
+            </li>
+            <li>
+              <span class="cc-ali">🫘 Fríjoles</span>
+              <span class="cc-tiempo">60 a 120 min o más</span>
+              <span class="cc-senal">Déjalos en remojo antes y cocínalos hasta que estén muy blandos. El tiempo
+                depende del tipo de fríjol y de la olla.</span>
+            </li>
+            <li>
+              <span class="cc-ali">🫘 Garbanzos</span>
+              <span class="cc-tiempo">60 a 120 min o más</span>
+              <span class="cc-senal">Déjalos en remojo y cocínalos bien. En olla a presión el tiempo se reduce
+                bastante.</span>
+            </li>
+            <li>
+              <span class="cc-ali">🍚 Arroz</span>
+              <span class="cc-tiempo">15 a 25 min</span>
+              <span class="cc-senal">Hasta que quede completamente blando.</span>
+            </li>
+            <li>
+              <span class="cc-ali">🥣 Avena en hojuelas</span>
+              <span class="cc-tiempo">5 a 10 min</span>
+              <span class="cc-senal">Revuelve y comprueba que tenga una textura suave.</span>
+            </li>
+            <li>
+              <span class="cc-ali">🍝 Pasta</span>
+              <span class="cc-tiempo">7 a 12 min</span>
+              <span class="cc-senal">Hasta que quede blanda, siguiendo el empaque.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Frutas para purés -->
+        <div class="panel" id="p-cc-frutas" role="tabpanel">
+          <p class="cc-nota">🍎 Frutas para purés: cocínalas solo si están firmes.</p>
+          <!-- TODO: validar con nutricionista y agregar fuente de los tiempos de cocción -->
+          <ul class="cc-lista">
+            <li>
+              <span class="cc-ali">🍎 Manzana</span>
+              <span class="cc-tiempo">8 a 12 min</span>
+              <span class="cc-senal">En trozos, hasta que esté blanda.</span>
+            </li>
+            <li>
+              <span class="cc-ali">🍐 Pera</span>
+              <span class="cc-tiempo">5 a 10 min</span>
+              <span class="cc-senal">Si está firme. Si está madura y blanda, puedes ofrecerla sin cocinar.</span>
+            </li>
+            <li>
+              <span class="cc-ali">🍑 Durazno</span>
+              <span class="cc-tiempo">3 a 8 min</span>
+              <span class="cc-senal">Solo si necesitas ablandarlo.</span>
+            </li>
+            <li>
+              <span class="cc-ali">🥭 Mango, banano y papaya maduros</span>
+              <span class="cc-tiempo">Sin cocción</span>
+              <span class="cc-senal">No necesitan cocción: solo lávalos bien.</span>
+            </li>
+          </ul>
+        </div>
 
         <!-- Conservar nutrientes -->
         <!-- TODO: validar con nutricionista y agregar fuente -->
@@ -1661,12 +1774,13 @@
         </div>
       </div>
       <p class="refs">Referencias: Organización Mundial de la Salud (s. f.) · OMS (2006), Cinco claves para la inocuidad
-        de los alimentos · OMS (2009), ¿Cómo lavarse las manos? · OMS (2019) · UNICEF (s. f.) · UNICEF (2023) · ICBF (s.
-        f.) · ICBF (2020) · ICBF, Guías Alimentarias (2015-2025) · ESPGHAN (2017) · DANE-SIPSA (2026) · Álvarez (2024) ·
-        Rechy (2024).</p>
+        de los alimentos · OMS (2009), ¿Cómo lavarse las manos? · OMS (2019) · OMS (2026) · UNICEF (s. f.) · UNICEF
+        (2023)
+        · ICBF (s. f.) · ICBF (2020) · ICBF, Guías Alimentarias (2015-2025) · ESPGHAN (2017) · USDA-FSIS (s. f.) ·
+        DANE-SIPSA (2026) · Álvarez (2024) · Rechy (2024).</p>
     </section>
 
-        <!-- ================= COMER CON POCO ================= -->
+    <!-- ================= COMER CON POCO ================= -->
     <section class="section section-full" id="ahorro">
       <div class="section-head reveal">
         <span class="tag">Comer bien sin gastar de más</span>
@@ -1678,43 +1792,44 @@
       <!-- Consejos -->
       <h3 class="block-title">💡 Consejos para que el mercado rinda</h3>
       <!-- TODO: validar con nutricionista y agregar fuente a los consejos que no la tienen -->
-      <div class="grid-3">
+      <div class="grid-3 consejos">
         <div class="card">
-          <h4>🥚 Proteínas que rinden</h4>
-          <p>El huevo, la lenteja, el fríjol y el garbanzo son proteínas nutritivas y económicas. Las vísceras, como el
-            hígado de pollo o de res, también son buena opción, siempre bien cocidas. Si compras pescado, pregunta en
-            Bazurto cuál llegó fresco ese día: suele ser el de mejor precio.</p>
+          <h4><span class="ah-emoji">🛒</span> Al comprar</h4>
+          <ul class="check">
+            <li><strong>Prefiere lo de cosecha.</strong> Las frutas y verduras que están en cosecha son más baratas y
+              más frescas. Pregunta en el mercado qué está llegando en abundancia y arma tu menú con eso.</li>
+            <li><strong>Planea antes de salir.</strong> Revisa qué tienes en la nevera, escribe el menú de la semana y
+              haz la lista. Compra solo lo de la lista y compara el precio por kilo en la
+              <a href="#precios">tabla de precios</a>.
+            </li>
+            <li><strong>Elige proteínas que rinden.</strong> El huevo, la lenteja, el fríjol y el garbanzo son
+              nutritivos
+              y económicos. Las vísceras, como el hígado de pollo o de res, también son buena opción, siempre bien
+              cocidas. Si compras pescado, pregunta en Bazurto cuál llegó fresco ese día: suele ser el de mejor
+              precio.</li>
+          </ul>
         </div>
         <div class="card">
-          <h4>🍚 Granos con cereal</h4>
-          <p>Combina un grano con un cereal en la misma comida, como arroz con lenteja o arroz con fríjol. Juntos se
-            complementan y aportan una proteína más completa, sin gastar de más.</p>
+          <h4><span class="ah-emoji">🍳</span> Al cocinar</h4>
+          <ul class="check">
+            <li><strong>Junta un grano con un cereal.</strong> Arroz con lenteja o arroz con fríjol: juntos se
+              complementan y aportan una proteína más completa, sin gastar de más.</li>
+            <li><strong>Acompaña el hierro con vitamina C.</strong> Lentejas guisadas con tomate o una guayaba de
+              postre ayudan a que el cuerpo aproveche mejor el hierro, sin costo extra. <small>(ESPGHAN, 2017)</small>
+            </li>
+            <li><strong>Una sola olla para toda la familia.</strong> No necesitas cocinar aparte para el bebé. Separa su
+              porción antes de agregar sal o condimentos y adapta la textura a su edad: puré, machacado o picado
+              fino.</li>
+          </ul>
         </div>
         <div class="card">
-          <h4>🍊 Hierro con vitamina C <small>(ESPGHAN, 2017)</small></h4>
-          <p>Acompaña los granos con alimentos ricos en vitamina C, como lentejas guisadas con tomate o una guayaba de
-            postre. Así el cuerpo aprovecha mejor el hierro, sin costo extra.</p>
-        </div>
-        <div class="card">
-          <h4>🥭 Frutas y verduras de cosecha</h4>
-          <p>Las que están en cosecha son más baratas y más frescas. Pregunta en el mercado qué está llegando en
-            abundancia y arma tu menú con eso.</p>
-        </div>
-        <div class="card">
-          <h4>📝 Planea antes de comprar</h4>
-          <p>Revisa qué tienes en la nevera, escribe el menú de la semana y haz la lista de compras. Compra solo lo de
-            la lista y compara el precio por kilo en la <a href="#precios">tabla de precios</a>.</p>
-        </div>
-        <div class="card">
-          <h4>♻️ Aprovecha sin riesgos <small>(OMS, 2006)</small></h4>
-          <p>Guarda las sobras tapadas en la nevera antes de 2 horas y consúmelas pronto. El agua donde cocinaste los
-            granos o las verduras sirve para sopas y cremas. El agua del remojo de los fríjoles, en cambio, sí se bota.
-          </p>
-        </div>
-        <div class="card">
-          <h4>👨‍👩‍👧 Una sola olla para toda la familia</h4>
-          <p>No necesitas cocinar aparte para el bebé. Separa su porción antes de agregar sal o condimentos y adapta la
-            textura a su edad: puré, machacado o picado fino.</p>
+          <h4><span class="ah-emoji">♻️</span> Después de comer <small>(OMS, 2006)</small></h4>
+          <ul class="check">
+            <li><strong>Guarda bien las sobras.</strong> Tápalas y llévalas a la nevera antes de 2 horas, y consúmelas
+              pronto.</li>
+            <li><strong>Aprovecha el agua de cocción.</strong> El agua donde cocinaste los granos o las verduras sirve
+              para sopas y cremas. El agua del remojo de los fríjoles, en cambio, sí se bota.</li>
+          </ul>
         </div>
       </div>
 
@@ -1728,120 +1843,17 @@
         </div>
       </div>
 
-      <!-- Platos económicos -->
+      <!-- Platos económicos: las tarjetas las crea script.js (sección 4b) -->
       <h3 class="block-title">🍽️ ¿Cuánto cuestan los platos de la guía?</h3>
-      <p class="note">Costo aproximado de cada preparación, para una o dos porciones.</p>
-      <div class="grid-3 costos">
-        <article class="card costo">
-          <small class="dish-time">9 a 11 meses</small>
-          <p class="big">≈ $5.000</p>
-          <h4>Huevo revuelto suave con papa y espinaca</h4>
-          <ul class="costo-lista">
-            <li><span>Huevo · 1 unidad</span><span>$600</span></li>
-            <li><span>Papa · 1 libra</span><span>$1.400</span></li>
-            <li><span>Espinaca · 1 libra</span><span>$3.000</span></li>
-          </ul>
-        </article>
+      <p class="note">Es lo que gastas en el mercado para comprar los ingredientes. Con varios de ellos te alcanza para
+        más de una comida.</p>
+      <div class="grid-3 costos" id="costos"></div>
 
-        <article class="card costo">
-          <small class="dish-time">6 a 8 meses</small>
-          <p class="big">≈ $6.000</p>
-          <h4>Crema de ahuyama con pollo</h4>
-          <ul class="costo-lista">
-            <li><span>Ahuyama · 1 libra</span><span>$1.600</span></li>
-            <li><span>Pollo · 250 g</span><span>$4.400</span></li>
-          </ul>
-        </article>
-
-        <article class="card costo">
-          <small class="dish-time">Niñez</small>
-          <p class="big">≈ $7.000</p>
-          <h4>Cayeye con queso costeño bajo en sal y huevo cocido</h4>
-          <ul class="costo-lista">
-            <li><span>Guineo verde · 1 unidad</span><span>$800</span></li>
-            <li><span>Queso costeño bajo en sal · 250 g</span><span>$5.600</span></li>
-            <li><span>Huevo · 1 unidad</span><span>$600</span></li>
-          </ul>
-        </article>
-
-        <article class="card costo">
-          <small class="dish-time">Adolescencia</small>
-          <p class="big">≈ $8.000</p>
-          <h4>Avena con banano</h4>
-          <ul class="costo-lista">
-            <li><span>Avena en hojuelas · 200 g</span><span>$2.500</span></li>
-            <li><span>Leche entera · 900 ml</span><span>$3.500</span></li>
-            <li><span>Banano · 1 unidad</span><span>$600</span></li>
-            <li><span>Canela en polvo · 1 bolsita</span><span>$1.400</span></li>
-          </ul>
-        </article>
-
-        <article class="card costo">
-          <small class="dish-time">Adolescencia</small>
-          <p class="big">≈ $13.000</p>
-          <h4>Hígado encebollado con yuca</h4>
-          <ul class="costo-lista">
-            <li><span>Hígado de res · 1 libra</span><span>$8.000</span></li>
-            <li><span>Yuca · 1 libra</span><span>$2.000</span></li>
-            <li><span>Cebolla · 1 unidad</span><span>$1.000</span></li>
-            <li><span>Tomate · 1 unidad</span><span>$1.000</span></li>
-            <li><span>Ajo · 1 unidad</span><span>$1.000</span></li>
-          </ul>
-        </article>
-
-        <article class="card costo">
-          <small class="dish-time">12 a 23 meses</small>
-          <p class="big">≈ $17.000</p>
-          <h4>Arroz con pollo, habichuela y zanahoria</h4>
-          <ul class="costo-lista">
-            <li><span>Arroz · 1 libra</span><span>$1.800</span></li>
-            <li><span>Pollo · 1 libra</span><span>$8.700</span></li>
-            <li><span>Zanahoria · 1 unidad</span><span>$1.000</span></li>
-            <li><span>Habichuela</span><span>$1.500</span></li>
-            <li><span>Cebolla · 1 unidad</span><span>$1.000</span></li>
-            <li><span>Cilantro</span><span>$1.000</span></li>
-            <li><span>Cebollín</span><span>$1.000</span></li>
-            <li><span>Pimentón · 1 unidad</span><span>$1.000</span></li>
-          </ul>
-        </article>
-
-        <article class="card costo">
-          <small class="dish-time">12 a 23 meses</small>
-          <p class="big">≈ $19.000</p>
-          <h4>Pescado guisado con arroz y brócoli</h4>
-          <ul class="costo-lista">
-            <li><span>Pescado fresco · 1 libra</span><span>$10.000</span></li>
-            <li><span>Arroz · 1 libra</span><span>$1.800</span></li>
-            <li><span>Brócoli · 1 libra</span><span>$3.200</span></li>
-            <li><span>Tomate · 1 unidad</span><span>$1.000</span></li>
-            <li><span>Cebolla · 1 unidad</span><span>$1.000</span></li>
-            <li><span>Ajo · 1 unidad</span><span>$1.000</span></li>
-            <li><span>Cilantro</span><span>$1.000</span></li>
-          </ul>
-        </article>
-
-        <article class="card costo">
-          <small class="dish-time">Niñez</small>
-          <p class="big">≈ $25.000</p>
-          <h4>Carne guisada con arroz, fríjol cabeza negra y ensalada</h4>
-          <ul class="costo-lista">
-            <li><span>Carne de res magra · 250 g</span><span>$8.000</span></li>
-            <li><span>Arroz · 1 libra</span><span>$1.800</span></li>
-            <li><span>Fríjol cabeza negra · 1 libra</span><span>$2.200</span></li>
-            <li><span>Tomate · 1 unidad</span><span>$1.000</span></li>
-            <li><span>Cebolla · 1 unidad</span><span>$1.000</span></li>
-            <li><span>Ajo · 1 unidad</span><span>$1.000</span></li>
-            <li><span>Zanahoria · 1 unidad</span><span>$1.000</span></li>
-            <li><span>Ají dulce · 1 unidad</span><span>$1.000</span></li>
-            <li><span>Repollo · 1 unidad</span><span>$1.000</span></li>
-            <li><span>Aguacate · 1 unidad</span><span>$7.000</span></li>
-          </ul>
-        </article>
-      </div>
-
-      <!-- TODO: agregar la fecha de consulta de los precios de los platos -->
-      <p class="note center">Estos valores se calculan con precios de referencia de los ingredientes en Cartagena. Son
-        aproximados y pueden variar según el establecimiento, el lugar de compra y los cambios del mercado.</p>
+      <!-- TODO: agregar la fecha de consulta de los precios -->
+      <p class="note center">Los ingredientes que se compran por peso usan el precio más bajo de la
+        <a href="#precios">tabla de precios</a>. Los marcados con ≈ son precios de referencia por unidad. Todos los
+        valores son aproximados y pueden variar según el lugar de compra y los cambios del mercado.
+      </p>
     </section>
 
     <!-- ================= PRECIOS ================= -->
@@ -1945,14 +1957,21 @@
   </dialog>
 
   <footer class="footer">
+    <div class="footer-logos">
+      <img src="imgs/logos/unisinu.png" alt="Logo de la Universidad del Sinú" loading="lazy">
+      <!-- TODO: confirmar a qué Bienestar corresponde el logo y ajustar el alt -->
+      <img src="imgs/logos/bienestar.png" alt="Logo de Bienestar" loading="lazy">
+    </div>
     <p>🌱 <strong>Semillitas</strong> · Guía de alimentación con alimentos locales</p>
-    <p class="refs">Referencias: Organización Mundial de la Salud (s. f.) · OMS (2019) · UNICEF (s. f.) · UNICEF (2023)
-      · ICBF (s. f.) · ICBF (2020) · ICBF, Guías Alimentarias (2015-2025) · ESPGHAN (2017) · DANE-SIPSA (2026) · Álvarez
-      (2024) · Rechy (2024).</p>
+    <p class="autoras">Elaborado por Gisella Patricia Ospino Garcia, Danna Saray Martelo Romero y Luisa Guerra</p>
+    <p class="refs">Referencias: Organización Mundial de la Salud (s. f.) · OMS (2006), Cinco claves para la inocuidad
+      de los alimentos · OMS (2009), ¿Cómo lavarse las manos? · OMS (2019) · OMS (2026) · UNICEF (s. f.) · UNICEF (2023)
+      · ICBF (s. f.) · ICBF (2020) · ICBF, Guías Alimentarias (2015-2025) · ESPGHAN (2017) · USDA-FSIS (s. f.) ·
+      DANE-SIPSA (2026) · Álvarez (2024) · Rechy (2024).</p>
     <button class="to-top" id="toTop" aria-label="Volver arriba">↑</button>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 
 </html>

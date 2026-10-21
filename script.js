@@ -5,6 +5,7 @@
    2. Datos de precios
    3. Utilidades
    4. Tabla de precios
+       4b. Costo de los platos
    5. Pestañas
    6. Slider de ejes
    7. Visor de imágenes
@@ -54,8 +55,8 @@ const alimentos = [
   { n: 'Tomate de árbol', e: '🍅', cat: 'Frutas', u: 'kg', p: { baz: 5278, d1: 7500, ara: 7200, mega: 8200 }, ok: [], etapa: 'Jugo sin azúcar · vitamina C' },
   { n: 'Mora', e: '🫐', cat: 'Frutas', u: 'kg', p: { baz: 6367, d1: 9900, ara: 9500, mega: 10900 }, ok: [], etapa: 'Jugo colado sin azúcar' },
   { n: 'Fresa', e: '🍓', cat: 'Frutas', u: 'kg', p: { baz: null, d1: null, ara: null, mega: 15000 }, ok: ['mega'], etapa: 'Lavada y en trozos pequeños · vitamina C' },
-  { n: 'Kiwi', e: '🥝', cat: 'Frutas', u: 'kg', p: { baz: null, d1: null, ara: null, mega: 19500 }, ok: ['mega'], etapa: 'Pelado y en trozos · vitamina C' },
-  { n: 'Arándanos', e: '🫐', cat: 'Frutas', u: 'kg', p: { baz: null, d1: null, ara: null, mega: 61800 }, ok: ['mega'], etapa: 'Partidos o aplastados para niños pequeños' },
+  { n: 'Kiwi', e: '🥝', cat: 'Frutas', u: 'kg', p: { baz: null, d1: 20000, ara: null, mega: 19500 }, ok: ['d1', 'mega'], etapa: 'Pelado y en trozos · vitamina C' },
+  { n: 'Arándanos', e: '🫐', cat: 'Frutas', u: 'kg', p: { baz: null, d1: 52000, ara: null, mega: 61800 }, ok: ['d1', 'mega'], etapa: 'Partidos o aplastados para niños pequeños' },
 
   // ===== Verduras =====
   { n: 'Zanahoria', e: '🥕', cat: 'Verduras', u: 'kg', p: { baz: 744, d1: 2500, ara: 2300, mega: 2800 }, ok: [], etapa: 'Desde 6 meses (puré)' },
@@ -69,9 +70,9 @@ const alimentos = [
   { n: 'Apio', e: '🥬', cat: 'Verduras', u: 'kg', p: { baz: 1967, d1: null, ara: 4500, mega: 4900 }, ok: [], etapa: 'Para caldos y sopas' },
   { n: 'Ajo', e: '🧄', cat: 'Verduras', u: 'kg', p: { baz: 5858, d1: 14000, ara: 13500, mega: 15900 }, ok: [], etapa: 'Sazón natural en lugar de cubitos' },
   { n: 'Cilantro', e: '🌿', cat: 'Verduras', u: 'kg', p: { baz: 11500, d1: 15800, ara: 16000, mega: 18000 }, ok: [], etapa: 'Aromático, picado fino' },
-  { n: 'Cebolla cabezona roja', e: '🧅', cat: 'Verduras', u: 'kg', p: { baz: null, d1: null, ara: null, mega: 5900 }, ok: ['mega'], etapa: 'Para dar sabor sin sal' },
-  { n: 'Habichuela', e: '🫛', cat: 'Verduras', u: 'kg', p: { baz: null, d1: null, ara: null, mega: 6900 }, ok: ['mega'], etapa: 'Cocida hasta que esté blanda y picada' },
-  { n: 'Brócoli', e: '🥦', cat: 'Verduras', u: 'kg', p: { baz: null, d1: null, ara: null, mega: 9800 }, ok: ['mega'], etapa: 'Al vapor y en trozos pequeños' },
+  { n: 'Cebolla cabezona roja', e: '🧅', cat: 'Verduras', u: 'kg', p: { baz: 2000, d1: 4400, ara: 3200, mega: 5900 }, ok: ['d1', 'ara', 'mega'], etapa: 'Para dar sabor sin sal' },
+  { n: 'Habichuela', e: '🫛', cat: 'Verduras', u: 'kg', p: { baz: 6000, d1: null, ara: null, mega: 6900 }, ok: ['mega'], etapa: 'Cocida hasta que esté blanda y picada' },
+  { n: 'Brócoli', e: '🥦', cat: 'Verduras', u: 'kg', p: { baz: null, d1: 14000, ara: 16000, mega: 9800 }, ok: ['d1', 'ara', 'mega'], etapa: 'Al vapor y en trozos pequeños' },
 
   // ===== Tubérculos y plátanos =====
   { n: 'Papa', e: '🥔', cat: 'Tubérculos', u: 'kg', p: { baz: 2324, d1: 4000, ara: 3800, mega: 4300 }, ok: [], etapa: 'Desde 6 meses (puré)' },
@@ -79,7 +80,7 @@ const alimentos = [
   { n: 'Plátano hartón verde', e: '🍌', cat: 'Tubérculos', u: 'kg', p: { baz: 3375, d1: 5000, ara: 4800, mega: 5200 }, ok: [], etapa: 'Sopas y purés' },
   { n: 'Ñame criollo', e: '🍠', cat: 'Tubérculos', u: 'kg', p: { baz: 3248, d1: 5400, ara: 5200, mega: 5300 }, ok: [], etapa: 'Típico del Caribe, ideal en sopas' },
   { n: 'Batata', e: '🍠', cat: 'Tubérculos', u: 'kg', p: { baz: 2500, d1: null, ara: 4500, mega: 4900 }, ok: [], bazEst: true, etapa: 'Desde 6 meses, puré naturalmente dulce' },
-  { n: 'Plátano maduro', e: '🍌', cat: 'Tubérculos', u: 'kg', p: { baz: null, d1: null, ara: null, mega: 6400 }, ok: ['mega'], etapa: 'Cocido y machacado · dulzor natural' },
+  { n: 'Plátano maduro', e: '🍌', cat: 'Tubérculos', u: 'kg', p: { baz: 6100, d1: null, ara: null, mega: 6400 }, ok: ['mega'], etapa: 'Cocido y machacado · dulzor natural' },
 
   // ===== Granos y cereales =====
   { n: 'Arroz', e: '🍚', cat: 'Granos', u: 'kg', p: { baz: 3378, d1: 3900, ara: 3800, mega: 3300 }, ok: ['d1', 'mega'], etapa: 'Desde 6 meses (machacado)' },
@@ -92,20 +93,20 @@ const alimentos = [
   { n: 'Harina de maíz precocida', e: '🌽', cat: 'Granos', u: 'kg', p: { baz: 3479, d1: 4200, ara: 4100, mega: 4500 }, ok: [], etapa: 'Arepas para niños y escolares' },
   { n: 'Pasta', e: '🍝', cat: 'Granos', u: 'kg', p: { baz: 6500, d1: 5800, ara: 5600, mega: 7200 }, ok: [], etapa: 'Bien cocida y picada desde 9 meses' },
   { n: 'Avena en hojuelas', e: '🥣', cat: 'Granos', u: 'kg', p: { baz: 10104, d1: 9800, ara: 9900, mega: 11200 }, ok: [], etapa: 'Coladas sin azúcar añadida' },
-  { n: 'Garbanzo', e: '🫘', cat: 'Granos', u: 'kg', p: { baz: null, d1: null, ara: null, mega: 5580 }, ok: ['mega'], etapa: 'Remojado y bien cocido · proteína vegetal' },
+  { n: 'Garbanzo', e: '🫘', cat: 'Granos', u: 'kg', p: { baz: 2800, d1: 5400, ara: 6000, mega: 5580 }, ok: ['d1', 'ara', 'mega'], etapa: 'Remojado y bien cocido · proteína vegetal' },
 
   // ===== Proteínas =====
   { n: 'Huevo rojo A', e: '🥚', cat: 'Proteínas', u: 'cubeta x30', p: { baz: 14820, d1: 11990, ara: 11500, mega: 15900 }, ok: ['d1'], etapa: 'Empieza por la yema' },
   { n: 'Muslo / contramuslo de pollo', e: '🍗', cat: 'Proteínas', u: 'kg', p: { baz: 6650, d1: 11900, ara: 7600, mega: 8390 }, ok: ['ara', 'mega'], etapa: 'Hierro hemínico' },
   { n: 'Pollo entero', e: '🐔', cat: 'Proteínas', u: 'kg', p: { baz: 8850, d1: 10500, ara: 9900, mega: 8444 }, ok: ['mega'], etapa: 'Hierro hemínico' },
-  { n: 'Pechuga de pollo', e: '🍗', cat: 'Proteínas', u: 'kg', p: { baz: 13000, d1: 14500, ara: 12900, mega: 13572 }, ok: ['mega'], etapa: 'Desmechada desde 12 meses' },
+  { n: 'Pechuga de pollo', e: '🍗', cat: 'Proteínas', u: 'kg', p: { baz: 13000, d1: 14500, ara: 12900, mega: 13572 }, ok: ['mega'], etapa: 'Triturada o desmechada según la edad' },
   { n: 'Pata de pollo', e: '🐾', cat: 'Proteínas', u: 'kg', p: { baz: 4000, d1: null, ara: 5500, mega: 5900 }, ok: [], bazEst: true, etapa: 'Da sabor al caldo; no reemplaza la carne' },
   { n: 'Carne de cerdo (pernil)', e: '🐖', cat: 'Proteínas', u: 'kg', p: { baz: 16750, d1: 19900, ara: 18900, mega: 21900 }, ok: [], etapa: 'Magra, bien cocida y molida' },
   { n: 'Carne de res (bola)', e: '🥩', cat: 'Proteínas', u: 'kg', p: { baz: 32097, d1: 36000, ara: 35500, mega: 37900 }, ok: [], etapa: 'Molida desde 6–8 meses' },
   { n: 'Pescado basa', e: '🐟', cat: 'Proteínas', u: 'kg', p: { baz: 9100, d1: 12900, ara: 12500, mega: 13900 }, ok: [], etapa: 'Sin espinas, fácil para niños' },
   { n: 'Mojarra lora', e: '🐠', cat: 'Proteínas', u: 'kg', p: { baz: 11000, d1: null, ara: 15500, mega: 15900 }, ok: [], etapa: 'Retira bien las espinas' },
   { n: 'Bocachico', e: '🐟', cat: 'Proteínas', u: 'kg', p: { baz: 13500, d1: null, ara: null, mega: 16900 }, ok: [], etapa: 'Pescado de río típico · muchas espinas' },
-  { n: 'Hígado de res', e: '🥩', cat: 'Proteínas', u: 'kg', p: { baz: null, d1: null, ara: null, mega: 10600 }, ok: ['mega'], etapa: 'Muy rico en hierro · siempre bien cocido' },
+  { n: 'Hígado de res', e: '🥩', cat: 'Proteínas', u: 'kg', p: { baz: 8000, d1: null, ara: null, mega: 10600 }, ok: ['mega'], etapa: 'Muy rico en hierro · siempre bien cocido' },
 
   // ===== Lácteos =====
   { n: 'Leche entera', e: '🥛', cat: 'Lácteos', u: 'litro', p: { baz: null, d1: 3900, ara: 3800, mega: 4500 }, ok: [], etapa: 'Leche de vaca como bebida desde 12 meses' },
@@ -227,6 +228,125 @@ alimentos.forEach(a => {
   search.addEventListener('input', render);
   sortSel.addEventListener('change', render);
   render();
+})();
+
+/* ===========================================================
+   4b. Costo de los platos (Comer con poco)
+   -----------------------------------------------------------
+   Cada ingrediente puede ser:
+   - { ref, cant, txt }: se calcula con el precio más bajo de la tabla.
+     ref = nombre exacto en `alimentos`; cant = cantidad en la unidad
+     de la tabla (kg, litro o cubeta x30).
+   - { precio, txt }: precio fijo de referencia (se compra por unidad).
+   Las tarjetas se ordenan solas de menor a mayor costo.
+   =========================================================== */
+const platosCosto = [
+  {
+    etapa: '6 a 8 meses', nombre: 'Crema de ahuyama con pollo', items: [
+      { ref: 'Ahuyama', cant: 0.5, txt: 'Ahuyama · 1 libra' },
+      { ref: 'Pechuga de pollo', cant: 0.25, txt: 'Pechuga de pollo · 250 g' }
+    ]
+  },
+  {
+    etapa: '9 a 11 meses', nombre: 'Huevo revuelto suave con papa y espinaca', items: [
+      { ref: 'Huevo rojo A', cant: 1 / 30, txt: 'Huevo · 1 unidad' },
+      { ref: 'Papa', cant: 0.5, txt: 'Papa · 1 libra' },
+      { ref: 'Espinaca', cant: 0.5, txt: 'Espinaca · 1 libra' }
+    ]
+  },
+  {
+    etapa: '12 a 23 meses', nombre: 'Arroz con pollo, habichuela y zanahoria', items: [
+      { ref: 'Arroz', cant: 0.5, txt: 'Arroz · 1 libra' },
+      { ref: 'Pollo entero', cant: 0.5, txt: 'Pollo · 1 libra' },
+      { precio: 1000, txt: 'Zanahoria · 1 unidad' },
+      { precio: 1500, txt: 'Habichuela' },
+      { precio: 1000, txt: 'Cebolla · 1 unidad' },
+      { precio: 1000, txt: 'Tomate · 1 unidad' }
+    ]
+  },
+  {
+    etapa: '12 a 23 meses', nombre: 'Pescado guisado con arroz y brócoli', items: [
+      { ref: 'Pescado basa', cant: 0.5, txt: 'Pescado blanco · 1 libra' },
+      { ref: 'Arroz', cant: 0.5, txt: 'Arroz · 1 libra' },
+      { ref: 'Brócoli', cant: 0.5, txt: 'Brócoli · 1 libra' },
+      { precio: 1000, txt: 'Tomate · 1 unidad' },
+      { precio: 1000, txt: 'Cebolla · 1 unidad' }
+    ]
+  },
+  {
+    etapa: 'Niñez', nombre: 'Cayeye con queso costeño bajo en sal y huevo cocido', items: [
+      { precio: 800, txt: 'Guineo verde · 1 unidad' },
+      { ref: 'Queso costeño', cant: 0.25, txt: 'Queso costeño · 250 g' },
+      { ref: 'Huevo rojo A', cant: 1 / 30, txt: 'Huevo · 1 unidad' }
+    ]
+  },
+  {
+    etapa: 'Niñez', nombre: 'Carne guisada con arroz, fríjol cabeza negra y ensalada', items: [
+      { ref: 'Carne de res (bola)', cant: 0.25, txt: 'Carne de res magra · 250 g' },
+      { ref: 'Arroz', cant: 0.5, txt: 'Arroz · 1 libra' },
+      { ref: 'Fríjol cabeza negra', cant: 0.5, txt: 'Fríjol cabeza negra · 1 libra' },
+      { precio: 1000, txt: 'Tomate · 1 unidad' },
+      { precio: 1000, txt: 'Cebolla · 1 unidad' },
+      { precio: 1000, txt: 'Ajo · 1 unidad' },
+      { precio: 1000, txt: 'Zanahoria · 1 unidad' },
+      { precio: 1000, txt: 'Ají dulce · 1 unidad' },
+      { precio: 1000, txt: 'Repollo · 1 unidad' },
+      { precio: 7000, txt: 'Aguacate · 1 unidad' }
+    ]
+  },
+  {
+    etapa: 'Adolescencia', nombre: 'Avena con banano', items: [
+      { ref: 'Avena en hojuelas', cant: 0.2, txt: 'Avena en hojuelas · 200 g' },
+      { ref: 'Leche entera', cant: 0.9, txt: 'Leche entera · 900 ml' },
+      { precio: 600, txt: 'Banano · 1 unidad' },
+      { precio: 1400, txt: 'Canela en polvo · 1 bolsita' }
+    ]
+  },
+  {
+    etapa: 'Adolescencia', nombre: 'Hígado encebollado con yuca', items: [
+      { ref: 'Hígado de res', cant: 0.5, txt: 'Hígado de res · 1 libra' },
+      { ref: 'Yuca', cant: 0.5, txt: 'Yuca · 1 libra' },
+      { precio: 1000, txt: 'Cebolla · 1 unidad' },
+      { precio: 1000, txt: 'Tomate · 1 unidad' },
+      { precio: 1000, txt: 'Ajo · 1 unidad' }
+    ]
+  }
+];
+
+(function initCostos() {
+  const caja = document.getElementById('costos');
+  if (!caja) return;
+
+  function precioDe(it) {
+    if (it.precio != null) return it.precio;
+    const a = alimentos.find(x => x.n === it.ref);
+    if (!a) {
+      console.warn('Costos: este ingrediente no está en la tabla →', it.ref);
+      return 0;
+    }
+    return a.min * it.cant;
+  }
+
+  const platos = platosCosto
+    .map(p => {
+      const items = p.items.map(it => ({ ...it, valor: Math.round(precioDe(it)) }));
+      return { ...p, items, total: items.reduce((s, it) => s + it.valor, 0) };
+    })
+    .sort((x, y) => x.total - y.total);
+
+  caja.innerHTML = platos.map(p => `
+    <article class="card costo">
+      <small class="dish-time">${p.etapa}</small>
+      <p class="big">≈ ${cop.format(Math.round(p.total / 1000) * 1000)}</p>
+      <h4>${p.nombre}</h4>
+      <ul class="costo-lista">
+        ${p.items.map(it => `
+          <li>
+            <span>${it.txt}${it.ref ? '' : ' <b class="mk est" title="Precio de referencia por unidad">≈</b>'}</span>
+            <span>${cop.format(it.valor)}</span>
+          </li>`).join('')}
+      </ul>
+    </article>`).join('');
 })();
 
 
@@ -620,10 +740,23 @@ nav.querySelectorAll('a').forEach(a => a.addEventListener('click', cerrarMenu));
 
 
 /* ===========================================================
-   13. Respaldo con emoji si una imagen de pasos no carga
+   13. Respaldo de imágenes
+   -----------------------------------------------------------
+   - Pasos y tablas: muestran un emoji si la imagen no carga.
+   - Logos del pie: se ocultan si la imagen no carga.
    =========================================================== */
-document.querySelectorAll('.bstep-img img').forEach(img => {
+document.querySelectorAll('.bstep-img img, .tstep-img img').forEach(img => {
   const usarEmoji = () => img.parentElement.classList.add('sin-img');
   if (img.complete && img.naturalWidth === 0) usarEmoji();
   else img.addEventListener('error', usarEmoji);
+});
+
+document.querySelectorAll('.footer-logos img, .b-aval img').forEach(img => {
+  const ocultar = () => {
+    img.hidden = true;
+    const caja = img.parentElement;
+    if ([...caja.querySelectorAll('img')].every(i => i.hidden)) caja.hidden = true;
+  };
+  if (img.complete && img.naturalWidth === 0) ocultar();
+  else img.addEventListener('error', ocultar);
 });
