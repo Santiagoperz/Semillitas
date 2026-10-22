@@ -57,6 +57,7 @@ const alimentos = [
   { n: 'Fresa', e: '🍓', cat: 'Frutas', u: 'kg', p: { baz: null, d1: null, ara: null, mega: 15000 }, ok: ['mega'], etapa: 'Lavada y en trozos pequeños · vitamina C' },
   { n: 'Kiwi', e: '🥝', cat: 'Frutas', u: 'kg', p: { baz: null, d1: 20000, ara: null, mega: 19500 }, ok: ['d1', 'mega'], etapa: 'Pelado y en trozos · vitamina C' },
   { n: 'Arándanos', e: '🫐', cat: 'Frutas', u: 'kg', p: { baz: null, d1: 52000, ara: null, mega: 61800 }, ok: ['d1', 'mega'], etapa: 'Partidos o aplastados para niños pequeños' },
+  { n: 'Maracuyá', e: '🟡', cat: 'Frutas', u: 'kg', p: { baz: null, d1: null, ara: null, mega: null }, ok: [], etapa: 'Jugo colado y sin azúcar' },
 
   // ===== Verduras =====
   { n: 'Zanahoria', e: '🥕', cat: 'Verduras', u: 'kg', p: { baz: 744, d1: 2500, ara: 2300, mega: 2800 }, ok: [], etapa: 'Desde 6 meses (puré)' },
@@ -73,7 +74,10 @@ const alimentos = [
   { n: 'Cebolla cabezona roja', e: '🧅', cat: 'Verduras', u: 'kg', p: { baz: 2000, d1: 4400, ara: 3200, mega: 5900 }, ok: ['d1', 'ara', 'mega'], etapa: 'Para dar sabor sin sal' },
   { n: 'Habichuela', e: '🫛', cat: 'Verduras', u: 'kg', p: { baz: 6000, d1: null, ara: null, mega: 6900 }, ok: ['mega'], etapa: 'Cocida hasta que esté blanda y picada' },
   { n: 'Brócoli', e: '🥦', cat: 'Verduras', u: 'kg', p: { baz: null, d1: 14000, ara: 16000, mega: 9800 }, ok: ['d1', 'ara', 'mega'], etapa: 'Al vapor y en trozos pequeños' },
-
+  { n: 'Ají topito', e: '🌶️', cat: 'Verduras', u: 'kg', p: { baz: 3326, d1: 3400, ara: 4200, mega: 4150 }, ok: [], etapa: 'Para dar sabor a guisos sin usar cubitos' },
+  { n: 'Lechuga', e: '🥬', cat: 'Verduras', u: 'kg', p: { baz: 2317, d1: 15000, ara: 11200, mega: 12300 }, ok: [], etapa: 'Bien lavada y picada fina' },
+  { n: 'Pepino', e: '🥒', cat: 'Verduras', u: 'kg', p: { baz: null, d1: null, ara: null, mega: null }, ok: [], etapa: 'Lavado, pelado y en trozos pequeños' },
+  { n: 'Remolacha', e: '🟣', cat: 'Verduras', u: 'kg', p: { baz: 2600, d1: 5000, ara: 5000, mega: 5000 }, ok: [], etapa: 'Cocida, en puré o en trozos según la edad' },
   // ===== Tubérculos y plátanos =====
   { n: 'Papa', e: '🥔', cat: 'Tubérculos', u: 'kg', p: { baz: 2324, d1: 4000, ara: 3800, mega: 4300 }, ok: [], etapa: 'Desde 6 meses (puré)' },
   { n: 'Yuca', e: '🌿', cat: 'Tubérculos', u: 'kg', p: { baz: 2875, d1: 4400, ara: 4200, mega: 4300 }, ok: [], etapa: 'Bien cocida y machacada' },
@@ -81,6 +85,7 @@ const alimentos = [
   { n: 'Ñame criollo', e: '🍠', cat: 'Tubérculos', u: 'kg', p: { baz: 3248, d1: 5400, ara: 5200, mega: 5300 }, ok: [], etapa: 'Típico del Caribe, ideal en sopas' },
   { n: 'Batata', e: '🍠', cat: 'Tubérculos', u: 'kg', p: { baz: 2500, d1: null, ara: 4500, mega: 4900 }, ok: [], bazEst: true, etapa: 'Desde 6 meses, puré naturalmente dulce' },
   { n: 'Plátano maduro', e: '🍌', cat: 'Tubérculos', u: 'kg', p: { baz: 6100, d1: null, ara: null, mega: 6400 }, ok: ['mega'], etapa: 'Cocido y machacado · dulzor natural' },
+  { n: 'Mafufo', e: '🍌', cat: 'Tubérculos', u: 'kg', p: { baz: 3000, d1: 5000, ara: 5000, mega: 5000  }, ok: [], etapa: 'Cocido y machacado, en sopas y purés' },
 
   // ===== Granos y cereales =====
   { n: 'Arroz', e: '🍚', cat: 'Granos', u: 'kg', p: { baz: 3378, d1: 3900, ara: 3800, mega: 3300 }, ok: ['d1', 'mega'], etapa: 'Desde 6 meses (machacado)' },
@@ -94,6 +99,7 @@ const alimentos = [
   { n: 'Pasta', e: '🍝', cat: 'Granos', u: 'kg', p: { baz: 6500, d1: 5800, ara: 5600, mega: 7200 }, ok: [], etapa: 'Bien cocida y picada desde 9 meses' },
   { n: 'Avena en hojuelas', e: '🥣', cat: 'Granos', u: 'kg', p: { baz: 10104, d1: 9800, ara: 9900, mega: 11200 }, ok: [], etapa: 'Coladas sin azúcar añadida' },
   { n: 'Garbanzo', e: '🫘', cat: 'Granos', u: 'kg', p: { baz: 2800, d1: 5400, ara: 6000, mega: 5580 }, ok: ['d1', 'ara', 'mega'], etapa: 'Remojado y bien cocido · proteína vegetal' },
+  { n: 'Fríjol palomito', e: '🫘', cat: 'Granos', u: 'kg', p: { baz: null, d1: 6380, ara: 7780, mega: 6980 }, ok: [], etapa: 'Remojado y bien cocido · hierro no hemínico' },
 
   // ===== Proteínas =====
   { n: 'Huevo rojo A', e: '🥚', cat: 'Proteínas', u: 'cubeta x30', p: { baz: 14820, d1: 11990, ara: 11500, mega: 15900 }, ok: ['d1'], etapa: 'Empieza por la yema' },
@@ -112,7 +118,9 @@ const alimentos = [
   { n: 'Leche entera', e: '🥛', cat: 'Lácteos', u: 'litro', p: { baz: null, d1: 3900, ara: 3800, mega: 4500 }, ok: [], etapa: 'Leche de vaca como bebida desde 12 meses' },
   { n: 'Yogurt natural', e: '🥣', cat: 'Lácteos', u: 'litro', p: { baz: null, d1: 7900, ara: 7500, mega: 9500 }, ok: [], etapa: 'Sin azúcar · útil desde el primer año' },
   { n: 'Mantequilla', e: '🧈', cat: 'Lácteos', u: '250 g', p: { baz: null, d1: 6500, ara: 6300, mega: 7900 }, ok: [], etapa: 'En pequeñas cantidades' },
-  { n: 'Queso costeño', e: '🧀', cat: 'Lácteos', u: 'kg', p: { baz: 22000, d1: 26000, ara: 25500, mega: 27900 }, ok: [], etapa: 'Muy salado: no apto para bebés' }
+  { n: 'Queso costeño', e: '🧀', cat: 'Lácteos', u: 'kg', p: { baz: 22000, d1: 26000, ara: 25500, mega: 27900 }, ok: [], etapa: 'Muy salado: no apto para bebés' },
+  { n: 'Suero costeño', e: '🥣', cat: 'Lácteos', u: 'kg', p: { baz: null, d1: 21750, ara: null, mega: 28250 }, ok: [], etapa: 'Salado: no apto para bebés' }
+
 ];
 
 
@@ -133,6 +141,14 @@ function reanimar(el, clase) {
 /** Calcula, para cada alimento, la tienda más barata, el súper más barato y el ahorro. */
 alimentos.forEach(a => {
   const disponibles = tiendas.map(t => t.k).filter(k => a.p[k] != null);
+
+  // Alimentos todavía sin precio consultado
+  a.sinPrecio = disponibles.length === 0;
+  if (a.sinPrecio) {
+    a.min = a.mejor = a.ahorro = a.minSuper = a.mejorSuper = null;
+    return;
+  }
+
   const valores = disponibles.map(k => a.p[k]);
   a.min = Math.min(...valores);
   a.mejor = disponibles.find(k => a.p[k] === a.min);
@@ -205,8 +221,8 @@ alimentos.forEach(a => {
 
     const orden = sortSel.value;
     lista.sort((x, y) => {
-      if (orden === 'precio') return x.min - y.min;
-      if (orden === 'ahorro') return y.ahorro - x.ahorro;
+      if (orden === 'precio') return (x.min ?? Infinity) - (y.min ?? Infinity) || x.n.localeCompare(y.n, 'es');
+      if (orden === 'ahorro') return (y.ahorro ?? -1) - (x.ahorro ?? -1) || x.n.localeCompare(y.n, 'es');
       return x.n.localeCompare(y.n, 'es');
     });
 
@@ -215,9 +231,11 @@ alimentos.forEach(a => {
         <td><div class="food"><span class="food-emoji">${a.e}</span><div>${a.n}<em>${a.etapa}</em></div></div></td>
         <td data-label="Unidad">${a.u}</td>
         ${tiendas.map(t => celdaPrecio(a, t.k)).join('')}
-        <td data-label="Más barato en">
-          <span class="badge">${etiqueta(a.mejor)}</span>
-          <span class="save-small">ahorra hasta ${a.ahorro}%</span>
+                <td data-label="Más barato en">
+          ${a.sinPrecio
+        ? '<span class="save-small">Precio por consultar</span>'
+        : `<span class="badge">${etiqueta(a.mejor)}</span>
+               <span class="save-small">ahorra hasta ${a.ahorro}%</span>`}
         </td>
         ${celdaSuper(a)}
       </tr>`).join('');
@@ -322,6 +340,10 @@ const platosCosto = [
     const a = alimentos.find(x => x.n === it.ref);
     if (!a) {
       console.warn('Costos: este ingrediente no está en la tabla →', it.ref);
+      return 0;
+    }
+    if (a.sinPrecio) {
+      console.warn('Costos: este ingrediente todavía no tiene precio →', it.ref);
       return 0;
     }
     return a.min * it.cant;
