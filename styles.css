@@ -30,21 +30,21 @@
   --sea:#0E7C86;
   --sea-d:#09565d;
   --coral:#FF6F59;
-  --mango:#FFB627;
+  --mango:#fce2b1;
   --leaf:#43AA8B;
   --berry:#B5487A;
   --sky:#9DDFF5;
   --sky-d:#3d5861;
-  --lila:#DBBBF2;
-  --ciruela:#ac5f91;
-  --ciruela-d:#7a3f66;
+  --lila:#ddb3fa;
+  --ciruela:#e7d5f3;
+  --ciruela-d:#ba629d;
 
   /* Fondos y líneas */
   --sand:#FFF8EC;
   --sand-2:#FDEFD6;
   --card:#fff;
   --line:#f1e3c8;
-  --line-2:#ead9b8;
+  --line-2:#7ea2f6;
 
   /* Texto */
   --ink:#1F2D3D;
@@ -140,7 +140,7 @@ img{max-width:100%}
 .b-hero::after{   /* círculo decorativo */
   content:"";position:absolute;right:-140px;top:-140px;
   width:420px;height:420px;border-radius:50%;
-  background:rgba(255,182,39,.35);
+  background:rgba(255, 158, 158, 0.314);
 }
 .b-hero > *{position:relative;z-index:1}
 .b-hero h1{font-size:clamp(3rem,6vw,4.8rem);line-height:1;color:var(--sea-d);text-shadow:0 4px 0 rgba(255,255,255,.35)}
@@ -170,7 +170,7 @@ img{max-width:100%}
 .b-buscar input{flex:1;min-width:0;padding:.6rem .2rem;border:0;outline:0;background:none;font:inherit;color:var(--ink)}
 .b-buscar button{
   padding:.65rem 1.2rem;border:0;border-radius:999px;cursor:pointer;
-  background:var(--coral);color:#fff;font:inherit;font-weight:800;
+  background:var(--mango);color:#000000;font:inherit;font-weight:800;
   transition:background .2s;
 }
 .b-buscar button:hover{background:var(--sea)}
@@ -212,8 +212,8 @@ img{max-width:100%}
 .receta-botones{display:flex;flex-wrap:wrap;gap:.5rem}
 
 /* Atajos a las etapas */
-.b-etapas{grid-area:etapas;background:var(--sea);color:#fff}
-.b-etapas .tile-tag{margin-bottom:.9rem;background:rgba(255,255,255,.18);color:#fff}
+.b-etapas{grid-area:etapas;background:var(--sky);color:#fff}
+.b-etapas .tile-tag{margin-bottom:.9rem;background:rgba(255,255,255,.18);color:#000000}
 .etapas-botones{display:grid;grid-template-columns:1fr;gap:.55rem}
 .etapas-botones button{
   display:flex;align-items:center;gap:.8rem;
@@ -246,6 +246,7 @@ img{max-width:100%}
 .block-title{margin:2.2rem 0 1rem;font-size:1.4rem;color:var(--sea-d)}
 .titulo-menu{margin-left:clamp(0rem, 20vw - 6rem, 13rem)}
 .EjeError{margin-top:1rem;margin-bottom:1.4rem;text-align:center}   /* título centrado de la galería de errores */
+.titles{max-width:1150px;margin-left:auto;margin-right:auto}
 
 
 /* ===========================================================
@@ -402,7 +403,7 @@ img{max-width:100%}
   background:#fff;color:var(--ink);font:inherit;font-weight:800;
   transition:all .2s;
 }
-.subtab.active{border:2px solid var(--coral);background:#fff3f0;color:var(--coral)}
+.subtab.active{border:2px solid var(--sea);background:#f0f5ff;color:var(--sea)}
 
 /* Pestañas de edad */
 .agetabs{
@@ -442,7 +443,7 @@ img{max-width:100%}
 .dish-name{font-weight:700;line-height:1.3}
 .dish-cta{
   margin-top:.8rem;padding:.3rem .9rem;border-radius:999px;
-  background:var(--coral);color:#fff;
+  background:var(--sea);color:#fff;
   font-style:normal;font-size:.8rem;font-weight:800;
   transition:background .2s;
 }
@@ -510,7 +511,7 @@ img{max-width:100%}
 .galeria .bstep-img:focus-visible{outline:3px solid var(--mango);outline-offset:3px}
 
 /* Lactancia: conserva los números y usa coral */
-#p-lactancia .galeria{--tips-c:var(--coral);--tips-bg:#fff3f0}
+#p-lactancia .galeria{--tips-c:var(--sea);--tips-bg:#fff3f0}
 #p-lactancia .galeria .bstep-img::before{content:counter(s)}
 
 /* Tablas de picar (marco del color de cada tabla) */
@@ -552,6 +553,9 @@ img{max-width:100%}
 #tips{
   --tips-c:var(--sea);      /* color principal: cámbialo aquí */
   --tips-bg:#eaf7f1;        /* fondo de la pestaña activa */
+  background:#e7d5f3 ;
+  max-width:100vw;
+  padding: 5rem 15vw;
 }
 #tips .section-head h2{color:var(--tips-c)}
 #tips .tag{background:var(--tips-c);color:#fff}
@@ -582,10 +586,8 @@ img{max-width:100%}
 /* ===========================================================
    11. Comer con poco
    =========================================================== */
-#ahorro{background:#fff7e0}
+#ahorro{background:var(--sand)}
 #ahorro .callout{background:#fff}
-#ahorro .block-title,
-#ahorro .block-title + .note{text-align:center}
 #ahorro .card .check li{margin-bottom:.8rem}
 #ahorro .card .check li:last-child{margin-bottom:0}
 /* Consejos: un color por tarjeta */
@@ -629,7 +631,7 @@ img{max-width:100%}
 /* ===========================================================
    12. Precios
    =========================================================== */
-#precios{background:#e7d5f3}
+#precios{background:#d5dcf3}
 
 /* Tiendas */
 .stores{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-bottom:1.5rem}
