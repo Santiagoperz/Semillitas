@@ -639,8 +639,8 @@ img{max-width:100%}
 
 #especias .esp-lista li{
   display:grid;
-  grid-template-columns:minmax(0,1.1fr) minmax(170px,.9fr) minmax(0,2fr);
-  grid-template-areas:"nombre momento nota";
+  grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);
+  grid-template-areas:"nombre nota";
   align-items:center;
   gap:.4rem 1rem;
   padding:.9rem 1.2rem;
