@@ -60,32 +60,32 @@ const alimentos = [
   { n: 'Maracuyá', e: '🟡', cat: 'Frutas', u: 'kg', p: { baz: null, d1: null, ara: null, mega: null }, ok: [], etapa: 'Jugo colado y sin azúcar' },
 
   // ===== Verduras =====
-  { n: 'Zanahoria', e: '🥕', cat: 'Verduras', u: 'kg', p: { baz: 744, d1: 2500, ara: 2300, mega: 2800 }, ok: [], etapa: 'Desde 6 meses (puré)' },
+  { n: 'Zanahoria', e: '🥕', cat: 'Verduras', u: 'kg', p: { baz: 3000, d1: 3100, ara: null, mega: 5400 }, ok: [], etapa: 'Desde 6 meses (puré)' },
   { n: 'Ahuyama', e: '🎃', cat: 'Verduras', u: 'kg', p: { baz: 1667, d1: 3400, ara: 3200, mega: 3600 }, ok: [], etapa: 'Desde 6 meses (crema)' },
-  { n: 'Tomate chonto', e: '🍅', cat: 'Verduras', u: 'kg', p: { baz: 4817, d1: 6500, ara: 6200, mega: 7900 }, ok: ['mega'], etapa: 'Vitamina C para el hierro' },
+  { n: 'Tomate chonto', e: '🍅', cat: 'Verduras', u: 'kg', p: { baz: 3500, d1: 4950, ara: 3950, mega: 4800 }, ok: ['mega'], etapa: 'Vitamina C para el hierro' },
   { n: 'Espinaca', e: '🥬', cat: 'Verduras', u: 'kg', p: { baz: 6889, d1: 10500, ara: 9900, mega: 11500 }, ok: [], etapa: 'Hierro no hemínico' },
-  { n: 'Cebolla cabezona blanca', e: '🧅', cat: 'Verduras', u: 'kg', p: { baz: 2408, d1: 6500, ara: 6200, mega: 7900 }, ok: ['mega'], etapa: 'Para dar sabor sin sal' },
+  { n: 'Cebolla cabezona blanca', e: '🧅', cat: 'Verduras', u: 'kg', p: { baz: 3800, d1: 4600, ara: 6175, mega: 6608 }, ok: ['mega'], etapa: 'Para dar sabor sin sal' },
   { n: 'Cebolla larga (junca)', e: '🌱', cat: 'Verduras', u: 'kg', p: { baz: 2500, d1: 8000, ara: 4200, mega: 10900 }, ok: ['mega'], etapa: 'Guisos y caldos caseros' },
   { n: 'Cebollín', e: '🌿', cat: 'Verduras', u: 'kg', p: { baz: 6333, d1: null, ara: 9500, mega: 10900 }, ok: [], etapa: 'Aromático, picado fino' },
-  { n: 'Pimentón', e: '🫑', cat: 'Verduras', u: 'kg', p: { baz: 4896, d1: 8900, ara: 8500, mega: 9500 }, ok: [], etapa: 'Rico en vitamina C' },
+  { n: 'Pimentón', e: '🫑', cat: 'Verduras', u: 'kg', p: { baz: 4896, d1: 8900, ara: 5200, mega: 9500 }, ok: [], etapa: 'Rico en vitamina C' },
   { n: 'Apio', e: '🥬', cat: 'Verduras', u: 'kg', p: { baz: 1967, d1: null, ara: 4500, mega: 4900 }, ok: [], etapa: 'Para caldos y sopas' },
   { n: 'Ajo', e: '🧄', cat: 'Verduras', u: 'kg', p: { baz: 5858, d1: 14000, ara: 13500, mega: 15900 }, ok: [], etapa: 'Sazón natural en lugar de cubitos' },
   { n: 'Cilantro', e: '🌿', cat: 'Verduras', u: 'kg', p: { baz: 11500, d1: 15800, ara: 16000, mega: 18000 }, ok: [], etapa: 'Aromático, picado fino' },
   { n: 'Cebolla cabezona roja', e: '🧅', cat: 'Verduras', u: 'kg', p: { baz: 2000, d1: 4400, ara: 3200, mega: 5900 }, ok: ['d1', 'ara', 'mega'], etapa: 'Para dar sabor sin sal' },
   { n: 'Habichuela', e: '🫛', cat: 'Verduras', u: 'kg', p: { baz: 6000, d1: null, ara: null, mega: 6900 }, ok: ['mega'], etapa: 'Cocida hasta que esté blanda y picada' },
-  { n: 'Brócoli', e: '🥦', cat: 'Verduras', u: 'kg', p: { baz: null, d1: 14000, ara: 16000, mega: 9800 }, ok: ['d1', 'ara', 'mega'], etapa: 'Al vapor y en trozos pequeños' },
+  { n: 'Brócoli', e: '🥦', cat: 'Verduras', u: 'kg', p: { baz: 8000, d1: 13980, ara: 16000, mega: 9800 }, ok: ['d1', 'ara', 'mega'], etapa: 'Al vapor y en trozos pequeños' },
   { n: 'Ají topito', e: '🌶️', cat: 'Verduras', u: 'kg', p: { baz: 3326, d1: 3400, ara: 4200, mega: 4150 }, ok: [], etapa: 'Para dar sabor a guisos sin usar cubitos' },
   { n: 'Lechuga', e: '🥬', cat: 'Verduras', u: 'kg', p: { baz: 2317, d1: 15000, ara: 11200, mega: 12300 }, ok: [], etapa: 'Bien lavada y picada fina' },
   { n: 'Pepino', e: '🥒', cat: 'Verduras', u: 'kg', p: { baz: null, d1: null, ara: null, mega: null }, ok: [], etapa: 'Lavado, pelado y en trozos pequeños' },
   { n: 'Remolacha', e: '🟣', cat: 'Verduras', u: 'kg', p: { baz: 2600, d1: 5000, ara: 5000, mega: 5000 }, ok: [], etapa: 'Cocida, en puré o en trozos según la edad' },
   // ===== Tubérculos y plátanos =====
-  { n: 'Papa', e: '🥔', cat: 'Tubérculos', u: 'kg', p: { baz: 2324, d1: 4000, ara: 3800, mega: 4300 }, ok: [], etapa: 'Desde 6 meses (puré)' },
-  { n: 'Yuca', e: '🌿', cat: 'Tubérculos', u: 'kg', p: { baz: 2875, d1: 4400, ara: 4200, mega: 4300 }, ok: [], etapa: 'Bien cocida y machacada' },
+  { n: 'Papa', e: '🥔', cat: 'Tubérculos', u: 'kg', p: { baz: 2324, d1: 4000, ara: 6395, mega: 4300 }, ok: [], etapa: 'Desde 6 meses (puré)' },
+  { n: 'Yuca', e: '🌿', cat: 'Tubérculos', u: 'kg', p: { baz: 2875, d1: 4400, ara: 4200, mega: 5800 }, ok: [], etapa: 'Bien cocida y machacada' },
   { n: 'Plátano hartón verde', e: '🍌', cat: 'Tubérculos', u: 'kg', p: { baz: 3375, d1: 5000, ara: 4800, mega: 5200 }, ok: [], etapa: 'Sopas y purés' },
   { n: 'Ñame criollo', e: '🍠', cat: 'Tubérculos', u: 'kg', p: { baz: 3248, d1: 5400, ara: 5200, mega: 5300 }, ok: [], etapa: 'Típico del Caribe, ideal en sopas' },
   { n: 'Batata', e: '🍠', cat: 'Tubérculos', u: 'kg', p: { baz: 2500, d1: null, ara: 4500, mega: 4900 }, ok: [], bazEst: true, etapa: 'Desde 6 meses, puré naturalmente dulce' },
   { n: 'Plátano maduro', e: '🍌', cat: 'Tubérculos', u: 'kg', p: { baz: 6100, d1: null, ara: null, mega: 6400 }, ok: ['mega'], etapa: 'Cocido y machacado · dulzor natural' },
-  { n: 'Mafufo', e: '🍌', cat: 'Tubérculos', u: 'kg', p: { baz: 3000, d1: 5000, ara: 5000, mega: 5000  }, ok: [], etapa: 'Cocido y machacado, en sopas y purés' },
+  { n: 'Mafufo', e: '🍌', cat: 'Tubérculos', u: 'kg', p: { baz: 3000, d1: 5000, ara: 5000, mega: 5000 }, ok: [], etapa: 'Cocido y machacado, en sopas y purés' },
 
   // ===== Granos y cereales =====
   { n: 'Arroz', e: '🍚', cat: 'Granos', u: 'kg', p: { baz: 3378, d1: 3900, ara: 3800, mega: 3300 }, ok: ['d1', 'mega'], etapa: 'Desde 6 meses (machacado)' },
@@ -105,14 +105,15 @@ const alimentos = [
   { n: 'Huevo rojo A', e: '🥚', cat: 'Proteínas', u: 'cubeta x30', p: { baz: 14820, d1: 11990, ara: 11500, mega: 15900 }, ok: ['d1'], etapa: 'Empieza por la yema' },
   { n: 'Muslo / contramuslo de pollo', e: '🍗', cat: 'Proteínas', u: 'kg', p: { baz: 6650, d1: 11900, ara: 7600, mega: 8390 }, ok: ['ara', 'mega'], etapa: 'Hierro hemínico' },
   { n: 'Pollo entero', e: '🐔', cat: 'Proteínas', u: 'kg', p: { baz: 8850, d1: 10500, ara: 9900, mega: 8444 }, ok: ['mega'], etapa: 'Hierro hemínico' },
-  { n: 'Pechuga de pollo', e: '🍗', cat: 'Proteínas', u: 'kg', p: { baz: 13000, d1: 14500, ara: 12900, mega: 13572 }, ok: ['mega'], etapa: 'Triturada o desmechada según la edad' },
+  { n: 'Pechuga de pollo', e: '🍗', cat: 'Proteínas', u: 'kg', p: { baz: 15500, d1: 17400, ara: 19734, mega: 21274 }, ok: ['mega'], etapa: 'Triturada o desmechada según la edad' },
   { n: 'Pata de pollo', e: '🐾', cat: 'Proteínas', u: 'kg', p: { baz: 4000, d1: null, ara: 5500, mega: 5900 }, ok: [], bazEst: true, etapa: 'Da sabor al caldo; no reemplaza la carne' },
   { n: 'Carne de cerdo (pernil)', e: '🐖', cat: 'Proteínas', u: 'kg', p: { baz: 16750, d1: 19900, ara: 18900, mega: 21900 }, ok: [], etapa: 'Magra, bien cocida y molida' },
   { n: 'Carne de res (bola)', e: '🥩', cat: 'Proteínas', u: 'kg', p: { baz: 32097, d1: 36000, ara: 35500, mega: 37900 }, ok: [], etapa: 'Molida desde 6–8 meses' },
-  { n: 'Pescado basa', e: '🐟', cat: 'Proteínas', u: 'kg', p: { baz: 9100, d1: 12900, ara: 12500, mega: 13900 }, ok: [], etapa: 'Sin espinas, fácil para niños' },
+  { n: 'Pescado basa', e: '🐟', cat: 'Proteínas', u: 'kg', p: { baz: 12000, d1: 22046, ara: 22600, mega: 15480 }, ok: [], etapa: 'Sin espinas, fácil para niños' },
   { n: 'Mojarra lora', e: '🐠', cat: 'Proteínas', u: 'kg', p: { baz: 11000, d1: null, ara: 15500, mega: 15900 }, ok: [], etapa: 'Retira bien las espinas' },
   { n: 'Bocachico', e: '🐟', cat: 'Proteínas', u: 'kg', p: { baz: 13500, d1: null, ara: null, mega: 16900 }, ok: [], etapa: 'Pescado de río típico · muchas espinas' },
-  { n: 'Hígado de res', e: '🥩', cat: 'Proteínas', u: 'kg', p: { baz: 8000, d1: null, ara: null, mega: 10600 }, ok: ['mega'], etapa: 'Muy rico en hierro · siempre bien cocido' },
+  { n: 'Hígado de res', e: '🥩', cat: 'Proteínas', u: 'kg', p: { baz: 15500, d1: null, ara: null, mega: 16400 }, ok: ['mega'], etapa: 'Muy rico en hierro · siempre bien cocido' },
+  { n: 'Carne de res', e: '🥩', cat: 'Proteínas', u: 'kg', p:{baz: 29000, d1: 39800, ara: 31900, mega: 33800 }, ok:[], etapa: 'Salud en el organismo · Ayuda al Desarrollo Muscular' },
 
   // ===== Lácteos =====
   { n: 'Leche entera', e: '🥛', cat: 'Lácteos', u: 'litro', p: { baz: null, d1: 3900, ara: 3800, mega: 4500 }, ok: [], etapa: 'Leche de vaca como bebida desde 12 meses' },
@@ -260,73 +261,87 @@ alimentos.forEach(a => {
    =========================================================== */
 const platosCosto = [
   {
-    etapa: '6 a 8 meses', nombre: 'Crema de ahuyama con pollo', items: [
-      { ref: 'Ahuyama', cant: 0.5, txt: 'Ahuyama · 1 libra' },
-      { ref: 'Pechuga de pollo', cant: 0.25, txt: 'Pechuga de pollo · 250 g' }
+    etapa: 'Para Toda La Familia', nombre: 'Huevo revuelto suave con papa y espinaca', items: [
+      { ref: 'Huevo rojo A', cant: 0.5, txt: 'Huevo rojo A · 10 unidades' },
+      { ref: 'Papa', cant: 1.5, txt: 'Papa · 1.500 gramos' },
+      { ref: 'Espinaca', cant: 0.25, txt: 'Espinaca · 4 onzas' }
     ]
   },
   {
-    etapa: '9 a 11 meses', nombre: 'Huevo revuelto suave con papa y espinaca', items: [
-      { ref: 'Huevo rojo A', cant: 1 / 30, txt: 'Huevo · 1 unidad' },
-      { ref: 'Papa', cant: 0.5, txt: 'Papa · 1 libra' },
-      { ref: 'Espinaca', cant: 0.5, txt: 'Espinaca · 1 libra' }
+    etapa: 'Para Toda La Familia', nombre: 'Avena con banano', items: [
+      { ref: 'Avena en hojuelas', cant: 0.15, txt: 'Avena en hojuelas · 150 gramos' },
+      { ref: 'Leche entera', cant: 1.5, txt: 'Leche entera · 1500 mililitros' },
+      { ref: 'Banano', cant: 5, txt: 'Banano · 5 unidades' },
+      { precio: 2000, txt: 'Canela en polvo · 10 gramos' }
     ]
   },
   {
-    etapa: '12 a 23 meses', nombre: 'Arroz con pollo, habichuela y zanahoria', items: [
+    etapa: 'Para Toda La Familia', nombre: 'Crema de ahuyama con pollo', items: [
+      { ref: 'Ahuyama', cant: 2, txt: 'Ahuyama · 2 kilos' },
+      { ref: 'Pechuga de pollo', cant: 1, txt: 'Pollo (Pechuga) · 1 kilo' }
+    ]
+  },
+  {
+    etapa: 'Para Toda La Familia', nombre: 'Hígado encebollado con yuca', items: [
+      { ref: 'Hígado de res', cant: 1, txt: 'Hígado de res · 1 kilo' },
+      { ref: 'Yuca', cant: 1.5, txt: 'Yuca · 1,5 kilos' },
+      { ref: 'Cebolla cabezona blanca', cant: 0.3, txt: 'Cebolla cabezona blanca · 1 unidad grande' },
+      { ref: 'Tomate chonto', cant: 0.3, txt: 'Tomate chonto · 1 unidad' },
+      { ref: 'Ajo', cant: 0.03, txt: 'Ajo · 3 dientes' }
+    ]
+  },
+  {
+    etapa: 'Para Toda La Familia', nombre: 'Pollo desmenuzado con papa cocida', items: [
+      { ref: 'Pechuga de pollo', cant: 1, txt: 'Pollo (Pechuga) · 1 kilo' },
+      { ref: 'Papa', cant: 1.5, txt: 'Papa · 1.500 gramos' },
+      { ref: 'Tomate chonto', cant: 0.3, txt: 'Tomate chonto · 1 unidad' },
+      { ref: 'Cebolla cabezona blanca', cant: 0.3, txt: 'Cebolla cabezona blanca · 1 unidad' },
+      { ref: 'Ajo', cant: 0.03, txt: 'Ajo · 3 dientes' },
+      { ref: 'Cilantro', cant: 0.06, txt: 'Cilantro · 1 unidad' }
+    ]
+  },
+  {
+    etapa: 'Para Toda La Familia', nombre: 'Cayeye de guineo verde con queso costeño bajo en sal y huevo cocido', items: [
+      { ref: 'Mafufo', cant: 2.3, txt: 'Mafufo · 10 unidades' },
+      { ref: 'Queso costeño', cant: 0.5, txt: 'Queso costeño · una libra' },
+      { ref: 'Huevo rojo A', cant: 0.5, txt: 'Huevo rojo A · 10 unidades' }
+    ]
+  },
+  {
+    etapa: 'Para Toda La Familia', nombre: 'Arroz con pollo', items: [
       { ref: 'Arroz', cant: 0.5, txt: 'Arroz · 1 libra' },
-      { ref: 'Pollo entero', cant: 0.5, txt: 'Pollo · 1 libra' },
-      { precio: 1000, txt: 'Zanahoria · 1 unidad' },
-      { precio: 1500, txt: 'Habichuela' },
-      { precio: 1000, txt: 'Cebolla · 1 unidad' },
-      { precio: 1000, txt: 'Tomate · 1 unidad' }
+      { ref: 'Pechuga de pollo', cant: 1, txt: 'Pollo (Pechuga) · 1 kilo' },
+      { ref: 'Zanahoria', cant: .4 , txt: 'Zanahoria · 1 unidad grande' },
+      { ref: 'Habichuela', cant: .3, txt: 'Habichuela · 1 unidad' },
+      { ref: 'Cebolla cabezona blanca', cant: .3, txt: 'Cebolla cabezona blanca · 1 unidad' },
+      { ref: 'Cilantro', cant: .06, txt: 'Cilantro · 1 unidad' },
+      { ref: 'Cebolla larga (junca)', cant: .3, txt: 'Cebolla larga (junca) · 1 unidad' },
+      { ref: 'Pimentón', cant: .4 , txt: 'Pimentón · 1 unidad' }
     ]
   },
   {
-    etapa: '12 a 23 meses', nombre: 'Pescado guisado con arroz y brócoli', items: [
-      { ref: 'Pescado basa', cant: 0.5, txt: 'Pescado blanco · 1 libra' },
+    etapa: 'Para Toda La Familia', nombre: 'Pescado guisado con arroz y brócoli', items: [
+      { ref: 'Pescado basa', cant: 2, txt: 'Pescado basa · 2 kilos' },
       { ref: 'Arroz', cant: 0.5, txt: 'Arroz · 1 libra' },
       { ref: 'Brócoli', cant: 0.5, txt: 'Brócoli · 1 libra' },
-      { precio: 1000, txt: 'Tomate · 1 unidad' },
-      { precio: 1000, txt: 'Cebolla · 1 unidad' }
+      { ref: 'Tomate chonto', cant: .3, txt: 'Tomate chonto · 1 unidad' },
+      { ref: 'Cebolla cabezona blanca', cant: .3, txt: 'Cebolla cabezona blanca · 1 unidad' },
+      { ref: 'Ajo', cant: 0.05, txt: 'Ajo · 3 dientes' },
+      { ref: 'Cilantro', cant: .1, txt: 'Cilantro · 1 unidad' }
     ]
   },
   {
-    etapa: 'Niñez', nombre: 'Cayeye con queso costeño bajo en sal y huevo cocido', items: [
-      { precio: 800, txt: 'Guineo verde · 1 unidad' },
-      { ref: 'Queso costeño', cant: 0.25, txt: 'Queso costeño · 250 g' },
-      { ref: 'Huevo rojo A', cant: 1 / 30, txt: 'Huevo · 1 unidad' }
-    ]
-  },
-  {
-    etapa: 'Niñez', nombre: 'Carne guisada con arroz, fríjol cabeza negra y ensalada', items: [
-      { ref: 'Carne de res (bola)', cant: 0.25, txt: 'Carne de res magra · 250 g' },
+    etapa: 'Para Toda La Familia', nombre: 'Carne guisada con arroz, fríjol cabeza negra y ensalada', items: [
+      { ref: 'Carne de res', cant: 1, txt: 'Carne de res (bola) · 1 kilo' },
       { ref: 'Arroz', cant: 0.5, txt: 'Arroz · 1 libra' },
-      { ref: 'Fríjol cabeza negra', cant: 0.5, txt: 'Fríjol cabeza negra · 1 libra' },
-      { precio: 1000, txt: 'Tomate · 1 unidad' },
-      { precio: 1000, txt: 'Cebolla · 1 unidad' },
-      { precio: 1000, txt: 'Ajo · 1 unidad' },
-      { precio: 1000, txt: 'Zanahoria · 1 unidad' },
-      { precio: 1000, txt: 'Ají dulce · 1 unidad' },
-      { precio: 1000, txt: 'Repollo · 1 unidad' },
-      { precio: 7000, txt: 'Aguacate · 1 unidad' }
-    ]
-  },
-  {
-    etapa: 'Adolescencia', nombre: 'Avena con banano', items: [
-      { ref: 'Avena en hojuelas', cant: 0.2, txt: 'Avena en hojuelas · 200 g' },
-      { ref: 'Leche entera', cant: 0.9, txt: 'Leche entera · 900 ml' },
-      { precio: 600, txt: 'Banano · 1 unidad' },
-      { precio: 1400, txt: 'Canela en polvo · 1 bolsita' }
-    ]
-  },
-  {
-    etapa: 'Adolescencia', nombre: 'Hígado encebollado con yuca', items: [
-      { ref: 'Hígado de res', cant: 0.5, txt: 'Hígado de res · 1 libra' },
-      { ref: 'Yuca', cant: 0.5, txt: 'Yuca · 1 libra' },
-      { precio: 1000, txt: 'Cebolla · 1 unidad' },
-      { precio: 1000, txt: 'Tomate · 1 unidad' },
-      { precio: 1000, txt: 'Ajo · 1 unidad' }
+      { ref: 'Fríjol cabeza negra', cant: 0.2, txt: 'Fríjol cabeza negra · 200 gramos' },
+      { ref: 'Tomate chonto', cant: .3, txt: 'Tomate chonto · 1 unidad grande' },
+      { ref: 'Cebolla cabezona blanca', cant: .3 , txt: 'Cebolla cabezona blanca · 1 unidad grande' },
+      { ref: 'Ajo', cant: 0.003, txt: 'Ajo · 3 dientes' },
+      { ref: 'Zanahoria', cant: 1, txt: 'Zanahoria · 1 unidad' },
+      { ref: 'Ají topito', cant: 1, txt: 'Ají topito · 1 unidad' },
+      { precio: 1500, txt: 'Repollo · 1 unidad' },
+      { ref: 'Aguacate', cant: 1, txt: 'Aguacate · 1 unidad' }
     ]
   }
 ];
