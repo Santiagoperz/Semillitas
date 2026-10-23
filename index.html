@@ -10,7 +10,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap"
     rel="stylesheet">
-  <link href="styles.css?v=2" rel="stylesheet">
+  <link href="styles.css?v=3" rel="stylesheet">
 </head>
 
 <body>
@@ -1460,19 +1460,6 @@
 
           <li class="bstep">
             <figure>
-              <div class="bstep-img" data-emoji="🥣">
-                <img src="imgs/Higiene/manipulacion/5.jpeg" loading="lazy"
-                  alt="Recipientes pequeños y tapados con puré para bebé, guardados en la nevera">
-              </div>
-              <!-- TODO: validar con nutricionista (recalentar una sola vez) -->
-              <figcaption><strong>Guarda tapado y recalienta una sola vez.</strong> Conserva las preparaciones del bebé
-                tapadas en la nevera. Calienta solo la porción que va a comer y no vuelvas a recalentar lo que sobró.
-              </figcaption>
-            </figure>
-          </li>
-
-          <li class="bstep">
-            <figure>
               <div class="bstep-img" data-emoji="🗑️">
                 <img src="imgs/Higiene/manipulacion/6.jpeg" loading="lazy"
                   alt="Plato de bebé con restos de comida siendo vaciado en la basura">
@@ -1510,7 +1497,7 @@
             <figure>
               <div class="bstep-img" data-emoji="🔪">
                 <img src="imgs/Higiene/comparativa/1.1.jpeg" loading="lazy"
-                  alt="Ejemplo de un error al manipular alimentos en la cocina">
+                  alt="Forma correcta para que no haya contaminación cruzada entre carnes.">
               </div>
             </figure>
           </li>
@@ -1518,7 +1505,23 @@
             <figure>
               <div class="bstep-img" data-emoji="❄️">
                 <img src="imgs/Higiene/comparativa/1.2.jpeg" loading="lazy"
-                  alt="Ejemplo de un error al conservar alimentos en la nevera">
+                  alt="Forma correcta para que no haya contaminación cruzada entre carnes y verduras.">
+              </div>
+            </figure>
+          </li>
+          <li class="bstep">
+            <figure>
+              <div class="bstep-img" data-emoji="❄️">
+                <img src="imgs/Higiene/comparativa/1.3.jpeg" loading="lazy"
+                  alt="Metodo correcto para almacenasr alimentos en la nevera, evitando la contaminación cruzada entre carnes.">
+              </div>
+            </figure>
+          </li>
+          <li class="bstep">
+            <figure>
+              <div class="bstep-img" data-emoji="❄️">
+                <img src="imgs/Higiene/comparativa/1.4.jpeg" loading="lazy"
+                  alt="Metodo correcto para almacenasr alimentos en la nevera, evitando la contaminación cruzada entre carnes.">
               </div>
             </figure>
           </li>
@@ -1781,6 +1784,74 @@
           nutritivo.</p>
       </div>
 
+      <!-- Platos económicos: las tarjetas las crea script.js (sección 4b) -->
+      <h3 class="block-title titles">🍽️ ¿Cuánto cuestan los platos de la guía?</h3>
+      <p class="note">Es lo que gastas en el mercado para comprar los ingredientes. Con varios de ellos te alcanza para
+        más de una comida.</p>
+      <div class="grid-3 costos" id="costos"></div>
+
+      <div class="esp-bloque" id="especias">
+        <div class="agetabs esp-tabs" role="tablist" data-tabs>
+          <button class="agetab active">Especias</button>
+        </div>
+
+        <div class="panel active">
+          <ul class="esp-lista">
+            <li>
+              <span class="esp-nombre">🐔 Caldo de pollo</span>
+              <span class="esp-momento">Según la preparación</span>
+              <span class="esp-nota">El pollo debe cocinarse completamente. Retira los huesos y evita ofrecer trozos que
+                puedan causar atragantamiento.</span>
+            </li>
+            <li>
+              <span class="esp-nombre">🌿 Romero</span>
+              <span class="esp-momento">Durante la cocción</span>
+              <span class="esp-nota">Úsalo en pequeñas cantidades para aromatizar el caldo. Retira las ramas antes de
+                servir.</span>
+            </li>
+            <li>
+              <span class="esp-nombre">🌶️ Pimienta</span>
+              <span class="esp-momento">Al gusto, con moderación</span>
+              <span class="esp-nota">Utiliza poca cantidad, especialmente en preparaciones para niños pequeños, y evita
+                que el sabor resulte demasiado picante.</span>
+            </li>
+            <li>
+              <span class="esp-nombre">🌿 Albahaca</span>
+              <span class="esp-momento">Al final de la cocción</span>
+              <span class="esp-nota">Añade las hojas bien lavadas y picadas finamente para aportar aroma y sabor.</span>
+            </li>
+            <li>
+              <span class="esp-nombre">🍋 Limón</span>
+              <span class="esp-momento">Al finalizar la preparación</span>
+              <span class="esp-nota">Añade unas gotas de jugo recién exprimido para dar sabor. Lava el limón antes de
+                cortarlo.</span>
+            </li>
+            <li>
+              <span class="esp-nombre">🟡 Cúrcuma</span>
+              <span class="esp-momento">Durante la cocción</span>
+              <span class="esp-nota">Agrega una pequeña cantidad para aportar color y sabor. Evita excederte para que no
+                domine la preparación.</span>
+            </li>
+            <li>
+              <span class="esp-nombre">🧡 Páprika</span>
+              <span class="esp-momento">Durante la cocción</span>
+              <span class="esp-nota">Prefiere páprika dulce y sin picante para dar color y sabor suave al caldo.</span>
+            </li>
+            <li>
+              <span class="esp-nombre">🌿 Tomillo</span>
+              <span class="esp-momento">Durante la cocción</span>
+              <span class="esp-nota">Utiliza una pequeña cantidad para aromatizar. Retira las ramas o partes duras antes
+                de servir.</span>
+            </li>
+            <li>
+              <span class="esp-nombre">🌿 Orégano</span>
+              <span class="esp-momento">Durante la cocción</span>
+              <span class="esp-nota">Añade una pizca para dar aroma al caldo. Si utilizas hojas secas, desmenúzalas
+                finamente.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
       <!-- Consejos -->
       <h3 class="block-title titles">💡 Consejos para que el mercado rinda</h3>
       <!-- TODO: validar con nutricionista y agregar fuente a los consejos que no la tienen -->
@@ -1809,7 +1880,8 @@
             <li><strong>Acompaña el hierro con vitamina C.</strong> Lentejas guisadas con tomate o una guayaba de
               postre ayudan a que el cuerpo aproveche mejor el hierro, sin costo extra. <small>(ESPGHAN, 2017)</small>
             </li>
-            <li><strong>Una sola olla para toda la familia.</strong> No necesitas cocinar aparte para el bebé. Separa su
+            <li><strong>Una sola olla para toda la familia.</strong> No necesitas cocinar aparte para el bebé. Separa
+              su
               porción antes de agregar sal o condimentos y adapta la textura a su edad: puré, machacado o picado
               fino.</li>
           </ul>
@@ -1834,12 +1906,6 @@
             Úsala para dar sabor y sirve siempre una porción de proteína en el plato.</p>
         </div>
       </div>
-
-      <!-- Platos económicos: las tarjetas las crea script.js (sección 4b) -->
-      <h3 class="block-title titles">🍽️ ¿Cuánto cuestan los platos de la guía?</h3>
-      <p class="note">Es lo que gastas en el mercado para comprar los ingredientes. Con varios de ellos te alcanza para
-        más de una comida.</p>
-      <div class="grid-3 costos" id="costos"></div>
 
       <!-- TODO: agregar la fecha de consulta de los precios -->
       <p class="note center">Los ingredientes que se compran por peso usan el precio más bajo de la
@@ -1958,7 +2024,8 @@
       <img src="imgs/logos/bienestar.png" alt="Logo de Bienestar" loading="lazy">
     </div>
     <p>🌱 <strong>Semillitas</strong> · Guía de alimentación con alimentos locales</p>
-    <p class="autoras">Elaborado por: Guerra, Luisa; Martelo Romero, Danna Saray; Ospino García, Gisella Patricia.</p>
+    <p class="autoras">Elaborado por: Guerra Castilla, Luisa Maria; Martelo Romero, Danna Saray; Ospino García, Gisella
+      Patricia.</p>
     <p class="refs">Referencias: Organización Mundial de la Salud (s. f.) · OMS (2006), Cinco claves para la inocuidad
       de los alimentos · OMS (2009), ¿Cómo lavarse las manos? · OMS (2019) · OMS (2026) · UNICEF (s. f.) · UNICEF (2023)
       · ICBF (s. f.) · ICBF (2020) · ICBF, Guías Alimentarias (2015-2025) · ESPGHAN (2017) · USDA-FSIS (s. f.) ·
@@ -1966,7 +2033,10 @@
     <button class="to-top" id="toTop" aria-label="Volver arriba">↑</button>
   </footer>
 
-  <script src="script.js?v=1"></script>
+  <script src="script.js?v=2"></script>
+  <!-- Cloudflare Web Analytics -->
+  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js'
+    data-cf-beacon='{"token": "a662da0e957540fc9be2b7e6617fca77"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 
 </html>
