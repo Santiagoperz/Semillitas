@@ -1792,62 +1792,83 @@
 
       <div class="esp-bloque" id="especias">
         <div class="agetabs esp-tabs" role="tablist" data-tabs>
-          <button class="agetab active">Especias</button>
+          <button type="button" class="agetab active" role="tab" aria-selected="true"
+            data-panel="esp-caldos">Caldos</button>
+          <button type="button" class="agetab" role="tab" aria-selected="false"
+            data-panel="esp-especias">Especias</button>
         </div>
 
-        <div class="panel active">
+        <!-- Panel: Caldos -->
+        <div class="panel active" id="esp-caldos" role="tabpanel">
           <ul class="esp-lista">
             <li>
-              <span class="esp-nombre">🐔 Caldo de pollo</span>
-              <span class="esp-momento">Según la preparación</span>
-              <span class="esp-nota">El pollo debe cocinarse completamente. Retira los huesos y evita ofrecer trozos que
-                puedan causar atragantamiento.</span>
+              <span class="esp-nombre">🐔 Caldo natural de pollo</span>
+              <span class="esp-nota">El agua en la que se cocina el pollo, junto con sus vegetales y hierbas, adquiere
+                sabor y puede utilizarse para preparar arroz, sopas, guisos, salsas y legumbres. Aprovechas el líquido
+                de cocción y reduces la necesidad de comprar cubitos de caldo o sazonadores comerciales.</span>
             </li>
             <li>
-              <span class="esp-nombre">🌿 Romero</span>
-              <span class="esp-momento">Durante la cocción</span>
-              <span class="esp-nota">Úsalo en pequeñas cantidades para aromatizar el caldo. Retira las ramas antes de
-                servir.</span>
+              <span class="esp-nombre">🥕 Caldo de verduras</span>
+              <span class="esp-nota">El agua de cocción de zanahoria, cebolla, apio y otros vegetales limpios puede
+                aportar sabor a sopas, arroz y guisos. Utiliza verduras frescas y agua de cocción sin exceso de
+                sal.</span>
             </li>
             <li>
-              <span class="esp-nombre">🌶️ Pimienta</span>
-              <span class="esp-momento">Al gusto, con moderación</span>
-              <span class="esp-nota">Utiliza poca cantidad, especialmente en preparaciones para niños pequeños, y evita
-                que el sabor resulte demasiado picante.</span>
+              <span class="esp-nombre">🐄 Caldo de carne de res</span>
+              <span class="esp-nota">Se obtiene al cocinar carne con cebolla, ajo, cilantro y otros vegetales. Sirve
+                para preparar arroz, sopas, salsas, guisos de carne y legumbres. Aprovechas el líquido de cocción de la
+                carne y reduces la necesidad de comprar caldos comerciales.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Panel: Especias -->
+        <div class="panel" id="esp-especias" role="tabpanel">
+          <ul class="esp-lista">
+            <li>
+              <span class="esp-nombre">🌿 Cilantro y perejil</span>
+              <span class="esp-nota">Dan aroma y frescura a sopas, guisos, pescados, carnes, arroz y ensaladas. Puedes
+                comprar pequeños manojos, picarlos y congelarlos en porciones para utilizarlos durante varios
+                días.</span>
             </li>
             <li>
-              <span class="esp-nombre">🌿 Albahaca</span>
-              <span class="esp-momento">Al final de la cocción</span>
-              <span class="esp-nota">Añade las hojas bien lavadas y picadas finamente para aportar aroma y sabor.</span>
+              <span class="esp-nombre">🟤 Comino</span>
+              <span class="esp-nota">Es ideal para carnes guisadas, fríjoles, lentejas, sopas y algunas preparaciones de
+                arroz. Se utiliza en pequeñas cantidades, por lo que un solo paquete puede rendir para muchas
+                comidas.</span>
+            </li>
+            <li>
+              <span class="esp-nombre">☘️ Orégano</span>
+              <span class="esp-nota">Combina muy bien con pollo, carne, tomate, verduras, salsas y legumbres. Una pizca
+                aporta aroma sin necesidad de agregar mezclas comerciales.</span>
             </li>
             <li>
               <span class="esp-nombre">🍋 Limón</span>
-              <span class="esp-momento">Al finalizar la preparación</span>
-              <span class="esp-nota">Añade unas gotas de jugo recién exprimido para dar sabor. Lava el limón antes de
-                cortarlo.</span>
+              <span class="esp-nota">Su jugo aporta acidez y frescura a pescados, pollo, ensaladas, verduras y adobos.
+                Es una alternativa sencilla para realzar el sabor sin depender de salsas embotelladas.</span>
             </li>
             <li>
               <span class="esp-nombre">🟡 Cúrcuma</span>
-              <span class="esp-momento">Durante la cocción</span>
-              <span class="esp-nota">Agrega una pequeña cantidad para aportar color y sabor. Evita excederte para que no
-                domine la preparación.</span>
+              <span class="esp-nota">Aporta color amarillo y un sabor suave a arroces, sopas, verduras y guisos. Con una
+                pequeña cantidad puedes dar color y variedad a tus preparaciones sin recurrir a colorantes
+                culinarios.</span>
             </li>
             <li>
-              <span class="esp-nombre">🧡 Páprika</span>
-              <span class="esp-momento">Durante la cocción</span>
-              <span class="esp-nota">Prefiere páprika dulce y sin picante para dar color y sabor suave al caldo.</span>
+              <span class="esp-nombre">⚫ Pimienta negra</span>
+              <span class="esp-nota">Realza el sabor de carnes, pollo, pescado, huevos, sopas y verduras. Solo necesitas
+                una pizca para añadir aroma y un toque ligeramente picante.</span>
             </li>
             <li>
-              <span class="esp-nombre">🌿 Tomillo</span>
-              <span class="esp-momento">Durante la cocción</span>
-              <span class="esp-nota">Utiliza una pequeña cantidad para aromatizar. Retira las ramas o partes duras antes
-                de servir.</span>
+              <span class="esp-nombre">🍃 Laurel, tomillo y romero</span>
+              <span class="esp-nota">El laurel funciona muy bien en sopas y legumbres; el tomillo y el romero combinan
+                con pollo, pescado, carnes y verduras. Se emplean pequeñas cantidades para aportar bastante
+                aroma.</span>
             </li>
             <li>
-              <span class="esp-nombre">🌿 Orégano</span>
-              <span class="esp-momento">Durante la cocción</span>
-              <span class="esp-nota">Añade una pizca para dar aroma al caldo. Si utilizas hojas secas, desmenúzalas
-                finamente.</span>
+              <span class="esp-nombre">🧄 Ajo</span>
+              <span class="esp-nota">Aporta un sabor intenso a carnes, pescados, arroces, fríjoles, lentejas y verduras.
+                Una pequeña cantidad de ajo fresco puede sustituir parte del sazonador comercial y rinde para varias
+                preparaciones.</span>
             </li>
           </ul>
         </div>

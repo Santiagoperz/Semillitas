@@ -54,10 +54,10 @@ const alimentos = [
   { n: 'Zapote', e: '🧡', cat: 'Frutas', u: 'kg', p: { baz: 3500, d1: null, ara: null, mega: 5900 }, ok: [], bazEst: true, etapa: 'Fruta local, en puré o jugo sin azúcar' },
   { n: 'Tomate de árbol', e: '🍅', cat: 'Frutas', u: 'kg', p: { baz: 5278, d1: 7500, ara: 7200, mega: 8200 }, ok: [], etapa: 'Jugo sin azúcar · vitamina C' },
   { n: 'Mora', e: '🫐', cat: 'Frutas', u: 'kg', p: { baz: 6367, d1: 9900, ara: 9500, mega: 10900 }, ok: [], etapa: 'Jugo colado sin azúcar' },
-  { n: 'Fresa', e: '🍓', cat: 'Frutas', u: 'kg', p: { baz: null, d1: null, ara: null, mega: 15000 }, ok: ['mega'], etapa: 'Lavada y en trozos pequeños · vitamina C' },
-  { n: 'Kiwi', e: '🥝', cat: 'Frutas', u: 'kg', p: { baz: null, d1: 20000, ara: null, mega: 19500 }, ok: ['d1', 'mega'], etapa: 'Pelado y en trozos · vitamina C' },
-  { n: 'Arándanos', e: '🫐', cat: 'Frutas', u: 'kg', p: { baz: null, d1: 52000, ara: null, mega: 61800 }, ok: ['d1', 'mega'], etapa: 'Partidos o aplastados para niños pequeños' },
-  { n: 'Maracuyá', e: '🟡', cat: 'Frutas', u: 'kg', p: { baz: null, d1: null, ara: null, mega: null }, ok: [], etapa: 'Jugo colado y sin azúcar' },
+  { n: 'Fresa', e: '🍓', cat: 'Frutas', u: 'kg', p: { baz: 13000, d1: 18800, ara: 15500, mega: 27900 }, ok: ['mega'], etapa: 'Lavada y en trozos pequeños · vitamina C' },
+  { n: 'Kiwi', e: '🥝', cat: 'Frutas', u: 'kg', p: { baz: 17000, d1: 20000, ara: null, mega: 19500 }, ok: ['d1', 'mega'], etapa: 'Pelado y en trozos · vitamina C' },
+  { n: 'Arándanos', e: '🫐', cat: 'Frutas', u: 'kg', p: { baz: 400000, d1: 52000, ara: null, mega: 61800 }, ok: ['d1', 'mega'], etapa: 'Partidos o aplastados para niños pequeños' },
+  { n: 'Maracuyá', e: '🟡', cat: 'Frutas', u: 'kg', p: { baz: 10400, d1: null, ara: null, mega: 11800 }, ok: [], etapa: 'Jugo colado y sin azúcar' },
 
   // ===== Verduras =====
   { n: 'Zanahoria', e: '🥕', cat: 'Verduras', u: 'kg', p: { baz: 3000, d1: 3100, ara: null, mega: 5400 }, ok: [], etapa: 'Desde 6 meses (puré)' },
@@ -76,7 +76,7 @@ const alimentos = [
   { n: 'Brócoli', e: '🥦', cat: 'Verduras', u: 'kg', p: { baz: 8000, d1: 13980, ara: 16000, mega: 9800 }, ok: ['d1', 'ara', 'mega'], etapa: 'Al vapor y en trozos pequeños' },
   { n: 'Ají topito', e: '🌶️', cat: 'Verduras', u: 'kg', p: { baz: 3326, d1: 3400, ara: 4200, mega: 4150 }, ok: [], etapa: 'Para dar sabor a guisos sin usar cubitos' },
   { n: 'Lechuga', e: '🥬', cat: 'Verduras', u: 'kg', p: { baz: 2317, d1: 15000, ara: 11200, mega: 12300 }, ok: [], etapa: 'Bien lavada y picada fina' },
-  { n: 'Pepino', e: '🥒', cat: 'Verduras', u: 'kg', p: { baz: null, d1: null, ara: null, mega: null }, ok: [], etapa: 'Lavado, pelado y en trozos pequeños' },
+  { n: 'Pepino', e: '🥒', cat: 'Verduras', u: 'kg', p: { baz: 4300, d1: null, ara: 4000, mega: 5500 }, ok: [], etapa: 'Lavado, pelado y en trozos pequeños' },
   { n: 'Remolacha', e: '🟣', cat: 'Verduras', u: 'kg', p: { baz: 2600, d1: 5000, ara: 5000, mega: 5000 }, ok: [], etapa: 'Cocida, en puré o en trozos según la edad' },
   // ===== Tubérculos y plátanos =====
   { n: 'Papa', e: '🥔', cat: 'Tubérculos', u: 'kg', p: { baz: 2324, d1: 4000, ara: 6395, mega: 4300 }, ok: [], etapa: 'Desde 6 meses (puré)' },
@@ -116,11 +116,11 @@ const alimentos = [
   { n: 'Carne de res', e: '🥩', cat: 'Proteínas', u: 'kg', p:{baz: 29000, d1: 39800, ara: 31900, mega: 33800 }, ok:[], etapa: 'Salud en el organismo · Ayuda al Desarrollo Muscular' },
 
   // ===== Lácteos =====
-  { n: 'Leche entera', e: '🥛', cat: 'Lácteos', u: 'litro', p: { baz: null, d1: 3900, ara: 3800, mega: 4500 }, ok: [], etapa: 'Leche de vaca como bebida desde 12 meses' },
-  { n: 'Yogurt natural', e: '🥣', cat: 'Lácteos', u: 'litro', p: { baz: null, d1: 7900, ara: 7500, mega: 9500 }, ok: [], etapa: 'Sin azúcar · útil desde el primer año' },
-  { n: 'Mantequilla', e: '🧈', cat: 'Lácteos', u: '250 g', p: { baz: null, d1: 6500, ara: 6300, mega: 7900 }, ok: [], etapa: 'En pequeñas cantidades' },
+  { n: 'Leche entera', e: '🥛', cat: 'Lácteos', u: 'litro', p: { baz: 3900, d1: 3900, ara: 3800, mega: 4500 }, ok: [], etapa: 'Leche de vaca como bebida desde 12 meses' },
+  { n: 'Yogurt natural', e: '🥣', cat: 'Lácteos', u: 'litro', p: { baz: 7000, d1: 7900, ara: 7500, mega: 9500 }, ok: [], etapa: 'Sin azúcar · útil desde el primer año' },
+  { n: 'Mantequilla', e: '🧈', cat: 'Lácteos', u: '250 g', p: { baz: 5500, d1: 6500, ara: 6300, mega: 7900 }, ok: [], etapa: 'En pequeñas cantidades' },
   { n: 'Queso costeño', e: '🧀', cat: 'Lácteos', u: 'kg', p: { baz: 22000, d1: 26000, ara: 25500, mega: 27900 }, ok: [], etapa: 'Muy salado: no apto para bebés' },
-  { n: 'Suero costeño', e: '🥣', cat: 'Lácteos', u: 'kg', p: { baz: null, d1: 21750, ara: null, mega: 28250 }, ok: [], etapa: 'Salado: no apto para bebés' }
+  { n: 'Suero costeño', e: '🥣', cat: 'Lácteos', u: 'kg', p: { baz: 20000, d1: 21750, ara: 1925, mega: 28250 }, ok: [], etapa: 'Salado: no apto para bebés' }
 
 ];
 
