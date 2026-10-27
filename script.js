@@ -78,6 +78,9 @@ const alimentos = [
   { n: 'Lechuga', e: '🥬', cat: 'Verduras', u: 'kg', p: { baz: 2317, d1: 15000, ara: 11200, mega: 12300 }, ok: [], etapa: 'Bien lavada y picada fina' },
   { n: 'Pepino', e: '🥒', cat: 'Verduras', u: 'kg', p: { baz: 4300, d1: null, ara: 4000, mega: 5500 }, ok: [], etapa: 'Lavado, pelado y en trozos pequeños' },
   { n: 'Remolacha', e: '🟣', cat: 'Verduras', u: 'kg', p: { baz: 2600, d1: 5000, ara: 5000, mega: 5000 }, ok: [], etapa: 'Cocida, en puré o en trozos según la edad' },
+  { n: 'Repollo', e: '🥬', cat: 'Verduras', u: 'kg', p: { baz: null, d1: null, ara: null, mega: null }, ok: [], etapa: 'Bien lavado y cocido, picado según la edad' },
+
+
   // ===== Tubérculos y plátanos =====
   { n: 'Papa', e: '🥔', cat: 'Tubérculos', u: 'kg', p: { baz: 2324, d1: 4000, ara: 6395, mega: 4300 }, ok: [], etapa: 'Desde 6 meses (puré)' },
   { n: 'Yuca', e: '🌿', cat: 'Tubérculos', u: 'kg', p: { baz: 2875, d1: 4400, ara: 4200, mega: 5800 }, ok: [], etapa: 'Bien cocida y machacada' },
@@ -114,6 +117,12 @@ const alimentos = [
   { n: 'Bocachico', e: '🐟', cat: 'Proteínas', u: 'kg', p: { baz: 13500, d1: null, ara: null, mega: 16900 }, ok: [], etapa: 'Pescado de río típico · muchas espinas' },
   { n: 'Hígado de res', e: '🥩', cat: 'Proteínas', u: 'kg', p: { baz: 15500, d1: null, ara: null, mega: 16400 }, ok: ['mega'], etapa: 'Muy rico en hierro · siempre bien cocido' },
   { n: 'Carne de res', e: '🥩', cat: 'Proteínas', u: 'kg', p:{baz: 29000, d1: 39800, ara: 31900, mega: 33800 }, ok:[], etapa: 'Salud en el organismo · Ayuda al Desarrollo Muscular' },
+
+
+    // ===== Vísceras =====
+  { n: 'Bofe de res', e: '🥩', cat: 'Vísceras', u: 'kg', p: { baz: null, d1: null, ara: null, mega: null }, ok: [], etapa: 'Bien cocido y picado o triturado según la edad' },
+  { n: 'Corazón de res', e: '❤️', cat: 'Vísceras', u: 'kg', p: { baz: null, d1: null, ara: null, mega: null }, ok: [], etapa: 'Fuente de hierro y proteína · bien cocido' },
+  { n: 'Mondongo de res', e: '🥩', cat: 'Vísceras', u: 'kg', p: { baz: null, d1: null, ara: null, mega: null }, ok: [], etapa: 'Bien lavado, cocido hasta ablandar y picado fino' },
 
   // ===== Lácteos =====
   { n: 'Leche entera', e: '🥛', cat: 'Lácteos', u: 'litro', p: { baz: 3900, d1: 3900, ara: 3800, mega: 4500 }, ok: [], etapa: 'Leche de vaca como bebida desde 12 meses' },
