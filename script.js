@@ -120,9 +120,9 @@ const alimentos = [
 
 
     // ===== Vísceras =====
-  { n: 'Bofe de res', e: '🥩', cat: 'Vísceras', u: 'kg', p: { baz: null, d1: null, ara: null, mega: null }, ok: [], etapa: 'Bien cocido y picado o triturado según la edad' },
-  { n: 'Corazón de res', e: '❤️', cat: 'Vísceras', u: 'kg', p: { baz: null, d1: null, ara: null, mega: null }, ok: [], etapa: 'Fuente de hierro y proteína · bien cocido' },
-  { n: 'Mondongo de res', e: '🥩', cat: 'Vísceras', u: 'kg', p: { baz: null, d1: null, ara: null, mega: null }, ok: [], etapa: 'Bien lavado, cocido hasta ablandar y picado fino' },
+  { n: 'Bofe de res', e: '🥩', cat: 'Vísceras', u: 'kg', p: { baz: 9550, d1: null, ara: null, mega: 9980  }, ok: [], etapa: 'Bien cocido y picado o triturado según la edad' },
+  { n: 'Corazón de res', e: '❤️', cat: 'Vísceras', u: 'kg', p: { baz: 14500, d1: null, ara: null, mega: 8850  }, ok: [], etapa: 'Fuente de hierro y proteína · bien cocido' },
+  { n: 'Mondongo de res', e: '🥩', cat: 'Vísceras', u: 'kg', p: { baz: 16300, d1: null, ara: null, mega: 18900  }, ok: [], etapa: 'Bien lavado, cocido hasta ablandar y picado fino' },
 
   // ===== Lácteos =====
   { n: 'Leche entera', e: '🥛', cat: 'Lácteos', u: 'litro', p: { baz: 3900, d1: 3900, ara: 3800, mega: 4500 }, ok: [], etapa: 'Leche de vaca como bebida desde 12 meses' },
