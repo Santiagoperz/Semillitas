@@ -115,7 +115,6 @@ const alimentos = [
   { n: 'Pescado basa', e: '🐟', cat: 'Proteínas', u: 'kg', p: { baz: 12000, d1: 22046, ara: 22600, mega: 15480 }, ok: [], etapa: 'Sin espinas, fácil para niños' },
   { n: 'Mojarra lora', e: '🐠', cat: 'Proteínas', u: 'kg', p: { baz: 11000, d1: null, ara: 15500, mega: 15900 }, ok: [], etapa: 'Retira bien las espinas' },
   { n: 'Bocachico', e: '🐟', cat: 'Proteínas', u: 'kg', p: { baz: 13500, d1: null, ara: null, mega: 16900 }, ok: [], etapa: 'Pescado de río típico · muchas espinas' },
-  { n: 'Hígado de res', e: '🥩', cat: 'Proteínas', u: 'kg', p: { baz: 15500, d1: null, ara: null, mega: 16400 }, ok: ['mega'], etapa: 'Muy rico en hierro · siempre bien cocido' },
   { n: 'Carne de res', e: '🥩', cat: 'Proteínas', u: 'kg', p:{baz: 29000, d1: 39800, ara: 31900, mega: 33800 }, ok:[], etapa: 'Salud en el organismo · Ayuda al Desarrollo Muscular' },
 
 
@@ -123,6 +122,7 @@ const alimentos = [
   { n: 'Bofe de res', e: '🥩', cat: 'Vísceras', u: 'kg', p: { baz: 9550, d1: null, ara: null, mega: 9980  }, ok: [], etapa: 'Bien cocido y picado o triturado según la edad' },
   { n: 'Corazón de res', e: '❤️', cat: 'Vísceras', u: 'kg', p: { baz: 14500, d1: null, ara: null, mega: 8850  }, ok: [], etapa: 'Fuente de hierro y proteína · bien cocido' },
   { n: 'Mondongo de res', e: '🥩', cat: 'Vísceras', u: 'kg', p: { baz: 16300, d1: null, ara: null, mega: 18900  }, ok: [], etapa: 'Bien lavado, cocido hasta ablandar y picado fino' },
+  { n: 'Hígado de res', e: '🥩', cat: 'Vísceras', u: 'kg', p: { baz: 15500, d1: null, ara: null, mega: 16400 }, ok: ['mega'], etapa: 'Muy rico en hierro · siempre bien cocido' },
 
   // ===== Lácteos =====
   { n: 'Leche entera', e: '🥛', cat: 'Lácteos', u: 'litro', p: { baz: 3900, d1: 3900, ara: 3800, mega: 4500 }, ok: [], etapa: 'Leche de vaca como bebida desde 12 meses' },
