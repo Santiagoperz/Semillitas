@@ -78,6 +78,8 @@ const alimentos = [
   { n: 'Lechuga', e: '🥬', cat: 'Verduras', u: 'kg', p: { baz: 2317, d1: 15000, ara: 11200, mega: 12300 }, ok: [], etapa: 'Bien lavada y picada fina' },
   { n: 'Pepino', e: '🥒', cat: 'Verduras', u: 'kg', p: { baz: 4300, d1: null, ara: 4000, mega: 5500 }, ok: [], etapa: 'Lavado, pelado y en trozos pequeños' },
   { n: 'Repollo', e: '🥬', cat: 'Verduras', u: 'kg', p: { baz: 2077, d1: 4500, ara: 4000, mega: 4500 }, ok: [], etapa: 'Bien lavado y cocido, picado según la edad' },
+  { n: 'Remolacha', e: '🟣', cat: 'Verduras', u: 'kg', p: { baz: 2600, d1: 5000, ara: 5000, mega: 5000 }, ok: [], etapa: 'Cocida, en puré o en trozos según la edad' },
+
   
   // ===== Tubérculos y plátanos =====
   { n: 'Papa', e: '🥔', cat: 'Tubérculos', u: 'kg', p: { baz: 2324, d1: 4000, ara: 6395, mega: 4300 }, ok: [], etapa: 'Desde 6 meses (puré)' },
@@ -118,6 +120,7 @@ const alimentos = [
 
 
     // ===== Vísceras =====
+  { n: 'Hígado de res', e: '🥩', cat: 'Vísceras', u: 'kg', p: { baz: 15500, d1: null, ara: null, mega: 16400 }, ok: ['mega'], etapa: 'Muy rico en hierro · siempre bien cocido' },
   { n: 'Bofe de res', e: '🥩', cat: 'Vísceras', u: 'kg', p: { baz: 9550, d1: null, ara: null, mega: 9980  }, ok: [], etapa: 'Bien cocido y picado o triturado según la edad' },
   { n: 'Corazón de res', e: '❤️', cat: 'Vísceras', u: 'kg', p: { baz: 14500, d1: null, ara: null, mega: 8850  }, ok: [], etapa: 'Fuente de hierro y proteína · bien cocido' },
   { n: 'Mondongo de res', e: '🥩', cat: 'Vísceras', u: 'kg', p: { baz: 16300, d1: null, ara: null, mega: 18900  }, ok: [], etapa: 'Bien lavado, cocido hasta ablandar y picado fino' },
