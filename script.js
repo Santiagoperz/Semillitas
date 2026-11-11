@@ -80,7 +80,7 @@ const alimentos = [
   { n: 'Repollo', e: '🥬', cat: 'Verduras', u: 'kg', p: { baz: 2077, d1: 4500, ara: 4000, mega: 4500 }, ok: [], etapa: 'Bien lavado y cocido, picado según la edad' },
   { n: 'Remolacha', e: '🟣', cat: 'Verduras', u: 'kg', p: { baz: 2600, d1: 5000, ara: 5000, mega: 5000 }, ok: [], etapa: 'Cocida, en puré o en trozos según la edad' },
 
-  
+
   // ===== Tubérculos y plátanos =====
   { n: 'Papa', e: '🥔', cat: 'Tubérculos', u: 'kg', p: { baz: 2324, d1: 4000, ara: 6395, mega: 4300 }, ok: [], etapa: 'Desde 6 meses (puré)' },
   { n: 'Yuca', e: '🌿', cat: 'Tubérculos', u: 'kg', p: { baz: 2875, d1: 4400, ara: 4200, mega: 5800 }, ok: [], etapa: 'Bien cocida y machacada' },
@@ -115,15 +115,15 @@ const alimentos = [
   { n: 'Pescado basa', e: '🐟', cat: 'Proteínas', u: 'kg', p: { baz: 12000, d1: 22046, ara: 22600, mega: 15480 }, ok: [], etapa: 'Sin espinas, fácil para niños' },
   { n: 'Mojarra lora', e: '🐠', cat: 'Proteínas', u: 'kg', p: { baz: 11000, d1: null, ara: 15500, mega: 15900 }, ok: [], etapa: 'Retira bien las espinas' },
   { n: 'Bocachico', e: '🐟', cat: 'Proteínas', u: 'kg', p: { baz: 13500, d1: null, ara: null, mega: 16900 }, ok: [], etapa: 'Pescado de río típico · muchas espinas' },
-  { n: 'Carne de res', e: '🥩', cat: 'Proteínas', u: 'kg', p:{baz: 29000, d1: 39800, ara: 31900, mega: 33800 }, ok:[], etapa: 'Salud en el organismo · Ayuda al Desarrollo Muscular' },
+  { n: 'Carne de res', e: '🥩', cat: 'Proteínas', u: 'kg', p: { baz: 29000, d1: 39800, ara: 31900, mega: 33800 }, ok: [], etapa: 'Salud en el organismo · Ayuda al Desarrollo Muscular' },
   { n: 'Alas de pollo', e: '🍗', cat: 'Proteínas', u: 'kg', p: { baz: 8325, d1: 17444, ara: 9222, mega: 9555 }, ok: [], etapa: 'Bien cocidas y deshuesadas antes de ofrecerlas a niños pequeños' },
 
 
-    // ===== Vísceras =====
+  // ===== Vísceras =====
   { n: 'Hígado de res', e: '🥩', cat: 'Vísceras', u: 'kg', p: { baz: 15500, d1: null, ara: null, mega: 16400 }, ok: ['mega'], etapa: 'Muy rico en hierro · siempre bien cocido' },
-  { n: 'Bofe de res', e: '🥩', cat: 'Vísceras', u: 'kg', p: { baz: 9550, d1: null, ara: null, mega: 9980  }, ok: [], etapa: 'Bien cocido y picado o triturado según la edad' },
-  { n: 'Corazón de res', e: '❤️', cat: 'Vísceras', u: 'kg', p: { baz: 14500, d1: null, ara: null, mega: 8850  }, ok: [], etapa: 'Fuente de hierro y proteína · bien cocido' },
-  { n: 'Mondongo de res', e: '🥩', cat: 'Vísceras', u: 'kg', p: { baz: 16300, d1: null, ara: null, mega: 18900  }, ok: [], etapa: 'Bien lavado, cocido hasta ablandar y picado fino' },
+  { n: 'Bofe de res', e: '🥩', cat: 'Vísceras', u: 'kg', p: { baz: 9550, d1: null, ara: null, mega: 9980 }, ok: [], etapa: 'Bien cocido y picado o triturado según la edad' },
+  { n: 'Corazón de res', e: '❤️', cat: 'Vísceras', u: 'kg', p: { baz: 14500, d1: null, ara: null, mega: 8850 }, ok: [], etapa: 'Fuente de hierro y proteína · bien cocido' },
+  { n: 'Mondongo de res', e: '🥩', cat: 'Vísceras', u: 'kg', p: { baz: 16300, d1: null, ara: null, mega: 18900 }, ok: [], etapa: 'Bien lavado, cocido hasta ablandar y picado fino' },
 
   // ===== Lácteos =====
   { n: 'Leche entera', e: '🥛', cat: 'Lácteos', u: 'litro', p: { baz: 3900, d1: 3900, ara: 3800, mega: 4500 }, ok: [], etapa: 'Leche de vaca como bebida desde 12 meses' },
@@ -321,12 +321,12 @@ const platosCosto = [
     etapa: 'Para Toda La Familia', nombre: 'Arroz con pollo', items: [
       { ref: 'Arroz', cant: 0.5, txt: 'Arroz · 1 libra' },
       { ref: 'Pechuga de pollo', cant: 1, txt: 'Pollo (Pechuga) · 1 kilo' },
-      { ref: 'Zanahoria', cant: .4 , txt: 'Zanahoria · 1 unidad grande' },
+      { ref: 'Zanahoria', cant: .4, txt: 'Zanahoria · 1 unidad grande' },
       { ref: 'Habichuela', cant: .3, txt: 'Habichuela · 1 unidad' },
       { ref: 'Cebolla cabezona blanca', cant: .3, txt: 'Cebolla cabezona blanca · 1 unidad' },
       { ref: 'Cilantro', cant: .06, txt: 'Cilantro · 1 unidad' },
       { ref: 'Cebolla larga (junca)', cant: .3, txt: 'Cebolla larga (junca) · 1 unidad' },
-      { ref: 'Pimentón', cant: .4 , txt: 'Pimentón · 1 unidad' }
+      { ref: 'Pimentón', cant: .4, txt: 'Pimentón · 1 unidad' }
     ]
   },
   {
@@ -346,7 +346,7 @@ const platosCosto = [
       { ref: 'Arroz', cant: 0.5, txt: 'Arroz · 1 libra' },
       { ref: 'Fríjol cabeza negra', cant: 0.2, txt: 'Fríjol cabeza negra · 200 gramos' },
       { ref: 'Tomate chonto', cant: .3, txt: 'Tomate chonto · 1 unidad grande' },
-      { ref: 'Cebolla cabezona blanca', cant: .3 , txt: 'Cebolla cabezona blanca · 1 unidad grande' },
+      { ref: 'Cebolla cabezona blanca', cant: .3, txt: 'Cebolla cabezona blanca · 1 unidad grande' },
       { ref: 'Ajo', cant: 0.003, txt: 'Ajo · 3 dientes' },
       { ref: 'Zanahoria', cant: 1, txt: 'Zanahoria · 1 unidad' },
       { ref: 'Ají topito', cant: 1, txt: 'Ají topito · 1 unidad' },
@@ -792,7 +792,7 @@ nav.querySelectorAll('a').forEach(a => a.addEventListener('click', cerrarMenu));
    - Pasos y tablas: muestran un emoji si la imagen no carga.
    - Logos del pie: se ocultan si la imagen no carga.
    =========================================================== */
-document.querySelectorAll('.bstep-img img, .tstep-img img').forEach(img => {
+document.querySelectorAll('.bstep-img img, .tstep-img img, .eq-foto img').forEach(img => {
   const usarEmoji = () => img.parentElement.classList.add('sin-img');
   if (img.complete && img.naturalWidth === 0) usarEmoji();
   else img.addEventListener('error', usarEmoji);
@@ -807,3 +807,29 @@ document.querySelectorAll('.footer-logos img, .b-aval img').forEach(img => {
   if (img.complete && img.naturalWidth === 0) ocultar();
   else img.addEventListener('error', ocultar);
 });
+
+
+
+/* ===========================================================
+   14. Equipo
+   =========================================================== */
+(function initEquipo() {
+  const modal = document.getElementById('equipoModal');
+  const btn = document.getElementById('abrirEquipo');
+  if (!modal || !btn) return;
+
+  const cerrar = () => modal.close();
+
+  btn.addEventListener('click', () => {
+    modal.showModal();
+    document.body.classList.add('modal-open');
+    modal.querySelector('.equipo-body').scrollTop = 0;
+  });
+
+  document.getElementById('equipoCerrar').addEventListener('click', cerrar);
+  modal.addEventListener('click', e => { if (e.target === modal) cerrar(); });   // tocar fuera
+  modal.addEventListener('close', () => {
+    document.body.classList.remove('modal-open');
+    btn.focus();
+  });
+})();
