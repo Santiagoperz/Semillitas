@@ -45,7 +45,11 @@
           <p class="b-lead">Menús, recetas y precios de alimentos locales para niños, niñas y adolescentes de 0 a 18
             años.</p>
 
-          <a href="#etapas" class="btn">Empezar el recorrido ↓</a>
+          <div class="b-botones">
+            <a href="#etapas" class="btn">Empezar el recorrido ↓</a>
+            <button type="button" class="btn btn-blanco" id="abrirEquipo" aria-haspopup="dialog">👩‍🎓 Conoce al
+              equipo</button>
+          </div>
 
           <form class="b-buscar" id="portadaBuscar" role="search">
             <label for="portadaBuscarInput" class="sr-only">Busca un alimento</label>
@@ -2064,6 +2068,59 @@
       <p class="lb-count" id="lbCount"></p>
     </figure>
     <button class="lb-arrow next" id="lbNext" aria-label="Imagen siguiente">›</button>
+  </dialog>
+
+  <!-- ================= EQUIPO ================= -->
+  <dialog class="equipo-modal" id="equipoModal" aria-labelledby="equipoTitulo">
+    <div class="equipo-inner">
+      <div class="equipo-head">
+        <h3 id="equipoTitulo">🌱 El equipo de Semillitas</h3>
+        <button class="recipe-close" id="equipoCerrar" aria-label="Cerrar">✕</button>
+      </div>
+
+      <div class="equipo-body">
+        <h4 class="equipo-sub">Las autoras</h4>
+        <ul class="equipo-grid">
+          <li class="eq-card">
+            <div class="eq-foto" data-emoji="👩‍🎓">
+              <img src="imgs/autoras/gisella.jpeg" loading="lazy" alt="Foto de Gisella Patricia Ospino García">
+            </div>
+            <strong>Gisella Patricia Ospino García</strong>
+          </li>
+          <li class="eq-card">
+            <div class="eq-foto" data-emoji="👩‍🎓">
+              <img src="imgs/autoras/luisa.jpeg" loading="lazy" alt="Foto de Luisa Maria Guerra Castilla">
+            </div>
+            <strong>Luisa Maria Guerra Castilla</strong>
+          </li>
+          <li class="eq-card">
+            <div class="eq-foto" data-emoji="👩‍🎓">
+              <img src="imgs/autoras/danna.jpeg" loading="lazy" alt="Foto de Danna Saray Martelo Romero">
+            </div>
+            <strong>Danna Saray Martelo Romero</strong>
+          </li>
+        </ul>
+
+        <h4 class="equipo-sub">Con el apoyo de</h4>
+        <ul class="equipo-grid equipo-lugares">
+          <li class="eq-card">
+            <div class="eq-foto eq-lugar eq-logo" data-emoji="🎓">
+              <img src="imgs/logos/unisinu.png" loading="lazy" alt="Universidad del Sinú">
+            </div>
+            <strong>Universidad del Sinú</strong>
+            <small>Donde estudiamos</small>
+          </li>
+          <li class="eq-card">
+            <!-- TODO: poner el nombre real del sitio de prácticas y ajustar el alt -->
+            <div class="eq-foto eq-lugar eq-logo" data-emoji="🏥">
+              <img src="imgs/logos/bienestar.png" loading="lazy" alt="Sitio de prácticas">
+            </div>
+            <strong>Sitio de prácticas</strong>
+            <small>Donde hicimos las prácticas</small>
+          </li>
+        </ul>
+      </div>
+    </div>
   </dialog>
 
   <footer class="footer">

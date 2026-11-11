@@ -144,7 +144,7 @@ img{max-width:100%}
 }
 .b-hero > *{position:relative;z-index:1}
 .b-hero h1{font-size:clamp(3rem,6vw,4.8rem);line-height:1;color:var(--sea-d);text-shadow:0 4px 0 rgba(255,255,255,.35)}
-.b-hero .btn{margin-bottom:1.4rem}
+.b-botones{display:flex;flex-wrap:wrap;gap:.9rem;margin-bottom:1.4rem}
 .sprout{display:inline-block;animation:grow 2.5s ease-in-out infinite}
 
 .b-lema{
@@ -823,9 +823,69 @@ body.modal-open{overflow:hidden}
 .lb-arrow{top:50%;translate:0 -50%;width:52px;height:52px;font-size:2rem;line-height:1}
 .lb-arrow.prev{left:1rem}
 .lb-arrow.next{right:1rem}
-.lb-close:hover,
-.lb-arrow:hover{background:var(--coral);color:#fff;transform:scale(1.08)}
 
+/* Ventana del equipo */
+.equipo-modal{
+  width:min(920px,94vw);max-height:90dvh;margin:auto;padding:0;overflow:hidden;
+  border:0;border-radius:var(--radius-lg);
+  background:var(--sand);color:var(--ink);box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
+.equipo-modal::backdrop{background:rgba(31,45,61,.88);backdrop-filter:blur(4px)}
+.equipo-modal[open]{animation:pop .3s ease}
+.equipo-inner{display:flex;flex-direction:column;max-height:90dvh}
+
+.equipo-head{
+  display:flex;align-items:center;gap:1rem;padding:1.2rem 1.6rem;
+  background:linear-gradient(160deg,var(--lila),var(--ciruela));
+}
+.equipo-head h3{flex:1;font-size:1.4rem;color:var(--sea-d)}
+.equipo-head .recipe-close{background:rgba(255,255,255,.6);color:var(--sea-d)}
+.equipo-head .recipe-close:hover{background:var(--coral);color:#fff}
+
+.equipo-body{padding:1.5rem 1.6rem 2rem;overflow-y:auto}
+.equipo-sub{margin-bottom:1rem;font-size:1.1rem;color:var(--sea-d)}
+.equipo-sub:not(:first-child){margin-top:2rem}
+
+.equipo-grid{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem}
+.equipo-lugares{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+
+.eq-card{
+  display:flex;flex-direction:column;align-items:center;gap:.25rem;
+  padding:.7rem .7rem 1.1rem;text-align:center;
+  border:3px solid color-mix(in srgb, var(--berry) 30%, #fff);border-radius:var(--radius);
+  background:#fff;box-shadow:var(--shadow);
+  transition:transform .25s, box-shadow .25s, border-color .25s;
+}
+.eq-card strong{margin-top:.5rem;font-family:var(--font-h);font-weight:600;font-size:1.05rem;line-height:1.2}
+.eq-card small{font-size:.8rem}
+
+.eq-foto{
+  display:grid;place-items:center;width:100%;aspect-ratio:2/3;   /* vertical, tipo cuerpo completo */
+  overflow:hidden;border-radius:14px;background:var(--ciruela);
+}
+.eq-foto img{
+  display:block;width:100%;height:100%;
+  object-fit:cover;object-position:center top;   /* si hay que recortar, se conserva la cabeza */
+  transition:transform .4s;
+}
+.eq-lugar{aspect-ratio:4/3;background:var(--sky)}
+/* Logos: se muestran a su tamaño real (nunca se agrandan) dentro de un recuadro blanco */
+.eq-logo{background:#fff;padding:1.2rem}
+.eq-logo img{
+  width:auto;height:auto;max-width:85%;max-height:85%;
+  object-fit:contain;
+}
+.eq-card:hover .eq-logo img{transform:scale(1.04)}
+
+/* Respaldo con emoji si la foto no carga */
+.eq-foto.sin-img img{display:none}
+.eq-foto.sin-img::after{content:attr(data-emoji);font-size:3.5rem}
+
+@media (hover:hover){
+  .eq-card:hover{transform:translateY(-6px) rotate(-1deg);border-color:var(--berry);box-shadow:var(--shadow-hover)}
+  .eq-card:nth-child(even):hover{transform:translateY(-6px) rotate(1deg)}
+  .eq-card:hover .eq-foto img{transform:scale(1.06)}
+}
 
 /* ===========================================================
    15. Pie de página
